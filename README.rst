@@ -1,9 +1,13 @@
-# querido-diario-doc
+Querido Diário
+=======================
+
 Querido Diário project - Official documentation
 
-## Contributing
+*********************
+Contributing
+*********************
 
-### Creating the documentation
+**Creating the documentation**
 
 Dependencies:
 
@@ -14,12 +18,12 @@ Dependencies:
 `pip install -r requirements.txt`
     
 
-Clone this repo:
+**Clone this repo:**
 ::
 
     git clone https://github.com/okfn-brasil/querido-diario-doc.git
 
-Make documentation:
+**Make documentation:**
 ::
 
     make html
