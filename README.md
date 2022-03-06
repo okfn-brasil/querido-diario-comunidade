@@ -11,8 +11,8 @@ comunidade do projeto.
 
 *A documentação está em progresso.* :building_construction:
 
-## Colaborando
+# Contribuição
 
-Para saber como colaborar com o projeto, seja através de *Issues*, *Pull
-Requests* ou interagindo com a comunidade, leia o
-[documento de colaboração](CONTRIBUTING.md).
+Agradecemos por considerar contribuir com o Querido Diário! :tada:
+
+Você encontra como fazê-lo em nosso [Guia de Contribuição](.github/CONTRIBUTING.md).
