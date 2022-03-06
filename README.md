@@ -16,3 +16,16 @@ comunidade do projeto.
 Agradecemos por considerar contribuir com o Querido Diário! :tada:
 
 Você encontra como fazê-lo em nosso [Guia de Contribuição](.github/CONTRIBUTING.md).
+
+# Querido Diário
+
+Repositórios relacionados:
+- [Raspadores](https://github.com/okfn-brasil/querido-diario)
+- [Toolbox](https://github.com/okfn-brasil/querido-diario-toolbox)
+- [Infraestrutura](https://github.com/okfn-brasil/querido-diario-infra)
+- [Frontend](https://github.com/okfn-brasil/querido-diario-frontend)
+- [Data Processing](https://github.com/okfn-brasil/querido-diario-data-processing)
+- [API](https://github.com/okfn-brasil/querido-diario-api)
+- [API Wrapper](https://github.com/okfn-brasil/querido-diario-api-wrapper)
+- [Censo](https://github.com/okfn-brasil/censo-querido-diario)
+- [Educação (Piloto)](https://github.com/okfn-brasil/piloto-educacao)
