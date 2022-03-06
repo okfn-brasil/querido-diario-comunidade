@@ -1,4 +1,4 @@
-[**Português (Brasil)**](README.md) | [English (United States)](.github/README-en-US.md)
+**Português (Brasil)** | [English (United States)](.github/README-en-US.md)
 
 <p align="center">
   <img alt="Querido Diário" src="./.github/images/querido-diario-logo.png" width="200">
