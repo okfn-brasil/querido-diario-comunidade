@@ -4,9 +4,9 @@
   <img alt="Querido Diário" src="./.github/images/querido-diario-logo.png" width="200">
 </p>
 
-# Querido Diário - Documentação e Comunidade
+# Documentação e Comunidade
 
-Documentação mais geral do Querido Diário e espaço dedicado a discussões e à
+Documentação mais geral do Querido Diário e espaço dedicado a [discussões](https://github.com/okfn-brasil/querido-diario-comunidade/discussions) e à
 comunidade do projeto.
 
 *A documentação ainda está em progresso.*
