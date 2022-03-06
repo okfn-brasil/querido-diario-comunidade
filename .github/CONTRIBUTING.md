@@ -41,4 +41,3 @@ de revisão de código são de interesse público para todos na comunidade.
 - Se um *Pull Request* tiver muitos *commits* e as mensagens não forem claras,
   use a opção *Squash and Merge* ao mesclar. Se a disciplina de gerenciamento
   de histórico de versão for boa, isto não é necessário.
-
