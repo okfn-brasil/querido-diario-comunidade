@@ -29,3 +29,7 @@ Repositórios relacionados:
 - [API Wrapper](https://github.com/okfn-brasil/querido-diario-api-wrapper)
 - [Censo](https://github.com/okfn-brasil/censo-querido-diario)
 - [Educação (Piloto)](https://github.com/okfn-brasil/piloto-educacao)
+
+# Open Knowledge Brasil
+
+A [Open Knowledge Brasil](https://ok.org.br/), a Rede pelo Conhecimento Livre, é uma organização da sociedade civil sem fins lucrativos voltada à promoção da **informação**, **sabedoria** e **transparência**. Todo o trabalho produzido pela rede está disponível livremente.
