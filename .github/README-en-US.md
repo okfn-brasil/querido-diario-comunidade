@@ -7,3 +7,5 @@
 # Documentation and Community
 
 General documentation related to *Querido Diário* and a dedicated space to [discussions](https://github.com/okfn-brasil/querido-diario-comunidade/discussions) and to the project community.
+
+*The documentation is still in progress.* :building_construction:

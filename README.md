@@ -9,7 +9,7 @@
 Documentação mais geral do Querido Diário e espaço dedicado a [discussões](https://github.com/okfn-brasil/querido-diario-comunidade/discussions) e à
 comunidade do projeto.
 
-*A documentação ainda está em progresso.*
+*A documentação está em progresso.* :building_construction:
 
 ## Colaborando
 
