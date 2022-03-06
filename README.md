@@ -1,3 +1,5 @@
+[**Português (Brasil)**](README.md) | [English (United States)](.github/README-en-US.md)
+
 # Querido Diário - Documentação e Comunidade
 
 Documentação mais geral do Querido Diário e espaço dedicado a discussões e à
