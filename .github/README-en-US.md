@@ -30,9 +30,11 @@ Related repositories:
 - [Education (Pilot)](https://github.com/okfn-brasil/piloto-educacao)
 
 # Open Knowledge Brasil
-<a href="https://twitter.com/intent/follow?screen_name=okfnbr">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/okfnbr?label=%40okfnbr&style=social">
-</a>
+<p>
+  <a href="https://twitter.com/intent/follow?screen_name=okfnbr">
+    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/okfnbr?label=%40okfnbr&style=social">
+  </a>
+</p>
 
 The [Open Knowledge Brasil](https://ok.org.br/), the Network for Free Knowledge, is a non-profit civil society organization dedicated to the promotion of **information**, **wisdom** and **transparency**. All work produced by the network is freely available.
 
