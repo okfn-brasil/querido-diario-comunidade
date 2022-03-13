@@ -25,7 +25,7 @@ The *Querido Diário* has several code repositories for you to contribute:
 
 ## How to contribute
 
-If you have not yet contributed to an open source project or are not familiar with this project, there are tasks for people like you in the [Issues](https://github.com/okfn-brasil/querido-diario-comunidade/issues), labeled as [`good first issues`](https://github.com/okfn-brasil/querido-diario-comunidade/issues?q=is%3Aissue+is%3Aopen+label%3A"good+first+issue").
+If you have not yet contributed to an open source project or are not familiar with this project, there are tasks for people like you in the [Issues](https://github.com/okfn-brasil/querido-diario-comunidade/issues) tab, labeled as [`good first issues`](https://github.com/okfn-brasil/querido-diario-comunidade/issues?q=is%3Aissue+is%3Aopen+label%3A"good+first+issue").
 
 If any of those interest you, before starting, you can leave comments to ask any relevant questions and then leave a notice that you will be working on that task.
 
