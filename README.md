@@ -31,7 +31,9 @@ Repositórios relacionados:
 - [Educação (Piloto)](https://github.com/okfn-brasil/piloto-educacao)
 
 # Open Knowledge Brasil
-![Twitter Follow](https://img.shields.io/twitter/follow/okfnbr?label=%40okfnbr&style=social)
+<a href="https://twitter.com/intent/follow?screen_name=okfnbr">
+  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/okfnbr?label=%40okfnbr&style=social">
+</a>
 
 A [Open Knowledge Brasil](https://ok.org.br/), a Rede pelo Conhecimento Livre, é uma organização da sociedade civil sem fins lucrativos voltada à promoção da **informação**, **sabedoria** e **transparência**. Todo o trabalho produzido pela rede está disponível livremente.
 
