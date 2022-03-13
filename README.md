@@ -20,6 +20,7 @@ Você encontra como fazê-lo em nosso [Guia de Contribuição](.github/CONTRIBUT
 # Querido Diário
 
 Repositórios relacionados:
+- [Documentação e Comunidade](https://github.com/okfn-brasil/querido-diario-comunidade)
 - [Raspadores](https://github.com/okfn-brasil/querido-diario)
 - [Toolbox](https://github.com/okfn-brasil/querido-diario-toolbox)
 - [Infraestrutura](https://github.com/okfn-brasil/querido-diario-infra)

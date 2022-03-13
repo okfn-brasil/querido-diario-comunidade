@@ -19,6 +19,7 @@ You can find how to do it in our [Contribution Guide](CONTRIBUTING-en-US.md).
 # *Querido Diário*
 
 Related repositories:
+- [Documentation and Community](https://github.com/okfn-brasil/querido-diario-comunidade)
 - [Scrapers](https://github.com/okfn-brasil/querido-diario)
 - [Toolbox](https://github.com/okfn-brasil/querido-diario-toolbox)
 - [Infrastructure](https://github.com/okfn-brasil/querido-diario-infra)
