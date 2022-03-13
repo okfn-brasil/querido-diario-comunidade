@@ -1,4 +1,7 @@
-**English (United States)** | [Português (Brasil)](../README.md)
+<p style="font-size: 0.875rem">
+  <strong>English (United States)</strong> |
+  <a href="./../README.md">Português (Brasil)</a>
+</p>
 
 <p align="center">
   <img alt="Querido Diário" src="./images/querido-diario-logo.png" width="200">
