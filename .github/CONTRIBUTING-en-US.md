@@ -35,7 +35,7 @@ And a [community on Discord](https://bit.ly/discord-ok), if you want to ask ques
 
 # Maintaining
 
-## Responsibilities of a *Querido Diário* maintainer:
+## Responsibilities of a *Querido Diário* maintainer
 
 - Respect the [code of conduct](CODE_OF_CONDUCT-en-US.md) and ensure that people have a safe and welcoming environment and that any victim of violation of this term has a channel of help;
 - Always justify a suggestion according to the practices already adopted in the project, legibility and simplicity. It is essential that a civic project have as simple a structure as possible for beginners;

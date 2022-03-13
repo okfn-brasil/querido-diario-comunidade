@@ -35,7 +35,7 @@ E uma [comunidade no Discord](https://bit.ly/discord-ok), se você desejar tirar
 
 # Mantendo
 
-## Responsabilidades de uma pessoa mantenedora do Querido Diário:
+## Responsabilidades de uma pessoa mantenedora do Querido Diário
 
 - Respeitar o [código de conduta](CODE_OF_CONDUCT.md) e garantir que as pessoas tenham um ambiente seguro e acolhedor e que qualquer vítima de infração desse termo tenha um canal de ajuda;
 - Sempre justificar uma sugestão de acordo com as práticas já adotadas no projeto, legibilidade e simplicidade. É essencial que um projeto cívico tenha uma estrutura tão simples quanto possível para iniciantes;
