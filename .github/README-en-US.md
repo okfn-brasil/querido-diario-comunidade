@@ -35,4 +35,4 @@ The [Open Knowledge Brasil](https://ok.org.br/), the Network for Free Knowledge,
 
 # Licence
 
-Code licenced under [MIT License](../LICENSE).
+Code licenced under [MIT License](../LICENSE.md).
