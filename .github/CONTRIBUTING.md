@@ -1,6 +1,6 @@
 **Português (Brasil)** | [English (United States)](CONTRIBUTING-en-US.md)
 
-# Colaborando
+# Contribuindo
 
 ## Código de Conduta
 
