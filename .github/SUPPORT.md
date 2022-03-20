@@ -1,4 +1,4 @@
-**Português (Brasil)** | [English (United States)](SUPPORT-en-US.md)
+**Português (BR)** | [English (US)](SUPPORT-en-US.md)
 
 # Suporte
 

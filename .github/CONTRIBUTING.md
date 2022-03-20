@@ -1,4 +1,4 @@
-**Português (Brasil)** | [English (United States)](CONTRIBUTING-en-US.md)
+**Português (BR)** | [English (US)](CONTRIBUTING-en-US.md)
 
 # Contribuindo
 
