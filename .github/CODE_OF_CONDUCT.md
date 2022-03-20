@@ -38,7 +38,7 @@ Este Código de Conduta se aplica dentro de todos os espaços da comunidade e ta
 
 ## Aplicação
 
-Ocorrências de comportamentos abusivos, de assédio ou que sejam inaceitáveis por qualquer outro motivo poderão ser reportadas para a liderança da comunidade, responsável pela aplicação, via contato por e-mail para [contato@ok.org.br](mailto:contato@ok.org.br).
+Casos de comportamento abusivo, de assédio ou de outra forma inaceitável podem ser relatados à liderança da comunidade em [contato@ok.org.br](mailto:contato@ok.org.br), que será responsável pela aplicação.
 
 Todas as reclamações serão revisadas e investigadas imediatamente e de maneira justa.
 
