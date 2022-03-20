@@ -33,7 +33,7 @@ Repositórios relacionados:
 
 # Open Knowledge Brasil
 <p>
-  <a href="https://twitter.com/intent/follow?screen_name=okfnbr">
+  <a href="https://twitter.com/intent/follow?screen_name=okfnbr" target="_blank">
     <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/okfnbr?label=%40okfnbr&style=social">
   </a>
 </p>
