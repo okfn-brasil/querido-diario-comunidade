@@ -21,7 +21,7 @@ Exemplos de comportamentos que contribuem para criar um ambiente positivo para a
 Exemplos de comportamentos inaceitáveis incluem:
 
 * Uso de linguagem ou imagens sexualizadas, bem como o assédio sexual ou de qualquer natureza
-* Comentários insultuosos/depreciativos e ataques pessoais ou políticos (*Trolling*)
+* Comentários insultuosos/depreciativos e ataques pessoais ou políticos
 * Assédio público ou privado
 * Publicar informações particulares de outras pessoas, como um endereço de e-mail ou endereço físico, sem a permissão explícita delas
 * Outras condutas que são normalmente consideradas inapropriadas em um ambiente profissional
