@@ -1,0 +1,164 @@
+Documentação Querido Diário
+
+Objetivo da Documentação
+
+    Facilitar que novos usuários possam contribuir tecnicamente com o projeto e/ou utilizá-lo para realizar suas próprias análises fora da plataforma.
+
+
+Quem são meus usuários?
+
+    Desenvolvedores
+
+    Experiência em Programação
+
+    Iniciantes (com pouca experiência em Python)
+
+    Intermediários (sem experiência com raspagem de dados e/ou Scrapy)
+
+    Intermediários/Avançados (com experiência com raspagem de dados e/ou Scrapy)
+
+    Ambientes de Desenvolvimento
+
+    Windows
+
+    Linux
+
+    MacOS
+
+    Código aberto
+
+    Nunca contribuíram com nenhum projeto de código aberto
+
+    Já contribuíram eventualmente com projetos de código aberto
+
+    Experientes em comunidades de código aberto
+
+    Idioma
+
+    Sem domínio do inglês
+
+    Domínio básico (instrumental) de inglês
+
+    Com domínio do inglês
+
+
+Necessidades dos Usuários
+
+    Perguntas Gerais
+
+    O que é o QD?
+
+    Quem mantém o QD?
+
+    Como posso colaborar com o QD?
+
+    Como se comunicar com os mantenedores e outros contribuidores do QD?
+
+    Qual a visão geral da Arquitetura do Projeto?
+
+    Código de Conduta
+
+    Conceitos
+
+    Diário Oficial
+
+    Poderes
+
+    Edição
+
+    Spiders
+
+    Documentos
+
+    Datas
+
+    Edições extra
+
+
+    Como preparar o meu ambiente para contribuir com o projeto?
+
+    Sistemas Operacionais
+
+    Linux
+
+    Windows
+
+    MacOS (precisamos?)
+
+    Quais os pré-requisitos?
+
+    Quais problemas podemos encontrar ao preparar o ambiente? E como corrigi-los?
+
+    Como saber que o meu ambiente está funcionando corretamente?
+
+
+    Como descobrir o que está disponível para ser feito?
+
+    Descobrindo cidades não mapeadas e/ou não iniciadas
+
+    Descobrindo spiders com erros que precisam ser corrigidos
+
+    Como executar código já existente
+
+    Como avisar que estou fazendo algo?
+
+
+    Como criar um novo spider?
+
+    Estrutura base de todos os spiders (BaseGazetteSpider)
+
+    Padrões de Código (PEP8, black, isort, pre-commit)
+
+    Práticas do código
+
+    Uso do get/getall
+
+    Tipos de paginas
+
+    paginação
+
+    filtros por data
+
+    Minimizar quantidade de requests
+
+    Full/Delta crawl (por data de início/fim)
+
+    O que e onde documentar se necessário?
+
+    Onde encontrar ajuda?
+
+
+    O que fazer quando terminar?
+
+    Confirmando que seu spider está funcionando corretamente?
+
+    Preparando o seu pull request
+
+    Título, descrição, commits
+
+    Aguardando revisão
+
+    O que fazer quando receber uma revisão?
+
+    Discutindo conceitos
+
+    Corrigindo o código
+
+    O que acontece quando o código é aceito?
+
+
+    Ambiente de Produção
+
+    Onde os spiders são executados?
+
+    Onde os dados são armazenados?
+
+    Como decidimos quais spiders serão executados em produção ou não?
+
+    Como é feito o monitoramento para garantirmos que está tudo funcionando corretamente?
+
+    Deploy de novas versões, agendamento de execuções, execução manual?
+
+
+Content Outline
+https://docs.google.com/spreadsheets/d/1t6PSaW4KUP7FxjDeqxFFb_t9SZqA9UBWpLwKc2n3i9c/edit#gid=0
