@@ -21,7 +21,6 @@ O Querido Diário possui vários repositórios de código para você contribuir:
 - [API](https://github.com/okfn-brasil/querido-diario-api)
 - [API Wrapper](https://github.com/okfn-brasil/querido-diario-api-wrapper)
 - [Censo](https://github.com/okfn-brasil/censo-querido-diario)
-- [Educação (Piloto)](https://github.com/okfn-brasil/piloto-educacao)
 
 ## Como contribuir
 

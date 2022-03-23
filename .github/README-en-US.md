@@ -28,7 +28,6 @@ Related repositories:
 - [API](https://github.com/okfn-brasil/querido-diario-api)
 - [API Wrapper](https://github.com/okfn-brasil/querido-diario-api-wrapper)
 - [Census](https://github.com/okfn-brasil/censo-querido-diario)
-- [Education (Pilot)](https://github.com/okfn-brasil/piloto-educacao)
 
 # Open Knowledge Brasil
 <p>
