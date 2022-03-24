@@ -21,7 +21,6 @@ The *Querido Diário* has several code repositories for you to contribute:
 - [API](https://github.com/okfn-brasil/querido-diario-api)
 - [API Wrapper](https://github.com/okfn-brasil/querido-diario-api-wrapper)
 - [Census](https://github.com/okfn-brasil/censo-querido-diario)
-- [Education (Pilot)](https://github.com/okfn-brasil/piloto-educacao)
 
 ## How to contribute
 
