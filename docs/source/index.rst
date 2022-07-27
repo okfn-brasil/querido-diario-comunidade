@@ -11,3 +11,4 @@ Querido Diário
    :caption: Querido Diário:
 
    o-que-eh-qd
+   escrevendo-um-novo-spider
