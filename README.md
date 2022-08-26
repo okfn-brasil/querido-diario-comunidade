@@ -41,4 +41,4 @@ A [Open Knowledge Brasil](https://ok.org.br/), a Rede pelo Conhecimento Livre, �
 
 # Licença
 
-Código licenciado sob a [Licença MIT](LICENSE.md).
+Código licenciado sob a [Licença MIT](.github/LICENSE.md).
