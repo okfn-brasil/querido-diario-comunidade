@@ -1,13 +1,10 @@
 Utilizando o Toolbox do Querido Diário
 ======================================
 
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/querido-diario-toolbox)](https://pypi.org/project/querido-diario-toolbox/)
-[![PyPI](https://img.shields.io/pypi/v/querido-diario-toolbox)](https://pypi.org/project/querido-diario-toolbox/)
+|python_version_img|
+|pypi_img|
 
-______________________________________
-
-_[Click here](languages/en-US/README.md) to read this article in english._
-______________________________________
+.. *`Click here`_ to read this article in english.*
 
 O objetivo da `querido-diario-toolbox` é dar à comunidade do Querido Diário o ferramental para executar suas próprias análises e manipulações com os dados
 que são obtidos pelo QD. Além disso, a biblioteca também será integrada nas aplicações utilizadas em produção pelo Querido Diário. Ou seja, quem utilizar a biblioteca poderá reproduzir localmente as mesmas etapas de
@@ -81,6 +78,11 @@ Colaborando
 Para saber como colaborar com o projeto, seja através de *Issues*, *Pull Requests* ou interagindo com a comunidade, leia o `documento de colaboração geral do Querido Diário`_ e depois leia o
 `documento de colaboração específico deste repositório`_.
 
+.. _Click here: how-to-use-toolbox.rst
+.. |python_version_img| image:: https://img.shields.io/pypi/pyversions/querido-diario-toolbox
+                        :target: https://pypi.org/project/querido-diario-toolbox/
+.. |pypi_img| image:: https://img.shields.io/pypi/v/querido-diario-toolbox
+              :target: https://pypi.org/project/querido-diario-toolbox/
 .. _Tesseract OCR: https://tesseract-ocr.github.io/tessdoc/
 .. _Apache Tika: https://tika.apache.org/download.html
 .. _./examples: examples
