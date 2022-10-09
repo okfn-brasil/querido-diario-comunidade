@@ -12,3 +12,4 @@ Querido Diário
 
    o-que-eh-qd
    escrevendo-um-novo-spider
+   arquitetura-do-projeto
