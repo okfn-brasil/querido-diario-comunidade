@@ -12,4 +12,4 @@ Querido Diário
 
    o-que-eh-qd
    escrevendo-um-novo-spider
-   utilizando-o-toolbox
+   utilizando-a-toolbox
