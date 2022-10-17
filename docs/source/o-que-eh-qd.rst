@@ -1,26 +1,7 @@
 O que é o Querido Diário
 ========================
 
-Um **Diário Oficial** é uma publicação feita por vários esferas da administração pública brasileira, seja
-na esfera federal, estadual ou municipal e dos poderes executivo, legislativo e judiciário. É 
-através dele que qualquer ação tomadas por essas esferas e poderes torne-se oficial para a 
-população.
 
-Mesmo com os esforços recorrentes para fortalecer a `Lei de Acesso à Informação`_ pelo país,
-a comunicação oficial permanece - na maioria do território nacional - restrita a documentos em
-formato **PDF**. Esses documentos, apesar de estarem públicos, não estão estruturados de uma maneira
-que permita a análise por um computador ou que sejam consultados em conjunto (por exemplo, 
-buscando palavras-chaves em diversas publicações ao mesmo tempo).
-
-O objetivo do **Querido Diário** é facilitar o acesso público aos Diários Oficiais dos municípios
-brasileiro, permitindo que qualquer pessoa tenha acesso e consulte as informações dentro dessas
-publicações.
-
-Para atingir esse objetivo, temos várias frentes de trabalho que visam mapear e descobrir onde 
-os Diários Oficiais estão publicados, obté-los com regularidade para que possamos processá-los e
-disponibiliza-los de uma maneira que seja possível com que a população possa pesquisar o seu
-conteúdo, seja através de uma `página de consulta`_ ou uma `API`_ para que esse processamento
-possa ser feito através de um computador.
 
 Como o projeto é mantido
 ------------------------
