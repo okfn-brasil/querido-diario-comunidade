@@ -72,11 +72,6 @@ Convertendo arquivo de formato fechado para texto puro e extraindo metadados
 
 Após a execução de `extrator.load_content(diario)`, dois arquivos (um `.txt` com o texto puro e um `.json` com os metadados) serão criados.
 
-Colaborando
------------
-
-Para saber como colaborar com o projeto, seja através de *Issues*, *Pull Requests* ou interagindo com a comunidade, leia o `documento de colaboração geral do Querido Diário`_ e depois leia o
-`documento de colaboração específico deste repositório`_.
 
 .. _Click here: how-to-use-toolbox.rst
 .. |python_version_img| image:: https://img.shields.io/pypi/pyversions/querido-diario-toolbox
@@ -88,5 +83,4 @@ Para saber como colaborar com o projeto, seja através de *Issues*, *Pull Reques
 .. _./examples: examples
 .. _Tabula: https://github.com/tabulapdf/tabula-java/releases
 .. _Jupyter: https://jupyter.org/
-.. _documento de colaboração geral do Querido Diário: https://github.com/okfn-brasil/querido-diario-comunidade/blob/main/CONTRIBUTING.md
-.. _documento de colaboração específico deste repositório: CONTRIBUTING.md
+
