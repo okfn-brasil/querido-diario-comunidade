@@ -1,4 +1,4 @@
-Utilizando o Toolbox do Querido Diário
+Utilizando a Toolbox do Querido Diário
 ======================================
 
 |python_version_img|
