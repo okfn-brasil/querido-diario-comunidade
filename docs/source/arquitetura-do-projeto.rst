@@ -82,7 +82,7 @@ com ideias para a API no repositório oficial.
 Front end 
 ---------
 
-O front end é este que vos fala. Esta plataforma de busca é uma interface visual de 
+Esta plataforma de busca é uma interface visual de 
 interação com a API pública e também uma ferramenta de difusão de conhecimento e incentivo 
 ao uso de diários oficiais.
 
