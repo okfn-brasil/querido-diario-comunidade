@@ -1,7 +1,7 @@
 Como contribuir
 ===============
 
-O QUerido Diário possui diversos sub-projetos, cada um deles resolvendo uma parte do problema
+O Querido Diário possui diversos sub-projetos, cada um deles resolvendo uma parte do problema
 ([TODO link para o documento de arquiteutra geral do projeto])
 
 Todo o código desenvolvido no projeto está disponivel no repositorio da OK (
