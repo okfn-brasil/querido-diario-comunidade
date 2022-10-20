@@ -11,6 +11,8 @@ Querido Diário
    :caption: Querido Diário:
 
    o-que-eh-qd
+   arquitetura-do-projeto
    escrevendo-um-novo-spider
    busca-avancada-nos-diarios
    utilizando-o-toolbox
+   
