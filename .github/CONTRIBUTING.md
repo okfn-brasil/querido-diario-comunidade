@@ -1,36 +1,64 @@
 **Português (BR)** | [English (US)](CONTRIBUTING-en-US.md)
 
+
+Guia de Contribuição
+====
+
+
+Este guia serve para orientar pessoas em sua jornada com o Querido Diário. Ele apresenta os passos iniciais que devem ser tomados ao interagir em todos os repositórios do projeto. 
+
+Os repositórios também tem particularidades descritas em sua própria documentação. Ao finalizar a leitura destas orientações gerais, leia também o arquivo `CONTRIBUTING.md` do repositório de interesse antes de fazer sua contribuição. 
+
 # Contribuindo
 
 ## Código de Conduta
 
-Para garantir que a nossa comunidade seja acolhedora para todas as pessoas, leia e siga o nosso [Código de Conduta](CODE_OF_CONDUCT.md).
+Para garantir que a nossa comunidade seja acolhedora para todas as pessoas, leia e siga o nosso [Código de Conduta](CODE_OF_CONDUCT.md) em todos os espaços da comunidade.
 
 Ao participar deste projeto, você concorda em aderir aos termos nele especificados.
 
-## Onde contribuir
+## Ecossistema do Querido Diário
 
-O Querido Diário possui vários repositórios de código para você contribuir:
+O Querido Diário possui vários repositórios, possibilitando contribuições onde houver mais afinidade:
 
-- [Documentação e Comunidade](https://github.com/okfn-brasil/querido-diario-comunidade)
 - [Raspadores](https://github.com/okfn-brasil/querido-diario)
-- [Toolbox](https://github.com/okfn-brasil/querido-diario-toolbox)
-- [Infraestrutura](https://github.com/okfn-brasil/querido-diario-infra)
 - [Frontend](https://github.com/okfn-brasil/querido-diario-frontend)
+- [Documentação e Comunidade](https://github.com/okfn-brasil/querido-diario-comunidade)
+- [Toolbox](https://github.com/okfn-brasil/querido-diario-toolbox)
 - [Data Processing](https://github.com/okfn-brasil/querido-diario-data-processing)
 - [API](https://github.com/okfn-brasil/querido-diario-api)
 - [API Wrapper](https://github.com/okfn-brasil/querido-diario-api-wrapper)
+- [Infraestrutura](https://github.com/okfn-brasil/querido-diario-infra)
 - [Censo](https://github.com/okfn-brasil/censo-querido-diario)
 
 ## Como contribuir
 
-Caso você ainda não tenha contribuido com um projeto de código aberto ou não está familiarizado com este projeto, existem tarefas indicadas para pessoas como você na aba [*Issues*](https://github.com/okfn-brasil/querido-diario-comunidade/issues), etiquetadas como [`good first issues`](https://github.com/okfn-brasil/querido-diario-comunidade/issues?q=is%3Aissue+is%3Aopen+label%3A"good+first+issue") (boas primeiras tarefas).
+Conhecer sobre `git` e como a plataforma *GitHub* funciona é um passo fundamental. Indicamos o [tutorial da Escola de Dados](https://escoladedados.org/tutoriais/introducao-ao-git-e-github-colaborando-com-projetos-de-codigo-aberto/) caso você ainda não conheça.
 
-Em alguma te interessando, antes de começar, você pode deixar comentários para tirar qualquer dúvida relevante e então deixar um aviso de que você irá trabalhar naquela tarefa.
+### Descobrindo com o que contribuir
 
-Temos também um [fórum de discussões](https://github.com/okfn-brasil/querido-diario-comunidade/discussions), onde você pode contribuir com as ideias relacionadas ao projeto.
+#### Issues
+Na aba **Issues** do repositório escolhido ficam as tarefas ou problemas específicos daquele repositório. Veja se uma te interessa.
+- Quando a tarefa é indicada para iniciantes terá uma etiqueta com `good first issue` ("boa primeira tarefa").
+- Ao encontrar uma que interessar, comente que fará a tarefa. Assim outras pessoas saberão que você já está trabalhando nela, podendo oferecer ajuda ou se dedicando a outras que ainda não tenham sido iniciadas.
+- Já tendo, ou não, escolhido uma *issue* para trabalhar, você pode também comentar dúvidas relevantes relacionadas a tarefa.
 
-E uma [comunidade no Discord](https://bit.ly/discord-ok), se você desejar tirar dúvidas mais rápidas ou conversar com pessoas que também tem esse interesse pelos projetos de inovação cívica da Open Knowledge Brasil.
+#### Milestones
+Se não houver *issues* abertas ou nenhuma te interessar, veja as **Milestones** do repositório de interesse. Elas indicam as metas a serem alcançadas. Explorar os arquivos buscando encontrar espaços de melhorias que ajudem o repositório a atingir uma *milestone* é uma excelente forma de contribuição.
+- Ao encontrar, abra uma *issue* descrevendo a possibilidade de melhoria percebida. Se você já for realizar a tarefa, mencione na mensagem.
+
+#### Discussions
+Caso tenha uma ideia ou sugestão para os rumos do projeto, crie uma **Discussion** (discussão).
+- Como o Querido Diário é composto por muitos repositórios e discussões tendem a ter caráter transversal, é **uma decisão de gestão manter todas elas centralizadas**. Assim, para iniciar ou acompanhar discussões, basta ver a aba [Discussion de `querido-diario-comunidade`](https://github.com/okfn-brasil/querido-diario-comunidade/discussions).
+
+#### Chat para a comunidade
+Ingresse na [comunidade](https://go.ok.org.br/discord). Lá você poderá tirar dúvidas mais rápidas, interagir com as pessoas mantenedoras, perguntar como poderia ajudar e ainda conversar com outras pessoas que também contribuem. 
+
+### Interagindo com a pessoa revisora de código
+- Tenha paciência e dê tempo para a revisora. Além de revisões de código serem complexas e demandarem, por si só, tempo e atenção, uma pessoa revisora pode ser, assim como você, outra contribuidora cedendo seu tempo pessoal quando possível ou ter outras prioridades antes de poder revisar seu código.
+- Seja em forma de código ou com mensagens de dúvidas e sugestões, facilite a interação sendo objetivo(a), mas dando detalhes quando necessário.
+- Durante a revisão, uma pessoa revisora pode abrir *threads* de solicitação de melhorias em seu código. Geralmente, é responsabilidade da pessoa revisora decidir quando a *thread* foi finalizada. 
+
 
 # Mantendo
 
@@ -39,4 +67,14 @@ E uma [comunidade no Discord](https://bit.ly/discord-ok), se você desejar tirar
 - Respeitar o [código de conduta](CODE_OF_CONDUCT.md) e garantir que as pessoas tenham um ambiente seguro e acolhedor e que qualquer vítima de infração desse termo tenha um canal de ajuda;
 - Sempre justificar uma sugestão de acordo com as práticas já adotadas no projeto, legibilidade e simplicidade. É essencial que um projeto cívico tenha uma estrutura tão simples quanto possível para iniciantes;
 - O projeto deve ser testado antes de um *Pull Request* ser mesclado;
-- Caso um *Pull Request* tenha muitos *commits* e as mensagens não forem claras, use a opção *Squash and Merge* ao mesclar. Em a disciplina de gerenciamento de histórico de versão sendo boa, isso não será necessário.
+- Manter o histórico de commits organizado, preferencialmente seguindo o formato a seguir onde toda alteração na base de código tem como base a main atualizada e é mesclada com um merge commit:
+
+<p align="center">
+  <a href="https://queridodiario.ok.org.br/sobre" target="_blank"> <img alt="História dos commits" src="./images/historia_commits.png">
+  </a>
+</p>
+
+- Caso um Pull Request tenha muitos commits e as mensagens não forem claras, pode-se realizar um *squash* nos commits antes de mesclar o Pull Request
+
+
+
