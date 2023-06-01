@@ -96,7 +96,7 @@ Algumas dicas
 -------------
 
 Logicas de spiders já estabelecidas
-^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
 Antes de começar a analise do site, vale a pena verificar se por a caso a logica dele já foi trabalhada em alguma das nossas ``class`` preestabelecida.
    
@@ -155,19 +155,19 @@ Exemplo do Script completo ➡️ `Link`_
 
 
 Tempo de coleta
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 Cuidado com o tempo que as vezes o spider leva para realizar toda a operação. As vezes é necessario notificar isso no seu PR, para uma mudança no disparador de rotina dessa spider.
 
 **O tempo limite de coleta é de 1 hora nas rotinas de coleta**
 
 Spiders com mais de um site de coleta
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Bom verificar se todos os diarios estão disponiveis em um ou mais sites. Caso esteja em mais de um site, tome a abordagem que se encontra aqui ➡️ `849`_ 
 
 HTTPCACHE_ENABLED
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 Durante o desenvolvimento, para evitar que você faça chamadas repetidas nas páginas das cidades é possível utilizar a configuração `HTTPCACHE_ENABLED`_ do Scrapy. Isso também faz com que as execuções sejam mais rápidas, já que todos os dados ficam armazenados localmente
 
@@ -196,7 +196,7 @@ Dentro do arquivo ``settings.pys``. Crei uma nova linha e insira ``HTTPCACHE_ENA
 Para desativas, apenas apague a linha do ``HTTPCACHE_ENABLED = True`` ou a troque por ``HTTPCACHE_ENABLED = False``
 
 Shell
-^^^^^^^^^^^^^
+^^^^^
 
 O `shell`_ do Scrapy ajuda muito na hora de testar seletores CSS e XPath
 
