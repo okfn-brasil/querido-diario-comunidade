@@ -8,11 +8,20 @@ Querido Diário
 
 .. toctree::
    :maxdepth: 2
-   :caption: Querido Diário:
+   :caption: Conheça
 
-   o-que-eh-qd
-   arquitetura-do-projeto
+   o-que-eh
+   arquitetura
+   utilizando-a-toolbox
+   busca-avancada
    escrevendo-um-novo-spider
-   busca-avancada-nos-diarios
-   utilizando-o-toolbox
-   
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Get to know
+
+   what-is-it
+   architecture
+   using-the-toolbox
+   advanced-search
+   writing-a-new-spider
