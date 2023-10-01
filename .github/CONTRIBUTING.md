@@ -22,6 +22,7 @@ Ao participar deste projeto, você concorda em aderir aos termos nele especifica
 O Querido Diário possui vários repositórios, possibilitando contribuições onde houver mais afinidade:
 
 - [Raspadores](https://github.com/okfn-brasil/querido-diario)
+- [Backend](https://github.com/okfn-brasil/querido-diario-backend)
 - [Frontend](https://github.com/okfn-brasil/querido-diario-frontend)
 - [Documentação e Comunidade](https://github.com/okfn-brasil/querido-diario-comunidade)
 - [Toolbox](https://github.com/okfn-brasil/querido-diario-toolbox)
