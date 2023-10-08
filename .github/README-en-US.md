@@ -7,9 +7,14 @@
 
 # Documentation and Community
 
-Within the [*Querido Diário* ecosystem](.github/CONTRIBUTING-en-US.md#the-querido-diário-ecosystem), the present repository encompasses **general documentation** and **[discussions](https://github.com/okfn-brasil/querido-diario-comunidade/discussions)** that cover the various repositories of the project and its community.
+Within the [*Querido Diário* ecosystem](.github/CONTRIBUTING-en-US.md#the-querido-diário-ecosystem),
+the present repository encompasses **general documentation** and
+**[discussions](https://github.com/okfn-brasil/querido-diario-comunidade/discussions)**
+that cover the various repositories of the project and its community.
 
-Find out more about the [technologies](https://queridodiario.ok.org.br/tecnologia) and [history](https://queridodiario.ok.org.br/sobre) of the project on the [*Querido Diário* website](https://queridodiario.ok.org.br).
+Find out more about the [technologies](https://queridodiario.ok.org.br/tecnologia) and
+[history](https://queridodiario.ok.org.br/sobre) of the project on the [*Querido Diário*
+website](https://queridodiario.ok.org.br).
 
 # Table of contents
 
@@ -41,11 +46,15 @@ In addition to that, check [*Querido Diário*'s documentation](https://docs.quer
   </a>
 </p>
 
-Join our [Community Channel](https://go.ok.org.br/discord) to discuss projects, ask questions, request help with contributions and talk about civic innovation in general.
+Join our [Community Channel](https://go.ok.org.br/discord) to discuss projects, ask
+questions, request help with contributions and talk about civic innovation in general.
 
 # Acknowledgements
 
-This project is maintained by Open Knowledge Brasil and made possible thanks to the technical communities, the [Civic Innovation Ambassadors](https://embaixadoras.ok.org.br/), our volunteers and financial donors, as well as partner universities, supporting companies and funders.
+This project is maintained by Open Knowledge Brasil and made possible thanks to the
+technical communities, the [Civic Innovation Ambassadors](https://embaixadoras.ok.org.br/),
+our volunteers and financial donors, as well as partner universities, supporting companies
+and funders.
 
 Find out [who supports *Querido Diário*](https://queridodiario.ok.org.br/apoie#quem-apoia).
 
@@ -63,10 +72,12 @@ Find out [who supports *Querido Diário*](https://queridodiario.ok.org.br/apoie#
   </a>
 </p>
 
-[Open Knowledge Brasil](https://ok.org.br/) is a non-profit civil society organization whose mission is to use and develop civic tools, projects, public policies analysis, and data journalism to promote free knowledge in the various fields of society.
+[Open Knowledge Brasil](https://ok.org.br/) is a non-profit civil society organization
+whose mission is to use and develop civic tools, projects, public policies analysis, and
+data journalism to promote free knowledge in the various fields of society.
 
 All the work produced by OKBR is freely available.
 
 # License
 
-Code licensed under the [MIT License](LICENSE.md).
+Code licensed under the [MIT License](../LICENSE.md).
