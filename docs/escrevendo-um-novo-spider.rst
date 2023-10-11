@@ -82,7 +82,7 @@ o nosso spider (no exemplo, iremos coletar dados a partir de 28 de abril de 2022
 
 .. code-block:: sh
 
-    scrapy crawl my_city_spider -a start_date="2021-04-28"
+    scrapy crawl my_city_spider -a start_date=2021-04-28
 
 O valor padrão de `end_date` é a data de hoje (que estamos executando o nosso spider), então
 **não é necessário** definí-la em nossa classe do spider. Isso está definido em `BaseGazetteSpider`.
