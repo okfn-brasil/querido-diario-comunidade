@@ -85,7 +85,11 @@ sendo objetivo(a), mas dando detalhes quando necessário.
 - Durante a revisão, uma pessoa revisora pode abrir *threads* de solicitação de melhorias
 em seu código. Geralmente, é responsabilidade da pessoa revisora decidir quando a *thread*
 foi finalizada.
-
+- Nossa comunidade às vezes organiza eventos para resolver várias *issues* em um curto
+período de tempo. Especialmente nesses casos, uma *Issue* ou *Pull Request* pode
+ser considerado abandonado se a pessoa contribuindo não interagir com ele por algumas
+semanas. Caso precise de mais tempo, basta nos avisar, para que evitemos fechar sua *issue*
+ou *pull request* por engano, nessas situações.
 
 # Mantendo
 
