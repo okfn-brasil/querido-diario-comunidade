@@ -1,7 +1,7 @@
 Escrevendo um novo spider
 =========================
 
-Antes de inicial o desenvolvimento de um raspador para uma nova cidade, leia
+Antes de iniciar o desenvolvimento de um raspador para uma nova cidade, leia
 cuidadosamente as seguintes diretrizes necessárias para manter o projeto
 mais consistente e garantir que sua contribuição seja mais facilmente aceita.
 
@@ -91,6 +91,42 @@ Durante o desenvolvimento, tente fazer **a menor quantidade de requests possíve
 permitem que você filtre os resultados informando um período específico, outras vão exigir que você
 adicione alguma lógica extra para evitar visitar páginas desnecessárias e retornar Diários Oficiais
 fora do período desejado.
+
+Gerar múltiplos raspadores a partir de um template
+-------------
+
+Você pode se deparar com um cenário em que há diferentes cidades utilizando a mesma base para o raspador, como em `FecamGazetteSpider`. Para não ter que criar os arquivos de raspadores manualmente, você pode utilizar um script para casos em que temos alguns raspadores que não são complexos e usam a mesma base.
+
+Os templates de raspadores ficam na pasta `scripts/`. Aqui está um exemplo de um raspador gerado:
+
+.. code-block:: python
+   
+    from datetime import date
+    from gazette.spiders.base import ImprensaOficialSpider
+    class BaGentioDoOuroSpider(ImprensaOficialSpider):
+        name = "ba_gentio_do_ouro"
+        allowed_domains = ["pmGENTIODOOUROBA.imprensaoficial.org"]
+        start_date = date(2017, 2, 1)
+        url_base = "http://pmGENTIODOOUROBA.imprensaoficial.org"
+        TERRITORY_ID = "2911303"
+
+Para rodar o script, você precisa apenas de um arquivo .CSV seguindo a estrutura a seguir:
+
+.. code-block:: sh
+
+    url,city,state,territory_id,start_day,start_month,start_year,base_class
+    http://pmXIQUEXIQUEBA.imprensaoficial.org,Xique-Xique,BA,2933604,1,1,2017,ImprensaOficialSpider
+    http://pmWENCESLAUGUIMARAESBA.imprensaoficial.org,Wenceslau Guimarães,BA,2933505,1,1,2017,ImprensaOficialSpider
+    http://pmVERACRUZBA.imprensaoficial.org,Vera Cruz,BA,2933208,1,4,2017,ImprensaOficialSpider
+
+Depois de obter o arquivo .CSV, rode o comando:
+
+.. code-block:: sh
+
+    cd scripts/
+    python generate_spiders.py new-spiders.csv
+
+É isso. O novo raspador estará na pasta `data_collection/gazette/spiders/`.
 
 Algumas dicas
 -------------
