@@ -9,7 +9,7 @@ Conheça operadores da busca avançada, seus efeitos e alguns exemplos:
 
 
 Operador \"OU\"
--------------
+---------------
 
 Também conhecido como \"operador OR\", funciona usando o símbolo de barra vertical ( `|` ) para buscar um termo ou outro em toda extensão do diário. Experimente ver os resultados da busca por `despacho | dispensa`_ e repare como são de trechos que tem pelo menos uma das palavras em seu conteúdo.
 
@@ -17,13 +17,13 @@ Também conhecido como \"operador OR\", funciona usando o símbolo de barra vert
 
 
 Operador \"E\"
-------------
+--------------
 
 Também conhecido como \"operador AND\", funciona usando o símbolo de adição ( + ) para buscar um termo e outro em toda a extensão do diário. Veja este exemplo de busca por `compra + computadores`_, cujos resultados são de diários que contêm ambos termos.
 
 
 Operador de Negação
--------------------
+--------------------
 
 É um comando de busca que usa os símbolos `+-` para negar o termo à direita. Buscar por **ivermectina +-pandemia** é buscar diários que contém o termo \"ivermectina\" e, adicionalmente, não contém o termo \"pandemia\" por toda sua extensão. 
 Confira esta busca com o `operador de negação`_.
@@ -32,7 +32,7 @@ Confira esta busca com o `operador de negação`_.
 
 
 Operador de Busca Exata
------------------------
+------------------------
 
 Esta busca funciona com uma frase entre aspas (`\" \"`) para busca exata do conteúdo, como em **\"lei de acesso à informação\"**. Verifique este exemplo de `busca exata`_ e repare que o que foi buscado corresponde exatamente ao que está entre aspas, as mesmas palavras na mesma ordem.
 
@@ -40,13 +40,13 @@ Esta busca funciona com uma frase entre aspas (`\" \"`) para busca exata do cont
 
 
 Operador de Busca por Prefixo
------------------------------
+------------------------------
 
 Esta operação utiliza o símbolo de asterisco ( * ) para buscar por prefixo. Serve para quando o objetivo é achar palavras derivadas de um mesmo radical. Confira como a pesquisa por `democr*`_ traz resultados com democracia, democrático, democrata, democratização, etc.
 
 
 Operador de Edição de Termo
----------------------------
+----------------------------
 
 Funciona utilizando o símbolo til seguido por um número (~N) para distância de edição de termo, ou seja, qual o limite de modificações de caracteres uma palavra precisa para se transformar em outra. Um exemplo é a pesquisa por `assento~3`_ que inclue termos como *acento, assunto, assentado*; todos eles distando até 3 alterações da palavra buscada.
 
