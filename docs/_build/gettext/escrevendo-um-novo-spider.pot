@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Open Knowledge Brasil
+# This file is distributed under the same license as the Querido Diário package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Querido Diário \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-24 02:26-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/escrevendo-um-novo-spider.rst:2
+msgid "Escrevendo um novo spider"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:4
+msgid "Antes de inicial o desenvolvimento de um raspador para uma nova cidade, leia cuidadosamente as seguintes diretrizes necessárias para manter o projeto mais consistente e garantir que sua contribuição seja mais facilmente aceita."
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:8
+msgid "Ler o código de raspadores que já existem também irá ajudar a você compreender melhor como o projeto está organizado e como iniciar o desenvolvimento."
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:12
+msgid "Regras básicas para seu spider"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:14
+msgid "Como regra, todos os spiders deve herdar de `BaseGazetteSpider`"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:15
+msgid "Nome da classe do spider deve seguir o seguinte padrão `<SiglaEstado><NomeCidade>Spider` (por exemplo `SpSaoPauloSpider` ou `MtFelizNatalSpider`)"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:16
+msgid "Atributo `name` do spider deve seguir o seguinte padrão `<sigla_estado>_<nome_cidade>` (por exemplo `sp_sao_paulo` ou `mt_feliz_natal`)"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:17
+msgid "Adicione o atributo `TERRITORY_ID` com o código encontrado no arquivo `territories.csv`"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:18
+msgid "Adicione o atributo `start_date` com a data do primeiro Diário Oficial disponível"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:19
+msgid "Utilize `.get()` e `.getall()` ao invés de `.extract_first()` e `.extract()`"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:21
+msgid "Exemplo de um spider:"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:41
+msgid "Definição de campos"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:43
+msgid "Estas são as informações que queremos extrair de cada um dos Diários Oficiais:"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:45
+msgid "**date (datetime.date)**: data de publicação"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:46
+msgid "**edition_number (string)**: número de edição do Diário Oficial"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:47
+msgid "**is_extra_edition (boolean)**: alguns Diarios são edições extras. Você geralmente consegue identificá-los ao encontrar termos como *Extra*, *Extraordinário*, *Suplemento*, etc. Se não for possível identificá-lo, retorne `False` como padrão"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:48
+msgid "**territory_id (string)**: valor do atributo `TERRITORY_ID` do spider (preenchido automaticamente)"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:49
+msgid "**power (string)**: se o Diário Oficial é referente ao Poder Executivo, ao Poder Legislativo ou ambos (`executive`, `legislative`, `executive_legislative`). Será necessário abrir manualmente o conteúdo de alguns Diários para descobrir essa informação"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:50
+msgid "**scraped_at (datetime.datetime)**: fixado em `datetime.datetime.utcnow()` (preenchido automaticamente)"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:51
+msgid "**file_urls (URL list)**: lista das URLs para baixar os Diários Oficiais (geralmente temos apenas um valor aqui)"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:54
+msgid "Filtro por data"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:56
+msgid "Nós queremos que todos os spiders sejam capazes de coletar **TODOS** os Diários Oficiais disponíveis. Mas também queremos ser capazes de restringir a quantidade de dados por período de tempo. Isso deve ser alcançado através dos atributos `start_date` e `end_date` que podemos passar ao executar os spiders."
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:60
+msgid "O valor padrão do `start_date` deve ser a data do primeiro Diário Oficial disponível na página do município (*hard coded*). Você deve pesquisar manualmente até encontrar essa data e adicioná-la como um argumento do seu spider."
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:64
+msgid "No exemplo a seguir, temos um spider que irá considerar como data inicial o dia 15 de setembro de 2001 como a primeira data onde é possível encontrar um Diário Oficial para coletar:"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:80
+msgid "Caso queiramos coletar os dados a partir de outra data, podemos utilizar o seguinte comando ao executar o nosso spider (no exemplo, iremos coletar dados a partir de 28 de abril de 2022)"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:87
+msgid "O valor padrão de `end_date` é a data de hoje (que estamos executando o nosso spider), então **não é necessário** definí-la em nossa classe do spider. Isso está definido em `BaseGazetteSpider`."
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:90
+msgid "Durante o desenvolvimento, tente fazer **a menor quantidade de requests possível**. Algumas páginas permitem que você filtre os resultados informando um período específico, outras vão exigir que você adicione alguma lógica extra para evitar visitar páginas desnecessárias e retornar Diários Oficiais fora do período desejado."
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:96
+msgid "Algumas dicas"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:98
+msgid "Durante o desenvolvimento, para evitar que você faça chamadas repetidas nas páginas das cidades é possível utilizar a configuração `HTTPCACHE_ENABLED`_ do Scrapy. Isso também faz com que as execuções sejam mais rápidas, já que todos os dados ficam armazenados localmente"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:99
+msgid "O `shell`_ do Scrapy ajuda muito na hora de testar seletores CSS e XPath"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:102
+msgid "Submetendo um novo PR"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:104
+msgid "Antes de submeter um novo PR do seu spider, garanta que ele esteja funcionando adequadamente."
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:106
+msgid "**EXECUTE O SEU SPIDER EM SEU AMBIENTE DE DESENVOLVIMENTO E AGUARDE ATÉ QUE ELE FINALIZE SUA EXECUÇÃO**"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:108
+msgid "Sugestões de verificações:"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:110
+msgid "Se os arquivos baixados são válidos"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:111
+msgid "Se você está coletando todos os Diários Oficiais disponíveis;"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:112
+msgid "Se ao especificar os argumentos `start_date` e/ou `end_date`, você não está coletando mais Diários Oficiais do que o esperado;"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:113
+msgid "Se ao executar o spider mais de uma vez, os resultados são os mesmos;"
+msgstr ""
+
+#: ../../source/escrevendo-um-novo-spider.rst:114
+msgid "Se não existem erros de execução (`log/ERROR` nas estatísticas do spider);"
+msgstr ""

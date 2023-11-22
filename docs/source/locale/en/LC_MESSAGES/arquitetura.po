@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Open Knowledge Brasil
+# This file is distributed under the same license as the Querido Diário
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Querido Diário \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-24 02:26-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/arquitetura.rst:2
+msgid "Arquitetura do projeto"
+msgstr "AAAAAAAAAAAAAAAAAAAAAAA"
+
+#: ../../source/arquitetura.rst:4
+msgid ""
+"O projeto conta com diversos sistemas para que o diário publicado no site"
+" do órgão publicador chegue aqui de forma aberta e que torne acessível a "
+"interação com essa base de dados. A seguir temos itens responsáveis por "
+"cada parte do projeto."
+msgstr ""
+"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+"CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"
+"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
+
+#: ../../source/arquitetura.rst:10
+msgid "Processamento de dados"
+msgstr ""
+
+#: ../../source/arquitetura.rst:12
+msgid ""
+"Esta etapa é essencial pois é aqui que acontece a mágica de transformar "
+"dados fechados em abertos e conectar outras etapas do nosso fluxo de "
+"dados. `No repositório`_ você encontrará várias tecnologias como: `Apache"
+" Tika`_ para extrair texto de documentos de vários formatos, "
+"`elasticsearch`_ para interagir com o indexador de texto dos documentos, "
+"`postgresql`_ para interagir com os dados extraídos das spiders e muito "
+"Python puro."
+msgstr ""
+
+#: ../../source/arquitetura.rst:20
+msgid "Coleta de dados"
+msgstr ""
+
+#: ../../source/arquitetura.rst:22
+msgid ""
+"Para entender o Querido Diário, é muito importante saber como funciona a "
+"estrutura de coleta de arquivos de diários oficiais. Todos os scripts são"
+" desenvolvidos utilizando o framework Scrapy, ferramenta muito popular "
+"para raspagem de dados. Caso nunca tenha utilizado, o tutorial é um ótimo"
+" caminho para aprender a fazer seus primeiros scripts de coleta de dados."
+" Temos um repositório direcionado para organizar a coleta de arquivos. "
+"Nele, você encontrará arquivos em Python desenvolvidos pela comunidade "
+"para cada município, chamamos esses arquivos de spiders (Spider é o termo"
+" utilizado para um script de raspagem de dados no Scrapy)."
+msgstr ""
+
+#: ../../source/arquitetura.rst:33
+msgid "Toolbox"
+msgstr ""
+
+#: ../../source/arquitetura.rst:35
+msgid ""
+"O objetivo do `Querido Diário Toolbox`_ é fornecer para a comunidade um "
+"conjunto de ferramentas que possibilitem a análise e manipulação dos "
+"dados extraídos de diários oficiais. Com o toolbox, ampliamos as "
+"possibilidades de novos projetos que se utilizem da base de dados e "
+"compartilhamos conhecimento acumulado na limpeza e tratamento de dados "
+"que o projeto já enfrentou. O toolbox, inclusive, é utilizado "
+"internamente pela equipe da OKBR para o tratamento dos diários que são "
+"oferecidos na API; ele permite a extração de dados, metadados, limpeza de"
+" caracteres irrelevantes e extração de CNPJ. O toolbox não é, nem nunca "
+"será, um projeto concluído: com o apoio da comunidade, vamos sempre "
+"adicionar novas ferramentas e disponibilizá-las a todas as pessoas "
+"interessadas no projeto!"
+msgstr ""
+
+#: ../../source/arquitetura.rst:48
+msgid "API pública"
+msgstr ""
+
+#: ../../source/arquitetura.rst:50
+msgid ""
+"A `API pública`_ é uma das camadas principais do projeto, pois permite a "
+"divulgação da base de dados de uma forma acessível e automatizável por "
+"máquinas, além de promover um acesso direto aos dados para pessoas "
+"desenvolvedoras e pesquisadoras. Além disso, a plataforma consome os "
+"dados da API para a disponibilização dos dados para o público geral."
+msgstr ""
+
+#: ../../source/arquitetura.rst:56
+msgid ""
+"A API foi construída em Python com `FastAPI`_ e é integrada ao Swagger "
+"para a obtenção da documentação de forma automática. Você pode contribuir"
+" com ideias para o `repositório da API`_."
+msgstr ""
+
+#: ../../source/arquitetura.rst:61
+msgid "Frontend"
+msgstr ""
+
+#: ../../source/arquitetura.rst:63
+msgid ""
+"Esta plataforma de busca é uma interface visual de interação com a API "
+"pública e também uma ferramenta de difusão de conhecimento e incentivo ao"
+" uso de diários oficiais."
+msgstr ""
+
+#: ../../source/arquitetura.rst:67
+msgid ""
+"O seu desenvolvimento é principalmente feito em Angular com Typescript, "
+"com responsividade para dispositivos móveis em primeiro lugar. Se te "
+"interessou contribuir, o `repositório`_ também é aberto."
+msgstr ""
+

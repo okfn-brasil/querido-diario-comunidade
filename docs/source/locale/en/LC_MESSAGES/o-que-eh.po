@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Open Knowledge Brasil
+# This file is distributed under the same license as the Querido Diário
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Querido Diário \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-24 02:26-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/o-que-eh.rst:2
+msgid "O que é o Querido Diário"
+msgstr ""
+
+#: ../../source/o-que-eh.rst:4
+msgid ""
+"Um **Diário Oficial** é uma publicação feita por vários esferas da "
+"administração pública brasileira, seja na esfera federal, estadual ou "
+"municipal e dos poderes executivo, legislativo e judiciário. É através "
+"dele que qualquer ação tomadas por essas esferas e poderes torne-se "
+"oficial para a população."
+msgstr ""
+
+#: ../../source/o-que-eh.rst:9
+msgid ""
+"Mesmo com os esforços recorrentes para fortalecer a `Lei de Acesso à "
+"Informação`_ pelo país, a comunicação oficial permanece - na maioria do "
+"território nacional - restrita a documentos em formato **PDF**. Esses "
+"documentos, apesar de estarem públicos, não estão estruturados de uma "
+"maneira que permita a análise por um computador ou que sejam consultados "
+"em conjunto (por exemplo, buscando palavras-chaves em diversas "
+"publicações ao mesmo tempo)."
+msgstr ""
+
+#: ../../source/o-que-eh.rst:15
+msgid ""
+"O objetivo do **Querido Diário** é facilitar o acesso público aos Diários"
+" Oficiais dos municípios brasileiro, permitindo que qualquer pessoa tenha"
+" acesso e consulte as informações dentro dessas publicações."
+msgstr ""
+
+#: ../../source/o-que-eh.rst:19
+msgid ""
+"Para atingir esse objetivo, temos várias frentes de trabalho que visam "
+"mapear e descobrir onde os Diários Oficiais estão publicados, obté-los "
+"com regularidade para que possamos processá-los e disponibiliza-los de "
+"uma maneira que seja possível com que a população possa pesquisar o seu "
+"conteúdo, seja através de uma `página de consulta`_ ou uma `API`_ para "
+"que esse processamento possa ser feito através de um computador."
+msgstr ""
+
+#: ../../source/o-que-eh.rst:26
+msgid "Como o projeto é mantido"
+msgstr ""
+
+#: ../../source/o-que-eh.rst:28
+msgid ""
+"O **Querido Diário** é um projeto de código aberto, isso quer dizer que "
+"todo código utilizado para extrair, processar e disponibilizar os Diários"
+" está disponível para que qualquer pessoa possa visualizar, utilizar e "
+"alterar para as suas necessidades."
+msgstr ""
+
+#: ../../source/o-que-eh.rst:32
+msgid ""
+"A `Open Knowledge Brasil`_ através do **Programa Ciência de Dados para "
+"Inovação Cívica** é a entidade responsável por manter toda a infra "
+"estrutura do projeto e organizar o seu desenvolvimento, além da "
+"contribuição contínua de centenas de voluntários."
+msgstr ""
+
+#: ../../source/o-que-eh.rst:37
+msgid "Como colaborar"
+msgstr ""
+
+#: ../../source/o-que-eh.rst:39
+msgid "Você pode contribuir:"
+msgstr ""
+
+#: ../../source/o-que-eh.rst:41
+msgid ""
+"`Financeiramente`_ ajudando a manter toda nossa infra estrutura de "
+"servidores e armazenamento, no desenvolvimento e na organização de "
+"eventos relacionados (sprints de desenvolvimento, lives de capacitação e "
+"fomento à colaboração) para atingirmos o maior número de cidades "
+"possível."
+msgstr ""
+
+#: ../../source/o-que-eh.rst:43
+msgid ""
+"`Com código`_ para quem tem mais conhecimentos técnicos, temos vários "
+"projetos que precisam de mãos para desenvolvimento (raspadores, APIs, "
+"infra estrutura, documentação, etc)."
+msgstr ""
+
+#: ../../source/o-que-eh.rst:46
+msgid "Contato"
+msgstr ""
+
+#: ../../source/o-que-eh.rst:48
+msgid "Você pode entrar em contato com o projeto em nossos canais no `Discord`_."
+msgstr ""
+

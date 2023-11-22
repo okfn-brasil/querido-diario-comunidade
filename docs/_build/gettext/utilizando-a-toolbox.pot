@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Open Knowledge Brasil
+# This file is distributed under the same license as the Querido Diário package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Querido Diário \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-24 02:26-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/utilizando-a-toolbox.rst:2
+msgid "Utilizando a Toolbox do Querido Diário"
+msgstr ""
+
+#: ../../source/utilizando-a-toolbox.rst:4
+msgid "|python_version_img| |pypi_img|"
+msgstr ""
+
+#: ../../source/utilizando-a-toolbox.rst:0
+msgid "python_version_img"
+msgstr ""
+
+#: ../../source/utilizando-a-toolbox.rst:0
+msgid "pypi_img"
+msgstr ""
+
+#: ../../source/utilizando-a-toolbox.rst:7
+msgid "O objetivo da `querido-diario-toolbox`_ é dar à comunidade do Querido Diário o ferramental para executar suas próprias análises e manipulações com os dados que são obtidos pelo QD. Além disso, a biblioteca também será integrada nas aplicações utilizadas em produção pelo Querido Diário. Ou seja, quem utilizar a biblioteca poderá reproduzir localmente as mesmas etapas de processamento que o QD realiza."
+msgstr ""
+
+#: ../../source/utilizando-a-toolbox.rst:14
+msgid "A biblioteca dá diferentes níveis de abstrações para trabalhar com os dados. Desde uma simples limpeza de texto a partir de strings até conversão de arquivos de vários formatos para texto puro."
+msgstr ""
+
+#: ../../source/utilizando-a-toolbox.rst:20
+msgid "Instalação"
+msgstr ""
+
+#: ../../source/utilizando-a-toolbox.rst:26
+msgid "Atualmente, a `querido-diario-toolbox` é compatível com Python 3.8+."
+msgstr ""
+
+#: ../../source/utilizando-a-toolbox.rst:28
+msgid "Para executar extrações de texto é necessário ter o `Tesseract OCR`_ instalado. Assim como ter os ``.jar`` do `Apache Tika`_ (última versão testada: 1.24.1) e `Tabula`_ (última versão testada: v1.0.4) acessíveis para poder passar seus caminhos de arquivo como argumentos."
+msgstr ""
+
+#: ../../source/utilizando-a-toolbox.rst:34
+msgid "Exemplos de uso"
+msgstr ""
+
+#: ../../source/utilizando-a-toolbox.rst:36
+msgid "Exemplos mais elaborados estão disponíveis na pasta `examples`_. Você pode visualizá-los (e interagir se desejar) utilizando notebooks `Jupyter`_."
+msgstr ""
+
+#: ../../source/utilizando-a-toolbox.rst:40
+msgid "Removendo espaços desnecessários em um texto"
+msgstr ""
+
+#: ../../source/utilizando-a-toolbox.rst:52
+msgid "Encontrando CNPJs válidos em um texto"
+msgstr ""
+
+#: ../../source/utilizando-a-toolbox.rst:64
+msgid "Convertendo arquivo de formato fechado para texto puro e extraindo metadados"
+msgstr ""
+
+#: ../../source/utilizando-a-toolbox.rst:80
+msgid "Após a execução de ``extrator.load_content(diario)``, dois arquivos (um ``.txt`` com o texto puro e um ``.json`` com os metadados) serão criados."
+msgstr ""
