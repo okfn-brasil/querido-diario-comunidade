@@ -77,4 +77,4 @@ também é aberto.
 .. _API pública: https://queridodiario.ok.org.br/api/docs
 .. _FastAPI: https://fastapi.tiangolo.com/
 .. _repositório da API: https://github.com/okfn-brasil/querido-diario-api
-.. _o repositório oficial: https://github.com/okfn-brasil/querido-diario-frontend
+.. _repositório: https://github.com/okfn-brasil/querido-diario-frontend

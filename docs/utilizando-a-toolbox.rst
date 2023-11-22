@@ -88,7 +88,7 @@ com o texto puro e um ``.json`` com os metadados) serão criados.
 .. _querido-diario-toolbox: https://pypi.org/project/querido-diario-toolbox/
 .. _Tesseract OCR: https://tesseract-ocr.github.io/tessdoc/
 .. _Apache Tika: https://tika.apache.org/download.html
-.. _./examples: https://github.com/okfn-brasil/querido-diario-toolbox/tree/main/examples
+.. _examples: https://github.com/okfn-brasil/querido-diario-toolbox/tree/main/examples
 .. _Tabula: https://github.com/tabulapdf/tabula-java/releases
 .. _Jupyter: https://jupyter.org/
 

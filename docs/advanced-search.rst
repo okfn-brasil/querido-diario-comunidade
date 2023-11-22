@@ -1,5 +1,5 @@
 Advanced Search in Gazettes
-========================
+===========================
 
 The `simple query string`_ syntax of Elasticsearch was implemented to enhance the search in the textual database of Official Gazettes. This mechanism uses characters as search operators to improve search results.
 
@@ -8,14 +8,14 @@ The `simple query string`_ syntax of Elasticsearch was implemented to enhance th
 Learn about advanced search operators, their effects, and some examples:
 
 \"OR\" Operator
--------------
+---------------
 
 It works by using the vertical bar symbol ( `|` ) to search for one term or another throughout the Gazette's content. Try view results for a search for `despacho | dispensa`_ and notice how the results include excerpts containing at least one of the words in their content.
 
 *Important: This is the default operator in Querido Diário. If you don't specify which operator you want to use, the tool will always adopt it.*
 
 \"AND\" Operator
--------------
+----------------
 
 It works by using the plus symbol ( `+` ) to search for one term and another throughout the Gazette's content. See this example search for `compra + computadores`_, whose results are Gazettes containing both terms.
 

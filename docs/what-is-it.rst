@@ -11,7 +11,7 @@ To achieve this goal, we have several activities that aim to map and find out wh
 
 
 How the project is maintained
-------------------------
+-----------------------------
 
 **Querido Diário** is an open source project, which means that all the code used to extract, process and make Official Gazettes available is open for anyone to view, use and modify for their needs.
 
@@ -19,7 +19,7 @@ A `Open Knowledge Brazil`_ through  **Data Science for Civic Innovation Program*
 
 
 How to contribute
---------------
+-----------------
 
 You can contribute:
 
