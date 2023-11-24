@@ -1,4 +1,4 @@
-**English (US)** | [Português (BR)](../README.md)
+**English (US)** | [Português (BR)](./README.md)
 
 <p align="center">
   <a href="https://queridodiario.ok.org.br/sobre" target="_blank"> <img alt="Querido Diário" src="./images/querido-diario-logo.png" width="200">
@@ -36,7 +36,7 @@ Thanks for considering contributing to *Querido Diário*! :tada:
 
 You can find out how to do that in our [Contribution Guide](CONTRIBUTING-en-US.md).
 
-In addition to that, check [*Querido Diário*'s documentation](https://docs.queridodiario.ok.org.br/pt/latest/index.html) to support you.
+In addition to that, check [*Querido Diário*'s documentation](https://docs.queridodiario.ok.org.br/pt-br/latest/index.html) to support you.
 
 # Support
 

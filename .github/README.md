@@ -1,18 +1,19 @@
-**Português (BR)** | [English (US)](.github/README-en-US.md)
+**Português (BR)** | [English (US)](./README-en-US.md)
 
 <p align="center">
-  <a href="https://queridodiario.ok.org.br/sobre" target="_blank"> <img alt="Querido Diário" src="./.github/images/querido-diario-logo.png" width="200">
+  <a href="https://queridodiario.ok.org.br/sobre" target="_blank"> <img alt="Querido Diário" src="./images/querido-diario-logo.png" width="200">
   </a>
 </p>
 
 # Documentação e Comunidade
 
-Dentro do [ecossistema do Querido Diário](.github/CONTRIBUTING.md#ecossistema-do-querido-diário), este repositório é o responsável pela **documentação geral** e pelas **[discussões](https://github.com/okfn-brasil/querido-diario-comunidade/discussions)** transversais aos vários repositórios do projeto e sua comunidade.
+Dentro do [ecossistema do Querido Diário](./CONTRIBUTING.md#ecossistema-do-querido-diário), este repositório é o responsável pela **documentação geral** e pelas **[discussões](https://github.com/okfn-brasil/querido-diario-comunidade/discussions)** transversais aos vários repositórios do projeto e sua comunidade.
 
 Conheça mais sobre as [tecnologias](https://queridodiario.ok.org.br/tecnologia) e a [história](https://queridodiario.ok.org.br/sobre) do projeto no [site do Querido Diário](https://queridodiario.ok.org.br)
 
 # Sumário
 - [Como contribuir](#como-contribuir)
+- [Como executar](#como-executar)
 - [Suporte](#suporte)
 - [Agradecimentos](#agradecimentos)
 - [Open Knowledge Brasil](#open-knowledge-brasil)
@@ -28,9 +29,23 @@ Conheça mais sobre as [tecnologias](https://queridodiario.ok.org.br/tecnologia)
 
 Agradecemos por considerar contribuir com o Querido Diário! :tada:
 
-Você encontra como fazê-lo em nosso **[Guia de Contribuição](.github/CONTRIBUTING.md)**!
+Você encontra como fazê-lo em nosso **[Guia de Contribuição](./CONTRIBUTING.md)**!
 
-Além disso, consulte a [documentação do Querido Diário](https://docs.queridodiario.ok.org.br/pt/latest/index.html) para te ajudar. 
+Além disso, consulte a [documentação do Querido Diário](https://docs.queridodiario.ok.org.br/pt-br/latest/index.html) para te ajudar. 
+
+# Como executar
+Para gerar a documentação localmente em sua máquina, siga os passos a seguir:
+1. Abra um terminal no diretório `docs/` do projeto e instale as dependências
+``` console
+pip install -r requirements.txt
+```
+
+2. O projeto está organizado em diretórios por idiomas. Para simular a visualização da documentação, basta acessar o diretório de interesse (`pt_BR/`, `en/`, etc) e executar:
+``` console
+make html
+```
+
+3. Um diretório chamado `build/` será criado dentro do diretório do idioma. Abra o arquivo `html/index.html` no navegador para visualizar as páginas de documentação a partir da raiz.
 
 # Suporte 
 <p>  

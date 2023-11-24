@@ -1,20 +1,17 @@
-# Minimal makefile for Sphinx documentation
-#
+compile: 
+	pip-compile --allow-unsafe --no-annotate requirements.in
 
-# You can set these variables from the command line, and also
-# from the environment for the first two.
-SPHINXOPTS    ?=
-SPHINXBUILD   ?= sphinx-build
-SOURCEDIR     = source
-BUILDDIR      = build
+env:
+	python3 -m venv .venv
 
-# Put it first so that "make" without argument is like "make help".
-help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+build-br:
+	cd pt_BR/; \
+	make html
+	
+build-en:
+	cd en/; \
+	make html
 
-.PHONY: help Makefile
-
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+build:
+	make build-br; \
+	make build-en;
