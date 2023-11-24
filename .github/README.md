@@ -31,21 +31,21 @@ Agradecemos por considerar contribuir com o Querido Diário! :tada:
 
 Você encontra como fazê-lo em nosso **[Guia de Contribuição](./CONTRIBUTING.md)**!
 
-Além disso, consulte a [documentação do Querido Diário](https://docs.queridodiario.ok.org.br/pt/latest/index.html) para te ajudar. 
+Além disso, consulte a [documentação do Querido Diário](https://docs.queridodiario.ok.org.br/pt-br/latest/index.html) para te ajudar. 
 
 # Como executar
 Para gerar a documentação localmente em sua máquina, siga os passos a seguir:
-1. Abra um terminal no diretório do projeto e instale as dependências
+1. Abra um terminal no diretório `docs/` do projeto e instale as dependências
 ``` console
 pip install -r requirements.txt
 ```
 
-2. Execute o **Sphinx** para gerar a documentação em formato HTML
+2. O projeto está organizado em diretórios por idiomas. Para simular a visualização da documentação, basta acessar o diretório de interesse (`pt_BR/`, `en/`, etc) e executar:
 ``` console
 make html
 ```
 
-3. Um diretório chamado `build/` será criado dentro de `docs/`. Abra o arquivo `html/index.html` no navegador para visualizar as páginas de documentação a partir da raiz.
+3. Um diretório chamado `build/` será criado dentro do diretório do idioma. Abra o arquivo `html/index.html` no navegador para visualizar as páginas de documentação a partir da raiz.
 
 # Suporte 
 <p>  
