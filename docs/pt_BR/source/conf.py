@@ -9,8 +9,8 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
+
+import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -27,7 +27,7 @@ author = "Open Knowledge Brasil"
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = ['sphinx.ext.autosectionlabel']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -44,15 +44,36 @@ language = "pt_BR"
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+# If true, Sphinx will warn about all references where the target cannot be 
+# found. Default is False. 
+nitpicky = True
 
 # -- Options for HTML output -------------------------------------------------
+
+html_build_dir = os.environ.get('READTHEDOCS_OUTPUT', 'docs/pt_BR/build/html')
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
 html_theme = "sphinx_rtd_theme"
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ["_static"]
+html_theme_options = {
+    'collapse_navigation': False,
+    'logo_only': True,
+    'style_nav_header_background': "#5e3f8e",
+}
+
+# The name of an image file (relative to this directory) to place at the top
+# of the sidebar.
+#
+html_logo = "../../_static/qd_logo_roxo.png"
+
+# The name of an image file (relative to this directory) to use as a favicon of
+# the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
+# pixels large.
+#
+html_favicon = "../../_static/favicon.ico"
+
+# Language to be used for generating the HTML full-text search index.
+html_search_language = 'pt'
+

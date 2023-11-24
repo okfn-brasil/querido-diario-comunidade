@@ -15,13 +15,3 @@ Querido Diário
    utilizando-a-toolbox
    busca-avancada
    escrevendo-um-novo-spider
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Get to know
-
-   what-is-it
-   architecture
-   using-the-toolbox
-   advanced-search
-   writing-a-new-spider
