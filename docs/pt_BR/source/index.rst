@@ -7,11 +7,31 @@ Querido Diário
 ==============
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Conheça
+   :maxdepth: 5
+   :caption: SOBRE
 
-   o-que-eh
+   conheca
    arquitetura
-   utilizando-a-toolbox
-   busca-avancada
-   escrevendo-um-novo-spider
+
+.. toctree::
+   :maxdepth: 5
+   :caption: UTILIZE
+
+   buscador
+   api-publica
+   operadores-avancados
+   bibliotecas
+   
+.. toctree::
+   :maxdepth: 5
+   :caption: CONTRIBUA
+
+   raspadores
+   documentacao
+   .. qd-universidades
+
+.. toctree::
+   :maxdepth: 5
+   :caption: DOE
+
+   doacoes

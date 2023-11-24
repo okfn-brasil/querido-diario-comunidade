@@ -1,5 +1,14 @@
-Utilizando a Toolbox do Querido Diário
-======================================
+Bibliotecas
+***********
+
+API-wrapper
+============
+
+... texto ...
+
+
+Toolbox
+========
 
 |python_version_img|
 |pypi_img|

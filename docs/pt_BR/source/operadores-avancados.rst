@@ -1,5 +1,5 @@
-Busca avançada nos diários
-==========================
+Operadores Avançados
+====================
 
 A sintaxe `simple query string`_ do Elasticsearch foi implementada para aperfeiçoamento de pesquisa na base de dados textuais dos Diários Oficiais. Este mecanismo funciona com o uso de caracteres como operadores de busca a fim de aprimorar os resultados.
 

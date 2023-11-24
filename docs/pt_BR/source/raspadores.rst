@@ -1,6 +1,32 @@
-Escrevendo um novo spider
-=========================
+Raspadores
+###########
 
+... paragrafo de abertura
+
+Panorama de Publicação 
+***********************
+
+... explica os 3 tipos de diários (completo, agregado, fragmentado)
+
+
+Entendendo o código de raspadores
+*********************************
+
+A classe `BaseGazetteSpider`
+=============================
+
+... texto ...
+
+
+Classes para publicadores padronizados
+======================================
+
+- Explica sistemas replicáveis
+- Lista (com prints, talvez) os layouts de sistemas conhecidos. 
+
+
+Escrevendo um novo raspador
+****************************
 Antes de inicial o desenvolvimento de um raspador para uma nova cidade, leia
 cuidadosamente as seguintes diretrizes necessárias para manter o projeto
 mais consistente e garantir que sua contribuição seja mais facilmente aceita.
@@ -8,8 +34,22 @@ mais consistente e garantir que sua contribuição seja mais facilmente aceita.
 Ler o código de raspadores que já existem também irá ajudar a você compreender
 melhor como o projeto está organizado e como iniciar o desenvolvimento.
 
+Definição de campos
+===================
+
+Estas são as informações que queremos extrair de cada um dos Diários Oficiais:
+
+- **date (datetime.date)**: data de publicação
+- **edition_number (string)**: número de edição do Diário Oficial
+- **is_extra_edition (boolean)**: alguns Diarios são edições extras. Você geralmente consegue identificá-los ao encontrar termos como *Extra*, *Extraordinário*, *Suplemento*, etc. Se não for possível identificá-lo, retorne `False` como padrão
+- **territory_id (string)**: valor do atributo `TERRITORY_ID` do spider (preenchido automaticamente)
+- **power (string)**: se o Diário Oficial é referente ao Poder Executivo, ao Poder Legislativo ou ambos (`executive`, `legislative`, `executive_legislative`). Será necessário abrir manualmente o conteúdo de alguns Diários para descobrir essa informação
+- **scraped_at (datetime.datetime)**: fixado em `datetime.datetime.utcnow()` (preenchido automaticamente)
+- **file_urls (URL list)**: lista das URLs para baixar os Diários Oficiais (geralmente temos apenas um valor aqui)
+
+
 Regras básicas para seu spider
-------------------------------
+==============================
 
 - Como regra, todos os spiders deve herdar de `BaseGazetteSpider`
 - Nome da classe do spider deve seguir o seguinte padrão `<SiglaEstado><NomeCidade>Spider` (por exemplo `SpSaoPauloSpider` ou `MtFelizNatalSpider`)
@@ -37,21 +77,6 @@ Exemplo de um spider:
             # Aqui colocamos toda nossa lógica de extração
             ...
 
-Definição de campos
--------------------
-
-Estas são as informações que queremos extrair de cada um dos Diários Oficiais:
-
-- **date (datetime.date)**: data de publicação
-- **edition_number (string)**: número de edição do Diário Oficial
-- **is_extra_edition (boolean)**: alguns Diarios são edições extras. Você geralmente consegue identificá-los ao encontrar termos como *Extra*, *Extraordinário*, *Suplemento*, etc. Se não for possível identificá-lo, retorne `False` como padrão
-- **territory_id (string)**: valor do atributo `TERRITORY_ID` do spider (preenchido automaticamente)
-- **power (string)**: se o Diário Oficial é referente ao Poder Executivo, ao Poder Legislativo ou ambos (`executive`, `legislative`, `executive_legislative`). Será necessário abrir manualmente o conteúdo de alguns Diários para descobrir essa informação
-- **scraped_at (datetime.datetime)**: fixado em `datetime.datetime.utcnow()` (preenchido automaticamente)
-- **file_urls (URL list)**: lista das URLs para baixar os Diários Oficiais (geralmente temos apenas um valor aqui)
-
-Filtro por data
----------------
 
 Nós queremos que todos os spiders sejam capazes de coletar **TODOS** os Diários Oficiais disponíveis.
 Mas também queremos ser capazes de restringir a quantidade de dados por período de tempo. Isso deve ser
@@ -92,14 +117,27 @@ permitem que você filtre os resultados informando um período específico, outr
 adicione alguma lógica extra para evitar visitar páginas desnecessárias e retornar Diários Oficiais
 fora do período desejado.
 
-Algumas dicas
--------------
+Dicas
+=======
 
-- Durante o desenvolvimento, para evitar que você faça chamadas repetidas nas páginas das cidades é possível utilizar a configuração `HTTPCACHE_ENABLED`_ do Scrapy. Isso também faz com que as execuções sejam mais rápidas, já que todos os dados ficam armazenados localmente
-- O `shell`_ do Scrapy ajuda muito na hora de testar seletores CSS e XPath
+Paginação
+-----------
 
-Submetendo um novo PR
----------------------
+... texto ...
+
+Filtro por Data
+---------------
+
+... texto ...
+
+
+Testando seu raspador
+**********************
+
+Executando localmente
+======================
+
+... coleta completa, coleta por período, coleta de um dia. 
 
 Antes de submeter um novo PR do seu spider, garanta que ele esteja funcionando adequadamente.
 
@@ -113,5 +151,37 @@ Sugestões de verificações:
 - Se ao executar o spider mais de uma vez, os resultados são os mesmos;
 - Se não existem erros de execução (`log/ERROR` nas estatísticas do spider);
 
+
+Verificando os arquivos baixados
+=================================
+
+- olhar os pdfs dos diarios
+- olhar o .csv 
+- olhar o log (txt) 
+
+
+Extra: aprenda sobre raspagem
+*****************************
+
+... referencias, video aulas, code review, etc
+
 .. _shell: https://docs.scrapy.org/en/latest/topics/shell.html
 .. _HTTPCACHE_ENABLED: https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-enabled
+
+
+
+
+
+.. Algumas dicas
+.. ==============
+
+.. - Durante o desenvolvimento, para evitar que você faça chamadas repetidas nas páginas das cidades é possível utilizar a configuração `HTTPCACHE_ENABLED`_ do Scrapy. Isso também faz com que as execuções sejam mais rápidas, já que todos os dados ficam armazenados localmente
+.. - O `shell`_ do Scrapy ajuda muito na hora de testar seletores CSS e XPath
+
+.. - explica o que é raspador, pra que serve, o que faz
+.. - explica o repositório
+.. - hierarquia de diretorios
+.. - Acompanhamento de Issues
+
+.. Escrevendo um novo spider
+.. =========================
