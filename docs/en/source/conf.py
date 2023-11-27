@@ -63,6 +63,23 @@ html_theme_options = {
     'style_nav_header_background': "#5e3f8e",
 }
 
+# A list of paths that contain custom _static files (such as style sheets or 
+# script files). Relative paths are taken as relative to the configuration 
+# directory
+html_static_path = ['../../_static']
+
+# The style sheet to use for HTML pages. A file of that name must exist either 
+# in Sphinx’s _static/ path, or in one of the custom paths given in 
+# html_static_path. Default is the stylesheet given by the selected theme. If 
+# you only want to add or override a few things compared to the theme’s 
+# stylesheet, use CSS @import to import the theme’s stylesheet.
+html_style = 'css/custom.css'
+
+# A list of CSS files. The entry must be a filename string or a tuple containing
+# the filename string and the attributes dictionary.
+#
+html_css_files = ['custom.css']
+
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 #
@@ -76,6 +93,4 @@ html_favicon = "../../_static/favicon.ico"
 
 # Language to be used for generating the HTML full-text search index.
 html_search_language = 'en'
-
-
 
