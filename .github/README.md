@@ -31,7 +31,7 @@ Agradecemos por considerar contribuir com o Querido Diário! :tada:
 
 Você encontra como fazê-lo em nosso **[Guia de Contribuição](./CONTRIBUTING.md)**!
 
-Além disso, consulte a [documentação do Querido Diário](https://docs.queridodiario.ok.org.br/pt-br/latest/index.html) para te ajudar. 
+Além disso, consulte a [documentação do Querido Diário](https://docs.queridodiario.ok.org.br/pt-br/latest/) para te ajudar. 
 
 # Como executar
 Para gerar a documentação localmente em sua máquina, siga os passos a seguir:

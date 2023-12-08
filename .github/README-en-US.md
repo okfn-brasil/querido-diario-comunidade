@@ -36,7 +36,7 @@ Thanks for considering contributing to *Querido Diário*! :tada:
 
 You can find out how to do that in our [Contribution Guide](CONTRIBUTING-en-US.md).
 
-In addition to that, check [*Querido Diário*'s documentation](https://docs.queridodiario.ok.org.br/pt-br/latest/index.html) to support you.
+In addition to that, check [*Querido Diário*'s documentation](https://docs.queridodiario.ok.org.br/en/latest/) to support you.
 
 # Support
 
