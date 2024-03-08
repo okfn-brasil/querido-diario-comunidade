@@ -5,6 +5,25 @@ A interface de busca do Querido Diário é um recurso que permite usuários faze
 pesquisas, de forma amigável, nos dados que o projeto armazena: os textos de diários
 oficiais. É acessível por meio da `plataforma web do Querido Diário`_. 
 
+Aprenda como utilizar a interface de busca conforme preferir, seja assistindo uma 
+gravação ou por meio de tutorial textual, logo abaixo.
+
+Navegando no site
+**********************
+
+.. raw:: html
+
+    <div style="position:relative;padding-bottom:56.25%;margin-bottom:3vh">
+        <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;"
+        src="https://www.youtube.com/embed/Qk5oQ9g1iX8" 
+        title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
+        encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen></iframe>
+    </div>
+
+Tutorial de uso da busca
+******************************
+
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/interface-de-busca/interface-de-busca.png
     :alt: Interface de busca do QD na plataforma web
 
