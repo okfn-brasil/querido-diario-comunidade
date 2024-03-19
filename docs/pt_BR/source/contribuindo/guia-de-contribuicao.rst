@@ -1,7 +1,7 @@
 Guia de Contribuição
 ######################
 
-Este guia serve para orientar pessoas em sua jornada com o Querido Diário. Ele trás 
+Este guia serve para orientar pessoas em sua jornada com o Querido Diário. Ele traz 
 os passos iniciais que devem ser tomados ao interagir em todos os repositórios e
 espaços virtuais ou presenciais do projeto. 
 
