@@ -75,16 +75,22 @@ Ingresse na [comunidade](https://go.ok.org.br/discord). Lá você poderá tirar 
 rápidas, interagir com as pessoas mantenedoras, perguntar como poderia ajudar e ainda
 conversar com outras pessoas que também contribuem.
 
-### Interagindo com a pessoa revisora de código
-- Tenha paciência e dê tempo para a revisora. Além de revisões de código serem complexas e
-demandarem, por si só, tempo e atenção, uma pessoa revisora pode ser, assim como você,
-outra contribuidora cedendo seu tempo pessoal quando possível ou ter outras prioridades
-antes de poder revisar seu código.
+### Interagindo com a pessoa revisora
+- Tenha paciência e dê tempo para a revisora. Além de revisões de contribuições serem
+complexas e demandarem, por si só, tempo e atenção, uma pessoa revisora pode ser, assim
+como você, outra contribuidora cedendo seu tempo pessoal quando possível ou ter outras
+prioridades antes de poder revisar seu código.
 - Seja em forma de código ou com mensagens de dúvidas e sugestões, facilite a interação
 sendo objetivo(a), mas dando detalhes quando necessário.
 - Durante a revisão, uma pessoa revisora pode abrir *threads* de solicitação de melhorias
 em seu código. Geralmente, é responsabilidade da pessoa revisora decidir quando a *thread*
-foi finalizada.
+foi finalizada e marcar como "resolvida" na interface do GitHub. Isso significa que tanto
+você quanto a pessoa revisora concordam com as modificações e a contribuição pode
+prosseguir.
+- During the reviewing process, a reviewer can open *threads* requesting improvements to
+your contribution. In general, it is the reviewers' role to decide when a *thread* has
+ended and mark it as "resolved" in the GitHub interface. That means that both of you agree
+with the implemented modifications and the contribution can move on.
 - Nossa comunidade às vezes organiza eventos para resolver várias *issues* em um curto
 período de tempo. Especialmente nesses casos, uma *Issue* ou *Pull Request* pode
 ser considerado abandonado se a pessoa contribuindo não interagir com ele por algumas
@@ -103,7 +109,7 @@ legibilidade e simplicidade. É essencial que um projeto cívico tenha uma estru
 simples quanto possível para iniciantes;
 - O projeto deve ser testado antes de um *Pull Request* ser mesclado;
 - Manter o histórico de commits organizado, preferencialmente seguindo o formato a seguir
-onde toda alteração na base de código tem como base a main atualizada e é mesclada com um
+onde toda alteração no repositório tem como base a main atualizada e é mesclada com um
 merge commit:
 
 <p align="center">
