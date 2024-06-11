@@ -367,7 +367,11 @@ nas referências abaixo. Lembre-se de seguir o :doc:`guia-de-contribuicao` duran
 as interações no repositório. 
 
 - **Repositório**: https://github.com/okfn-brasil/querido-diario
-- **Configuração do Ambiente de Desenvolvimento**: `CONTRIBUTING`_
+- **Configuração do Ambiente de Desenvolvimento**:
+
+  - Em máquina local: `CONTRIBUTING`_   
+  - Em máquina virtual: :doc:`Usando GitHub Codespaces<usando-github-codespaces>`
+
 - **Mapeamento de municípios para contribuição**: `Quadro de Expansão de Cidades`_
 
 .. attention::
@@ -632,7 +636,7 @@ Aprenda mais sobre raspagem
 
 **> Textos**
 
-  - Giulio Carvalho, `Entenda como analisar *sites* de diários oficiais para raspagem de dados`_
+  - Giulio Carvalho, `Entenda como analisar sites de diários oficiais para raspagem de dados`_
   - Juliana Trevine, `Conheça os desafios de raspagem do Querido Diário`_
   - Ana Paula Gomes, `Quero tornar Diários Oficiais acessíveis. Como começar?`_
   - Lucas Villela, `Monitorando o governo de Araraquara/SP`_
@@ -690,7 +694,7 @@ Aprenda mais sobre raspagem
 .. _Indo além: https://youtu.be/gNbUQAicLAs?list=PLpWp6ibmzPTc2rod9Hc822_3zMaq9G-qE
 .. _Raspador para Petrópolis-RJ do início ao fim: https://youtu.be/s22_t4YTTTk?list=PLpWp6ibmzPTc2rod9Hc822_3zMaq9G-qE
 .. _Querido Diário, hoje eu tornei um diário oficial acessível: https://escoladedados.org/coda/coda2020/workshop-querido-diario/
-.. _Entenda como analisar *sites* de diários oficiais para raspagem de dados: https://queridodiario.ok.org.br/blog/post/30
+.. _Entenda como analisar sites de diários oficiais para raspagem de dados: https://queridodiario.ok.org.br/blog/post/30
 .. _Conheça os desafios de raspagem do Querido Diário: https://queridodiario.ok.org.br/blog/post/28
 .. _Como funciona o robozinho do Serenata que baixa os diários oficiais?: https://jvanz.com/como-funciona-o-robozinho-do-serenata-que-baixa-os-diarios-oficiais.html
 .. _Quero tornar Diários Oficiais acessíveis. Como começar?: https://www.anapaulagomes.me/pt-br/2020/10/quero-tornar-di%C3%A1rios-oficiais-acess%C3%ADveis.-como-come%C3%A7ar/
