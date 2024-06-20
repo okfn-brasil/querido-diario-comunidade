@@ -39,7 +39,7 @@ Contato
 =======
 
 Você pode entrar em contato com as pessoas engajadas no projeto principalmente por meio
-do servidor do `Discord`_. Ou enviando e-mail para contato ARROBA serenata.ai.
+do servidor do `Discord`_. Ou enviando e-mail para **queridodiario ARROBA ok.org.br**.
 
 Responsabilidade
 =================
