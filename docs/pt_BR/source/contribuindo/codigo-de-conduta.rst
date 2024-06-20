@@ -63,7 +63,7 @@ Aplicação
 ***********
 
 Casos de comportamento abusivo, de assédio ou de outra forma inaceitável podem ser
-relatados à liderança da comunidade em **contato@ok.org.br**, que será responsável
+relatados à liderança da comunidade em **queridodiario ARROBA ok.org.br**, que será responsável
 pela aplicação. Todos os relatos serão revisados e investigadas imediatamente e 
 de maneira justa.
 
