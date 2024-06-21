@@ -14,4 +14,5 @@ Querido Diário
    architecture
    using-the-toolbox
    advanced-search
+   contributing/contribution-guide
    writing-a-new-spider
