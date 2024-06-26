@@ -58,16 +58,8 @@ outra licença específica no material em questão.
 
 Para mais informações, consulte os `Termos de Uso e Política de Privacidade`_. 
 
-.. REFERÊNCIAS
-.. _plataforma web: https://queridodiario.ok.org.br/
-.. _API: https://queridodiario.ok.org.br/api/docs
-.. _campanha de financiamento recorrente: https://www.catarse.me/queridodiario-okbr
-.. _diretamente para a OKBR: https://ok.org.br/apoie/
-.. _atividades de ensino ou pesquisa: https://ok.org.br/projetos/qd-universidades/
-.. _Discord: https://go.ok.org.br/discord
-.. _Open Knowledge Brasil: https://ok.org.br/
-.. _repositórios no GitHub: https://github.com/okfn-brasil/?q=querido-diario&type=source
-.. _Termos de Uso e Política de Privacidade: https://queridodiario.ok.org.br/privacidade
+Documentação
+=================
 
 .. toctree::
    :maxdepth: 3
@@ -94,3 +86,14 @@ Para mais informações, consulte os `Termos de Uso e Política de Privacidade`_
    contribuindo/guia-de-contribuicao
    contribuindo/raspadores
    contribuindo/documentacao
+
+.. REFERÊNCIAS
+.. _plataforma web: https://queridodiario.ok.org.br/
+.. _API: https://queridodiario.ok.org.br/api/docs
+.. _campanha de financiamento recorrente: https://www.catarse.me/queridodiario-okbr
+.. _diretamente para a OKBR: https://ok.org.br/apoie/
+.. _atividades de ensino ou pesquisa: https://ok.org.br/projetos/qd-universidades/
+.. _Discord: https://go.ok.org.br/discord
+.. _Open Knowledge Brasil: https://ok.org.br/
+.. _repositórios no GitHub: https://github.com/okfn-brasil/?q=querido-diario&type=source
+.. _Termos de Uso e Política de Privacidade: https://queridodiario.ok.org.br/privacidade
