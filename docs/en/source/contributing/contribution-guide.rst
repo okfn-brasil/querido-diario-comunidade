@@ -81,7 +81,7 @@ Responsibilities of a *Querido Diário* maintainer
 - The project must be tested before a Pull Request is merged;
 - Keep the commit history organized, preferably following the format below, where every repository change is based on the updated `main` and merged with a merge commit:
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/guia-contribuicao/historico-commits.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/guide-commits-history.png
     :alt: Commits flow
 
 - If a Pull Request has too many commits and its messages are not clear, it is possible to *squash* those commits before merging the Pull Request.

@@ -16,7 +16,7 @@ enumerado abaixo. Cada um é mais aprofundado nos tópicos enumerados correspond
 a seguir e, ao fim, é apresentado a ordem em que esses componentes são mobilizados 
 quando um comando de raspagem é acionado. 
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/raspadores/hierarquia-classes-numerado.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/scrapers-class-hierarchy_ptbr.png
     :alt: [TODO]
 
 1. O framework Scrapy
@@ -274,7 +274,7 @@ onde metadados são coletados, um objeto :class:`Gazette` é construído e é en
 ao `motor do Scrapy`_ para executar, de fato, a ação de baixar o arquivo do diário 
 oficial.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/raspadores/raspagem-execucao-padrao.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/scrapers-default-flow_ptbr.png
     :alt: [TODO]
 
 Há dois contextos em que, por exigência da situação, esse fluxo pode não acontecer 

@@ -24,12 +24,12 @@ Navegando no site
 Tutorial de uso da busca
 ******************************
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/interface-de-busca/interface-de-busca.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/search-interface/interface-de-busca.png
     :alt: Interface de busca do QD na plataforma web
 
 Nela, é possível fazer buscas por **palavras-chave**:
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/interface-de-busca/busca-querystring.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/search-interface/busca-querystring.png
     :alt: Resultado de consulta por palavras-chave
 
 .. tip::
@@ -37,12 +37,12 @@ Nela, é possível fazer buscas por **palavras-chave**:
 
 Aplicar **filtros por município e data**:
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/interface-de-busca/busca-filtros.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/search-interface/busca-filtros.png
     :alt: Resultado de consulta por palavras-chave com filtros
 
 Você pode **ordenar os resultados** da forma mais apropriada para sua busca.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/interface-de-busca/busca-ordenacao.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/search-interface/busca-ordenacao.png
     :alt: Clicando no botão de "ordenar por" da página de busca
 
 .. attention::
@@ -53,7 +53,7 @@ Você pode **ordenar os resultados** da forma mais apropriada para sua busca.
 
 E também pode baixar os **diários oficiais em formato original e/ou aberto**:
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/interface-de-busca/busca-baixar.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/search-interface/busca-baixar.png
     :alt: Clicando no botão de "baixar diário oficial" do excerto de diário
 
 .. tip::

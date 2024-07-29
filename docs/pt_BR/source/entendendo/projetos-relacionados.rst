@@ -13,7 +13,7 @@ relacionados ao universo das tecnologias adquiridas pela rede de educação bás
 a nível municipal em temáticas específicas como acessibilidade, conectividade, 
 gestão, infraestrutura, inteligência artificial, robótica, etc.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/projetos-relacionados/querido-diario-tecnologias-educacao.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/querido-diario-tecnologias-educacao.png
     :alt: [TODO]
 
 
@@ -25,7 +25,7 @@ relevantes sobre políticas públicas em clima e meio-ambiente. Nela, pessoas us
 podem acompanhar movimentações oficiais relacionadas a crimes ambientais, biodiversidade,
 mineração, água, saneamento, etc, assim que novos atos oficias forem publicados.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/projetos-relacionados/diario-do-clima.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/diario-do-clima.png
     :alt: [TODO]
 
 
@@ -36,7 +36,7 @@ O `LegislaTech`_ monitora documentos públicos - especialmente tramitações leg
 judiciais, diários oficiais e até notícias - em busca de assuntos de interesse para
 as pessoas usuárias.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/projetos-relacionados/legislatech.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/legislatech.png
     :alt: [TODO]
 
 
@@ -47,7 +47,7 @@ O `Exoonero`_ classifica, entre nomeações e exonerações, os atos oficiais do
 diários da Associação de Municípios Alagoanos, oferecendo estatísticas gerais e
 específicas por município e por ano.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/projetos-relacionados/exoonero.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/exoonero.png
     :alt: [TODO]
 
 

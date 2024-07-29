@@ -16,8 +16,7 @@ etapas abaixo e compreendê-los mais detalhadamente a seguir.
 2. **Processar**: aplicar tratamentos sobre os arquivos originais obtidos
 3. **Disponibilizar**: permitir acesso e pesquisa nos conteúdos armazenados 
 
-
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/arquitetura/diario-por-etapas.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/qd-dataflow-per-gazettes_ptbr.png
     :alt: [TODO]
 
 1. Coleta de dados
@@ -131,7 +130,7 @@ repositório de documentação fica o mapa de metas (:ref:`Roadmap`) do Querido 
 Desenho da arquitetura
 **************************
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/arquitetura/desenho-arquitetura.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/qd-architecture_ptbr.png
     :alt: [TODO]
 
 .. Referências

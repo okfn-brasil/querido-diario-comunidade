@@ -106,7 +106,7 @@ oficiais eletrônicos em 3 categorias:
 Note como esses três tipos de diários diferem quanto a granularidade do conteúdo 
 e se relacionam conforme o diagrama a seguir.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/relacao-entre-tipos-diarios.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/qd-document-types_ptbr.png
     :alt: [TODO]
 
 .. REFERÊNCIAS:
