@@ -15,4 +15,5 @@ Querido Diário
    using-the-toolbox
    advanced-search
    contributing/contribution-guide
+   understanding/know
    writing-a-new-spider
