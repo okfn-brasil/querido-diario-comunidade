@@ -1,12 +1,12 @@
-Meet the Querido Diário
+Get to know Querido Diário
 ############################## 
 
 Objectives
 ************
 
-An official gazette is a publication made by the spheres of Brazilian public administration
-, whether federal, state, or municipal, and from the executive, legislative
-, and judicial branches. It works to **make official to the population the decisions made by the powers**.
+An official gazette is a publication made by the spheres of Brazilian public administration, 
+whether federal, state, or municipal, and from the executive, legislative, and judicial 
+branches. It works to **make official to the population the decisions made by the powers**.
 
 The Union Official Gazette and States Official Gazettes are often 
 well-established objects of collective interest, while Municipalities Official Gazettes,
@@ -17,7 +17,7 @@ through ways that are difficult to watch**.
 Querido Diário is the project that tackles this data desert by offering **a 
 tool that expands access to information about Brazilian public administration**
 at its most local level - the municipalities - through the opening and centralization 
-of electronic gazettes. It’s not an easy endeavor, particularly because there are 
+of electronic gazettes. It's not an easy endeavor, particularly because there are 
 **5570 municipalities** in the country and significant discrepancies regarding the existence and maturity of the online availability of their data and information.
 
 Pillars: the Values of Querido Diário
@@ -97,7 +97,7 @@ Despite the lack of a legal standard, we find it possible to classify electronic
 Note how these three types of gazzetes differ in terms of content granularity and how they relate to each other as shown in the following diagram. 
    
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/qd-document-types.png
-    :alt: Diagram about how gazette types relate. Aggregated gazette split each municipality, making it a complete diary, while fragmented gazette unites all parts, becoming a complete gazette.
+   :alt: Diagram about how gazette types relate. An aggregated gazette if splited each municipality makes a complete gazette and a fragmented gazette if all parts joined becomes a complete gazette.
 
 .. REFERÊNCIAS:
 .. _Municipalities Association of Alagoas State Official Gazette: https://www.diariomunicipal.com.br/ama/

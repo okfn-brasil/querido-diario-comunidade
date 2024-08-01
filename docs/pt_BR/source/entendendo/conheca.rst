@@ -107,7 +107,7 @@ Note como esses três tipos de diários diferem quanto a granularidade do conte�
 e se relacionam conforme o diagrama a seguir.
 
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/qd-document-types_ptbr.png
-    :alt: Diagrama sobre como os tipos de diários se relacionam. Diário agregado , separa cada municipio, torna diário completo e, diário fragmentado, uni todas as partes, se torna diário completo.
+    :alt: Diagrama sobre como os tipos de diários se relacionam. Diário agregado ao separar cada município se torna diário completo e diário fragmentado se unir todas as partes se torna diário completo.
 
 .. REFERÊNCIAS:
 .. _Diário Oficial da Associação de Municípios de Alagoas: https://www.diariomunicipal.com.br/ama/
