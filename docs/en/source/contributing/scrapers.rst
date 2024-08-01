@@ -1,3 +1,7 @@
+Scrapers
+##############
+
+
 Writing a new spider
 =========================
 Before starting the development of a scraper for a new city, please carefully read the following guidelines necessary to maintain the project more consistent and ensure that your contribution is more easily accepted.

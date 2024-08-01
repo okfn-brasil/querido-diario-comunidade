@@ -1,4 +1,4 @@
-Project Architecture
+Architecture
 ======================
 
 The project relies on various systems to ensure that the daily publications 
@@ -37,7 +37,7 @@ it allows for data extraction, metadata handling, removal of irrelevant characte
 with the support of the community, we will continually add new tools and make them available to anyone 
 interested in the project!
 
-Public API
+API
 -----------
 
 The `public API`_ is one of the project's main layers because it allows the 
