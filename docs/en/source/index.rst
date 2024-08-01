@@ -1,19 +1,25 @@
-.. Querido Diário documentation master file, created by
-   sphinx-quickstart on Mon Nov  9 18:32:55 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Querido Diário
 ==============
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Get to know
+   :maxdepth: 3
+   :caption: Understanding
 
-   what-is-it
-   architecture
-   using-the-toolbox
-   advanced-search
-   contributing/contribution-guide
-   understanding/know
-   writing-a-new-spider
+   understanding/get-to-know
+   understanding/architecture.rst
+   understanding/related-projects.rst
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Using it
+
+   using/search-interface.rst
+   using/public-api.rst
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Contribute
+   
+   contributing/contribution-guide.rst
+   contributing/scrapers.rst
+   contributing/documentation.rst

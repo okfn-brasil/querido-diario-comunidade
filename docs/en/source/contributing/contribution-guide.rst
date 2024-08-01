@@ -70,7 +70,7 @@ Interacting with reviewers
 - During the reviewing process, a reviewer can open *threads* requesting improvements to your contribution. In general, it is the reviewers' role to decide when a *thread* has ended and mark it as "resolved" in the GitHub interface. That means that both of you agree with the implemented modifications and the contribution can move on.
 - Sometimes the community organizes events for solving multiple issues in a short amount of time. Especially in these cases, an issue or pull request may be considered abandoned when is waiting for the contributor but doesn't receive updates for a couple of weeks. Just let us know you need more time, so we don't end up closing it by mistake.
 
-# Maintaining
+Maintaining
 ************************
 
 Responsibilities of a *Querido Diário* maintainer
