@@ -17,14 +17,14 @@ With Querido Diário handling the heavy and innovative work of collecting, stori
 `Diário do clima`_ monitors gazettes to identify the most relevant documents on public policies related to climate and the enviroment. Users can track official action related to environmental crimes, biodiversity, mining, water, sanitation, etc. as soon as new official acts are published.
 
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/diario-do-clima.png
-    :alt: "Diário do clima" webpage.
+   :alt: "Diário do clima" webpage.
  
- `LegislaTech`_
- *****************
+`LegislaTech`_
+*****************
  
- `LegislaTech`_ monitors public documents - specially legislative proceedings, judicial documents, gazettes, and even news- seeking topics of interest for users.
+`LegislaTech`_ monitors public documents - specially legislative proceedings, judicial documents, gazettes, and even news- seeking topics of interest for users.
  
- .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/legislatech.png
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/legislatech.png
     :alt: LegislaTech webpage.
     
 
@@ -32,13 +32,13 @@ With Querido Diário handling the heavy and innovative work of collecting, stori
 `Exoonero`_
 *******************
 
-`Exoonero`_ classifies,among appointments and dismissals, the official acts from the gazettes of the Association of Alagoan Municipalities, providing general and specific statistcs by municipality and by year.
+`Exoonero`_ classifies, among appointments and dismissals, the official acts from the gazettes of the Association of Alagoan Municipalities, providing general and specific statistcs by municipality and by year.
 
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/exoonero.png
     :alt: Exoonero Webpage.
 
- Ro-Dou
- *************
+Ro-Dou
+*************
  
 Ro-Dou is a tool of the Brazilian Ministry of Economy that supports the daily activities of various public agencies by generating email *clippings* for officials. Initially create to monitor the Official Gazette of the Union, it has also begun using municipal gazettes as a source.
  
