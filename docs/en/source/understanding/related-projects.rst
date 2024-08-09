@@ -22,7 +22,7 @@ With Querido Diário handling the heavy and innovative work of collecting, stori
 `LegislaTech`_
 *****************
  
-`LegislaTech`_ monitors public documents - specially legislative proceedings, judicial documents, gazettes, and even news- seeking topics of interest for users.
+`LegislaTech`_ monitors public documents - specially legislative and judicial proceedings, official gazettes and even news - seeking topics of interest for users.
  
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/legislatech.png
     :alt: LegislaTech webpage.
