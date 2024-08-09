@@ -37,7 +37,7 @@ With Querido Diário handling the heavy and innovative work of collecting, stori
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/exoonero.png
     :alt: Exoonero Webpage.
 
-Ro-Dou
+Ro-DOU
 *************
  
 Ro-DOU is a tool of the Brazilian Ministry of Economy that supports the daily activities of various public agencies by generating email *clippings* for public servants. Initially create to monitor the Union Official Gazette, it has also begun using municipalities gazettes as a data source.
