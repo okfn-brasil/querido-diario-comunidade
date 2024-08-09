@@ -42,7 +42,7 @@ Ro-Dou
  
 Ro-Dou is a tool of the Brazilian Ministry of Economy that supports the daily activities of various public agencies by generating email *clippings* for officials. Initially create to monitor the Official Gazette of the Union, it has also begun using municipal gazettes as a source.
  
-**Learn more**: `Ro-DOU Registration in the Ministry's Solutions Catalog`_.
+**Learn more**: `Ro-DOU Registration in the Ministry's Solutions Catalog (in PT-BR)`_.
  
 .. REFERÊNCIAS
 .. _Querido Diário\: Technologies in Education: https://queridodiario.ok.org.br/educacao
