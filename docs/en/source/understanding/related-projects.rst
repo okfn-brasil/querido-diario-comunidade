@@ -40,7 +40,7 @@ With Querido Diário handling the heavy and innovative work of collecting, stori
 Ro-Dou
 *************
  
-Ro-Dou is a tool of the Brazilian Ministry of Economy that supports the daily activities of various public agencies by generating email *clippings* for officials. Initially create to monitor the Official Gazette of the Union, it has also begun using municipal gazettes as a source.
+Ro-DOU is a tool of the Brazilian Ministry of Economy that supports the daily activities of various public agencies by generating email *clippings* for public servants. Initially create to monitor the Union Official Gazette, it has also begun using municipalities gazettes as a data source.
  
 **Learn more**: `Ro-DOU Registration in the Ministry's Solutions Catalog (in PT-BR)`_.
  
