@@ -6,7 +6,7 @@ With Querido Diário handling the heavy and innovative work of collecting, stori
 `Querido Diário\: Technologies in Education`_
 ************************************************
 
-`Querido Diário\: Technologies in Education`_ is capable of indentifying official acts related to the world of technologies acquired by the basic education network at the municipality level in specific themes such as accessibility, connectivity, management, infrastructure,  artificial inteligence, robotics, etc.
+`Querido Diário\: Technologies in Education`_ is capable of identifying official acts related to  technologies acquired by the basic education network at the municipality level in specific themes such as accessibility, connectivity, management, infrastructure, artificial intelligence, robotics, etc.
 
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/querido-diario-tecnologias-educacao.png
     :alt: "Querido Diário: Technology in education" Webpage
