@@ -14,7 +14,7 @@ With Querido Diário handling the heavy and innovative work of collecting, stori
 `Diário do Clima`_
 **********************************
 
-`Diário do clima`_ monitors gazettes to identify the most relevant documents on public policies related to climate and the enviroment. Users can track official action related to environmental crimes, biodiversity, mining, water, sanitation, etc. as soon as new official acts are published.
+`Diário do Clima`_ monitors gazettes to identify the most relevant documents on public policies related to climate and the environment. Users can track official acts related to environmental crimes, biodiversity, mining, water, sanitation, etc. as soon as new official gazettes are published.
 
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/diario-do-clima.png
    :alt: "Diário do clima" webpage.
