@@ -1,7 +1,7 @@
 Related Projects
 ###########################
 
-With Querido Diário handling the heavy and innovative work of collecting, storing, and making thousands of municipal gazettes available, get to know projects that already use our data.
+With Querido Diário handling the heavy and innovative work of collecting, storing and making thousands of municipalities gazettes available, get to know projects that already use our data.
 
 `Querido Diário\: Technologies in Education`_
 ************************************************
