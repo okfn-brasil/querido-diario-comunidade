@@ -32,7 +32,7 @@ With Querido Diário handling the heavy and innovative work of collecting, stori
 `Exoonero`_
 *******************
 
-`Exoonero`_ classifies, among appointments and dismissals, the official acts from the gazettes of the Association of Alagoan Municipalities, providing general and specific statistcs by municipality and by year.
+`Exoonero`_ classifies, among appointments and dismissals, the official acts from the Municipalities Association of Alagoas State Official Gazette, providing general and specific statistcs by municipality and by year.
 
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/exoonero.png
     :alt: Exoonero Webpage.
