@@ -49,5 +49,5 @@ Ro-Dou is a tool of the Brazilian Ministry of Economy that supports the daily ac
 .. _Diário do Clima: https://diariodoclima.org.br/
 .. _LegislaTech: https://legisla.tech/
 .. _Exoonero: https://exoonero.org/
-.. _Ro-DOU Registration in the Ministry's Solutions Catalog: https://www.gov.br/economia/pt-br/acesso-a-informacao/acoes-e-programas/transformagov/catalogodesolucoes/ro-dou
+.. _Ro-DOU Registration in the Ministry's Solutions Catalog (in PT-BR): https://www.gov.br/economia/pt-br/acesso-a-informacao/acoes-e-programas/transformagov/catalogodesolucoes/ro-dou
 
