@@ -66,10 +66,12 @@ html_build_dir = os.environ.get('READTHEDOCS_OUTPUT', 'docs/pt_BR/build/html')
 html_theme = "sphinx_rtd_theme"
 
 html_theme_options = {
+    'analytics_id': 'G-X0VTXQ7XR3',
     'collapse_navigation': False,
     'logo_only': True,
     'style_nav_header_background': "#5e3f8e",
 }
+
 
 # A list of paths that contain custom _static files (such as style sheets or 
 # script files). Relative paths are taken as relative to the configuration 
