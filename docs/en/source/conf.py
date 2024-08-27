@@ -66,6 +66,7 @@ html_build_dir = os.environ.get('READTHEDOCS_OUTPUT', 'docs/en/build/html')
 html_theme = "sphinx_rtd_theme"
 
 html_theme_options = {
+    'analytics_id': 'G-X0VTXQ7XR3',
     'collapse_navigation': False,
     'logo_only': True,
     'style_nav_header_background': "#5e3f8e",
