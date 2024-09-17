@@ -48,17 +48,17 @@ Diário.
    .. attribute:: date
    
       :tipo: `datetime.date()`_
-      :definição: Data de publicação informada no *site* publicador de um diário oficial.
+      :definição: Data de publicação informada no *site* publicador de um diário oficial. Em caso de ausência dessa informação, o raspador **não deve ser integrado**.
    
    .. attribute:: edition_number
    
       :tipo: **string**
-      :definição: Número informado no *site* publicador de um diário oficial.
+      :definição: Número informado no *site* publicador de um diário oficial. Em caso de ausência dessa informação, pode ser preenchido com vazio (``""``).
    
    .. attribute:: is_extra_edition
    
       :tipo: **boolean**
-      :definição: Informação do *site* publicador se a edição de um diário oficial é extra. Costuma ser identificado pela presença de termos como "Extra", "Extraordinário", "Suplemento". Quando não informado, deve ser fixado em ``False`` por padrão (*hard coded*). 
+      :definição: Informação do *site* publicador se a edição de um diário oficial é extra. Costuma ser identificado pela presença de termos como "Extra", "Extraordinário", "Suplemento". Em caso de ausência dessa informação, deve ser fixado em ``False`` por padrão (*hard coded*). 
    
    .. attribute:: power
    
@@ -66,7 +66,7 @@ Diário.
       :opções: ``'executive'`` ou ``'executive_legislative'``
       :definição: Informação se o conteúdo do diário oficial é do poder executivo exclusivamente ou se aparecem atos oficiais do poder legislativo também.
    
-      Atributo de preenchimento manual pela pessoa desenvolvedora (*hard coded*) a partir da consulta em alguns arquivos de diários oficias disponibilizados no *site* publicador.
+      Há casos onde é possível ser coletado no site, porém tende a ser um atributo de preenchimento manual pela pessoa desenvolvedora (*hard coded*) a partir da consulta em alguns diários oficias.
        
    .. attribute:: file_urls
    
@@ -101,7 +101,7 @@ seus metadados.
 
       :procedência: `scrapy.Spider.name`_
       :tipo: **string**
-      :definição: Nome do raspador no formato ``uf_nome_do_municipio``. Definido para ser usado no comando de execução da *spider*.
+      :definição: Nome do raspador no formato ``uf_nome_do_municipio``. É usado no comando de execução da *spider*.
    
    .. attribute:: TERRITORY_ID
 
@@ -113,13 +113,13 @@ seus metadados.
    
       :procedência: `scrapy.Spider.allowed_domains`_
       :tipo: **list[string]**
-      :definição:  Domínios em que a *spider* está autorizada a navegar. Evita que a *spider* visite ou colete arquivos de outros *sites*.
+      :definição:  Domínios em que a *spider* está autorizada a navegar. Evita que a *spider* visite outros *sites* indevidamente.
        
    .. attribute:: start_urls
 
       :procedência: `scrapy.Spider.start_urls`_
       :tipo: **list[string]**
-      :definição: URL da página onde ficam os diários oficiais no *site* publicador. É apenas uma URL e não deve ser a *homepage* do *site*.
+      :definição: URL da página onde ficam os diários oficiais no *site* publicador. É apenas uma URL e não costuma ser a *homepage* do *site*.
       :exigência: Opcional. Saiba mais em :ref:`start-urls-ou-start-requests`
    
    .. attribute:: start_date
@@ -133,7 +133,7 @@ seus metadados.
       :procedência: `BaseGazetteSpider`_
       :tipo: `datetime.date()`_      
       :definição: Data da última edição de diário oficial disponibilizado no *site* publicador. 
-      :exigência: Implícito. Por padrão, é preenchido automaticamente com a data da execução do raspador (``datetime.today().date()``). Só é explicitado em raspadores que coletam *sites* descontinuados, mas que seguem no ar por conservação de memória.
+      :exigência: Implícito. Por padrão, é preenchido automaticamente com a data da execução do raspador (``datetime.today().date()``). Só é explicitado em raspadores que coletam :ref:`sites descontinuados<sites-descontinuados>`.
    
    .. method:: start_requests()
    
@@ -147,6 +147,7 @@ seus metadados.
       :procedência: `scrapy.Spider.parse()`_
       :returns: :class:`Gazette`
       :definição: Método que implementa a lógica de extração de metadados a partir do texto da `Response`_ obtida do *site* publicador. É o *callback* padrão.
+      :exigência: Obrigatório. Porém, é possível que tenha :ref:`outro nome<parse-alternativo>` 
 
 
 Esqueleto de uma UFMunicipioSpider
