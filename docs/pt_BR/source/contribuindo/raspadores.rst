@@ -234,7 +234,7 @@ Como parte da família de *spiders* do Querido Diário, a **BaseSistemaSpider** 
 a mesma estrutura: é criada a partir de **BaseGazetteSpider** e finaliza construindo 
 objeto **Gazette**. 
 
-Porém, a classe que seria um raspador "normal" é dividida duas: **BaseSistemaSpider**,
+Porém, a classe que seria um raspador "normal" é dividida em duas: **BaseSistemaSpider**,
 onde ficam os recursos comuns para vários casos, e :class:`UFMunicipioSpider`, 
 onde ficam as partes específicas para cada caso. 
 
@@ -383,7 +383,7 @@ do repositório e podem ser úteis: `dateparser`_, para tratar datas e `chompJS`
 para transformar objetos JavaScript em estruturas Python.
 
 .. seealso::
-    Materiais complementares são indicados na seção :ref:`Aprenda mais<aprenda>` 
+    Materiais complementares são indicados na seção :ref:`Aprenda mais sobre os raspadores<aprenda>` 
 
 .. _parse-alternativo:
 
@@ -417,7 +417,8 @@ durante as interações no repositório.
 - **Listas de municípios para contribuição**: `Quadro de Expansão de Cidades`_
 
 .. danger::
-  Tente-se ao fato de que apenas casos de :ref:`diários completos<tipo-diarios>` estão sendo integrados.
+  Apenas casos de :ref:`diários completos<tipo-diarios>` estão sendo integrados.
+
 
 Desenvolvendo raspadores
 ==============================
@@ -499,6 +500,20 @@ devolvendo um formato JSON.
    * - `Exemplo de acesso à API em Natal-RN`_
      - `rn_natal.py`_
 
+.. _sites-descontinuados:
+
+Quando incrementar o *log*
+-------------------------------------
+
+(em construção)
+
+Sites descontinuados 
+-------------------------------------
+
+(em construção)
+
+.. _executando:
+
 Executando raspadores
 ==========================
 
@@ -523,11 +538,9 @@ e :attr:`~Gazette.date`, onde ficam os arquivos de diários oficiais baixados.
 Testes exigidos
 ------------------------
 
-No dia-a-dia do projeto, os raspadores são engatilhados em 3 situações diferentes
-apresentadas a seguir. Uma pessoa contribuidora deve testar seu código e anexar os 
+Uma pessoa contribuidora deve testar seu código para os 3 casos abaixo e anexar os 
 :ref:`arquivos auxiliares<arquivos-auxiliares>` aos comentários da *pull request*, 
-mostrando que seu raspador funciona os casos conforme esperado e agilizando 
-o processo de revisão. 
+mostrando que seu raspador funciona conforme esperado e agilizando o processo de revisão. 
 
 Coleta da última edição
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -567,10 +580,205 @@ Execute a coleta sem filtro por datas para obter toda a série histórica de edi
   **Coleta completa**: Em produção, a coleta completa é executada sempre que um 
   novo raspador é integrado ao projeto.
 
+.. _verificando:
+
+Validando raspagens
+==========================
+
+Verificar uma coleta quer dizer vasculhar os arquivos que uma raspagem produz - 
+diários oficiais, tabela da coleta e *log* - conferindo se foi coletado tudo disponível 
+e da forma como se espera.
+
+Entendendo a situação
+--------------------------
+
+Ao encontrar uma situação que parece indicar que o raspador está perdendo dados 
+na coleta é importante buscar saber se existe uma **solução técnica** (= há algo 
+a ser feito) ou se é **fora do controle do Querido Diário** (= não há algo a ser 
+feito). 
+
+Exemplos são: se as edições número 5 e 7 foram obtidas, mas a 6 não; ou o *log* indica 
+erro de acesso em uma *URL*. Se, ao navegar manualmente o site, a edição 6 é encontrada 
+ou a *URL* abre quando copiada e colada no navegador, é confirmação de que 
+o problema é no raspador, que deve ser corrigido. Se não deu certo, está confirmado 
+que o problema não é do raspador - é do site ou da prefeitura. 
+
+Outros contextos podem existir e, sempre, a abordagem será a de **comparar com 
+a fonte** (o site publicador). O código não estará impedido de ser integrado quando 
+a responsabilidade pelo problema for o site ou a prefeitura. 
+
+
+Conferindo arquivos
 -------------------------------------
 
+Algumas dicas para verificações nos arquivos de saída das raspagens. 
 
-Aprenda mais sobre nossos raspadores
+Diários Oficiais (``data_collection/data/``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Extensão dos arquivos, que devem ser ``.pdf``, ``.doc`` ou ``.docx``;
+- Conteúdo é o de um diário oficial realmente, não outro tipo de documento;
+- Se a data dentro do arquivo corresponde à data do diretório em que está.
+
+.. _arquivos-auxiliares:
+
+Tabela da coleta (arquivo ``.csv``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Coerência do metadados: :attr:`~Gazette.date`, :attr:`~Gazette.edition_number`, :attr:`~Gazette.is_extra_edition`, :attr:`~Gazette.power` e :attr:`~Gazette.file_urls`. Como o arquivo é uma tabela, é útil ordenar as colunas para fazer a conferência;
+- Se a primeira e a última edição (:attr:`~UFMunicipioSpider.start_date` e :attr:`~UFMunicipioSpider.end_date`) estão dentro do intervalo de coleta definido, ou seja, se o filtro por data implementado funciona;
+- Se faltam certas datas ou números de edição que possam indicar que arquivos não foram coletados.
+
+Log (arquivo ``.log``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Configurações: parte inicial, até** ``INFO: Spider opened``
+
+  - Lista as configurações internas sendo usadas, como as versões das bibliotecas, módulos, extensões, nome e intervalo do raspador, etc.
+  - Acaba sendo uma seção mais "administrativa" e, normalmente, não tem o quê ser verificado nela. 
+
+- **Requisições: parte do meio, de** ``INFO: Spider opened`` **a** ``INFO: Closing spider``
+
+  - Lista as requisições de acesso ao site (``DEBUG: Crawled ...``) e as requisições de download de arquivos (``DEBUG: File (downloaded)...``) feitas pelo raspador.
+  - Visto que registra *todas* as requisições feitas, esta seção normalmente é usada para se investigar detalhes de alguma situação mais particular.    
+
+- **Estatísticas: parte final, de** ``INFO: Closing spider`` **a** ``INFO: Spider closed (finished)``
+
+  - Lista dados gerais da coleta e traz uma análise sobre o comportamento do raspador.
+  - Sendo um relatório resumido, é por onde uma validação/revisão normalmente começa. Olha-se o resumo em busca de algum ponto de atenção e, caso haja, parte-se para entender o que houve.
+
+Explorando o log
+=============================
+
+Na seção de estatísticas do *log*, algumas naturezas de informação são exibidas 
+juntas, com informações gerais seguidas das específicas. Nos referimos a isso 
+como "bloco temático" nesta seção, trazendo alguns aspectos do que se analisar no 
+*log*.
+
+.. attention::
+  Tenha em mente que essas serão apenas dicas para começar, visto que o *log* do 
+  Scrapy tem uma lógica própria. Não há intenção de se esgotar todas as possibilidades,
+  mas de permitir uma familiarização inicial e apontar os indícios mais frequentes. 
+
+
+Bloco de informações gerais
+--------------------------------
+
+O bloco de contabilizações gerais é o primeiro passo para se averiguar problemas.
+Nele, o contador de ``ERROR`` ou ``WARNING`` existindo (se não existir, é por que 
+é igual à 0) indicam pontos de atenção, permitindo fazer buscas globais no
+arquivo (*ctrl + f*) por esses termos.
+
+.. code-block:: sh
+
+  log_count/DEBUG: n
+  log_count/ERROR: n
+  log_count/INFO: n
+  log_count/WARNING: n
+
+Bloco de status
+----------------------------
+
+O bloco de *status* mostra a quantidade de *responses* obtidas e a situação delas, 
+seguindo a `codificação oficial de respostas HTTP`_. É desejado que todas sejam 
+200 (no exemplo, n = x), código que indica sucesso. 
+
+.. code-block:: sh
+
+  # como aparece na seção de estatísticas... 
+
+  downloader/response_count: n                      <total>
+  downloader/response_status_count/'CODIGO': z      <parcela de total>
+  downloader/response_status_count/200: x           <parcela de total>
+  downloader/response_status_count/302: y           <parcela de total>
+
+Caso outros ``CODIGO`` forem contabilizados, a dica é fazer uma busca global no 
+arquivo, usando o código entre parênteses, para encontrar a situação específica. 
+
+.. code-block:: sh
+
+  # ... e como reflete na seção de requisições 
+
+  Crawled (200) <GET https://...> 
+  Redirecting (302) to <GET https://...> from <GET https://...>
+
+No geral, códigos de redirecionamento (código 300 a 399) costumam aparecer sem que isso 
+indique um problema; entretanto, muitas ocorrências pode ser que seja.  
+
+Bloco de tentativas repetidas
+-----------------------------------
+
+O Scrapy está configurado para tentar até 3 vezes uma requisição que não obteve 
+sucesso. O bloco de tentativas repetidas contabiliza esses casos, indicando também 
+os ``MOTIVO``.
+
+.. code-block:: sh
+
+  # como aparece na seção de estatísticas... 
+
+  retry/count: n,                                     <total>
+  retry/reason_count/'MOTIVO': y,                     <parcela de total>
+  retry/reason_count/500 Internal Server Error: x,    <parcela de total>
+
+Tentativas repetidas são sinalizadas com ``WARNING`` na primeira e segunda vezes, 
+se tornando ``ERROR`` apenas na terceira. Uma *URL* não acessada significa, em 
+último caso, arquivos não coletados. 
+
+.. code-block:: sh
+
+  # ... e como reflete na seção de requisições
+
+  Retrying <GET https://...> (failed 'N' times)
+
+Bloco de validações
+-------------------------------------
+
+No bloco de validações, pode aparecer indícios de que itens foram abandonados (*dropped*)
+e o ``MOTIVO`` do abandono.  
+
+.. code-block:: sh
+
+  # como aparece na seção de estatísticas... 
+
+  spidermon/validation/items: n                     <total>
+  spidermon/validation/items/dropped: x             <parcela de total>
+  ...
+  spidermon/validation/fields: n                    <total>
+  spidermon/validation/fields/errors/'MOTIVO': y    <parcela de total>
+
+Na seção de requisições do *log*, aparecerá informações específicas daquele arquivo 
+abandonado no padrão abaixo. Usar *Dropped* ou *failed* na busca global ajuda a 
+encontrar os casos.
+
+.. code-block:: sh
+
+  # ... e como reflete na seção de requisições
+
+  WARNING: Dropped: Validation failed!
+  {_validation: < mensagem que tem muitas coisas, entre elas 'MOTIVO' >,
+  date: ...,
+  edition_number: ...,
+  file_urls: [...],
+  files: ,
+  is_extra_edition: ...,
+  power: ...,
+  scraped_at: ,
+  territory_id: ...}
+
+.. attention::
+  Tenha em mente que abandono de arquivo não é o problema em si, mas a consequência 
+  de um problema. 
+
+  Por exemplo, foi tentado 3 vezes baixar um arquivo sem sucesso, isso cria um rastro 
+  no bloco de tentativas repetidas (erro) e no bloco de validações. Nesse caso, 
+  é possível que todos os campos estejam preenchidos, mas *files* e *scraped_at* 
+  não, visto que o arquivo não foi baixado. A ausência de dados esperados gerou 
+  o alerta de validação
+
+
+.. _aprenda:
+
+Aprenda mais sobre os raspadores
 *******************************************************
 
 Aulas
@@ -700,18 +908,4 @@ Textos
 .. _comandos padrão (ENG): https://docs.scrapy.org/en/latest/topics/commands.html#available-tool-commands
 .. _crawl: https://docs.scrapy.org/en/latest/topics/commands.html#crawl
 .. _Response: https://docs.scrapy.org/en/latest/topics/request-response.html#response-objects
-.. _contribua com raspadores: https://github.com/orgs/okfn-brasil/projects/12/views/13
-.. _manutenção: https://github.com/okfn-brasil/querido-diario/labels/maintenance
-.. _melhorias estruturais: https://github.com/okfn-brasil/querido-diario/labels/enhancement
-.. _sistema replicável: https://github.com/okfn-brasil/querido-diario/milestone/6
-.. _capital: https://github.com/okfn-brasil/querido-diario/milestone/2
-.. _Amazônia Legal: https://github.com/okfn-brasil/querido-diario/milestone/5
-.. _populoso: https://github.com/okfn-brasil/querido-diario/milestone/4
-.. _listas de mapeamento: https://github.com/okfn-brasil/querido-diario/issues?q=is%3Aopen+-label%3A%22status%3Aon-hold%22+label%3Aepic+
-.. _issues: https://github.com/okfn-brasil/querido-diario/labels/spider
-.. _alta: https://github.com/okfn-brasil/querido-diario/labels/dificuldade%3Aalta
-.. _média: https://github.com/okfn-brasil/querido-diario/labels/dificuldade%3Amédia
-.. _baixa: https://github.com/okfn-brasil/querido-diario/labels/dificuldade%3Abaixa
-.. _spider-base: https://github.com/okfn-brasil/querido-diario/labels/spider-base
-.. _Este é um exemplo: https://github.com/okfn-brasil/querido-diario/pull/1164
 .. _codificação oficial de respostas HTTP: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
