@@ -159,28 +159,46 @@ e :class:`Gazette` aparecem a seguir.
 
 .. code-block:: python
 
+    from datetime import date
+    
+    import scrapy import Request
+
     from gazette.items import Gazette
     from gazette.spiders.base import BaseGazetteSpider
 
     class UFMunicipioSpider(BaseGazetteSpider):  
-        name
-        TERRITORY_ID                                                      
-        allowed_domains
-        start_urls
-        start_date                    
+        name = "uf_nome_do_municipio"
+        TERRITORY_ID = ""                                                      
+        allowed_domains = [""]
+        start_urls = [""]
+        start_date = date()                   
 
-        def start_requests(): 
+        def start_requests(): # (caso necessário)
+            # Lógica de geração de URLs 
+            # ...
 
-        def parse():
+            yield Request()
+
+        # ... métodos auxiliares opcionais ...
+
+        def parse(self, response):
+            # Lógica de extração de metadados
+            
+            # partindo de response ...
+            # 
+            # ... o que deve ser feito para coletar DATA DO DIÁRIO?
+            # ... o que deve ser feito para coletar NÚMERO DA EDIÇÃO?
+            # ... o que deve ser feito para coletar se a EDIÇÃO É EXTRA? 
+            # ... o que deve ser feito para coletar a URL DE DOWNLOAD do arquivo?
+            # ... o que deve ser feito para coletar PODER?
 
             yield Gazette(
-                date  
-                edition_number       
-                is_extra_edition
-                file_urls    
-                power
-                )
-
+                date = date(),  
+                edition_number = "",       
+                is_extra_edition = False,
+                file_urls = [""],    
+                power = "",
+            )
 
 .. _classe-sistema:
 
@@ -231,20 +249,40 @@ BaseSistemaSpider
 
 .. code-block:: python
 
+    from datetime import date
+    
+    import scrapy import Request
+
     from gazette.items import Gazette
     from gazette.spiders.base import BaseGazetteSpider
 
     class BaseSistemaSpider(BaseGazetteSpider):
 
-        def parse():
+        def start_requests(self): 
+            # Lógica de geração de URLs 
+            # ...
+
+            yield Request()
+
+        def parse(self, response):
+            # Lógica de extração de metadados
             
+            # partindo de response ...
+            # 
+            # ... o que deve ser feito para coletar DATA DO DIÁRIO?
+            # ... o que deve ser feito para coletar NÚMERO DA EDIÇÃO?
+            # ... o que deve ser feito para coletar se a EDIÇÃO É EXTRA? 
+            # ... o que deve ser feito para coletar a URL DE DOWNLOAD do arquivo?
+
             yield Gazette(
-                date   
-                edition_number        
-                is_extra_edition
-                file_urls      
+                date = date(),  
+                edition_number = "",       
+                is_extra_edition = False,
+                file_urls = [""],    
+                power = self.power,
             )
 
+.. _exemplo-municipio-replicado:
 
 UFMunicipioSpider para uma BaseSistemaSpider genérica
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -254,10 +292,18 @@ os métodos implementados em **BaseSistemaSpider**, restando apenas implementar 
 demais atributos.
 
 .. code-block:: python
+  :emphasize-lines: 3,5
+
+    from datetime import date
 
     from gazette.spiders.base.sistema import BaseSistemaSpider
 
     class UFMunicipioSpider(BaseSistemaSpider):
+        name = "uf_nome_do_municipio"
+        TERRITORY_ID = ""    
+        allowed_domains = [""]
+        power = ""
+        start_date = date()                                                                          
 
 .. attention::
     Tenha em vista que estes esqueletos em função de onde cada componente *tende* 
