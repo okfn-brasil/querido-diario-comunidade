@@ -93,5 +93,6 @@ Para mais informações, consulte os `Termos de Uso e Política de Privacidade`_
 
    contribuindo/guia-de-contribuicao
    contribuindo/raspadores
+   contribuindo/frontend
    contribuindo/documentacao
    contribuindo/configuracao-de-ponta-a-ponta

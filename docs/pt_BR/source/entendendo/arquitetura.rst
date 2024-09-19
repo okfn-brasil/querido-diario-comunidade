@@ -98,8 +98,8 @@ realizar operações e entregar os resultados ao *site*.
 - **Armazenamento em produção**: `PostgreSQL`_ para gestão de usuário e alertas e `Redis`_ para tarefas assíncronas.
 - **Repositório de código**: https://github.com/okfn-brasil/querido-diario-backend
 
-Frontend
-=========
+Interface web
+=============
 
 É o *site* oficial do Querido Diário, sua interface visual para pessoas usuárias via 
 navegação pela *Internet*. Nele, fica a interface de busca de diários oficiais. 

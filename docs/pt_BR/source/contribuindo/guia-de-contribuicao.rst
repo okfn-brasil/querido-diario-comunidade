@@ -32,7 +32,7 @@ mais afinidade:
 - Processamento de Dados - https://github.com/okfn-brasil/querido-diario-data-processing
 - API - https://github.com/okfn-brasil/querido-diario-api
 - Backend - https://github.com/okfn-brasil/querido-diario-backend
-- Frontend - https://github.com/okfn-brasil/querido-diario-frontend
+- :doc:`frontend` - https://github.com/okfn-brasil/querido-diario-frontend
 - :doc:`documentacao` - https://github.com/okfn-brasil/querido-diario-comunidade
 
 Descobrindo com o que contribuir
