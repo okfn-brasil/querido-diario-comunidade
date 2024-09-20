@@ -1,20 +1,23 @@
 Raspadores
-############
+######################
 
-Responsáveis pela etapa de coleta de dados na :doc:`../entendendo/arquitetura`
-do Querido Diário, os raspadores são robôs programados para obter os arquivos de
-diários oficiais e seus metadados nos *sites* publicadores. O principal desafio
-é o de aumentar cada vez a cobertura, visando alcançar todos os 5570 municípios 
-brasileiros. 
+Responsáveis pela etapa de coleta de dados na :doc:`../entendendo/arquitetura`, 
+os raspadores são robôs programados para obter os diários oficiais e suas informações
+dos *sites* publicadores. 
+
+O principal desafio dessa etapa é o de ter cada vez mais robôs para aumentar a cobertura 
+do banco de dados do projeto, buscando alcançar todos os 5570 municípios brasileiros. 
 
 Entendendo o código 
 ************************
 
-Os raspadores são desenvolvidos em `Python`_ utilizando o *framework* `Scrapy`_. Os
-principais componentes de código do repositório se relacionam conforme o diagrama
-enumerado abaixo. Cada um é mais aprofundado nos tópicos enumerados correspondentes 
-a seguir e, ao fim, é apresentado a ordem em que esses componentes são mobilizados 
-quando um comando de raspagem é acionado. 
+Os raspadores são desenvolvidos em `Python`_ usando o *framework* `Scrapy`_ seguindo 
+o paradigma de Orientação a Objetos. Por isso, os principais componentes de código 
+são classes, e elas são utilizadas pelo `Scrapy`_ para realizar as coletas.  
+
+O diagrama resume a relação entre estas classes raspadoras. Cada uma é aprofundada 
+nos tópicos enumerados correspondentes desta seção e, ao fim, é apresentada a ordem 
+em que seus componentes são acionados quando um comando de raspagem é engatilhado. 
 
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/scrapers-class-hierarchy_ptbr.png
     :alt: [TODO]
@@ -22,41 +25,40 @@ quando um comando de raspagem é acionado.
 1. O framework Scrapy
 ========================
 
-O *framework* de raspagem que o Querido Diário utiliza é o `Scrapy`_. Isso quer 
-dizer que o Scrapy já oferece alguns recursos genéricos, restando ao Querido 
-Diário a decisão de utilizá-los e/ou modificá-los para aplicação mais específica
-que o projeto demande. 
+O *framework* de raspagem utilizado é o `Scrapy`_. Isso quer dizer que o Scrapy já 
+oferece alguns recursos genéricos, restando ao Querido Diário adaptá-los para o 
+contexto mais específico do projeto. Para o Scrapy, cada *script* de raspagem se 
+chama **spider**, título que aparecerá diversas vezes também no Querido Diário.
 
-Caso não conheça, a documentação oficial tem uma seção de primeiros passos, com 
-páginas como `uma primeira olhada no Scrapy (ENG)`_ e `tutorial Scrapy (ENG)`_,
-que indicamos. Para o Scrapy, cada *script* de raspagem se chama **spider**, título 
-que aparecerá diversas vezes também no Querido Diário. 
+.. seealso::
+  Para conhecer mais, a documentação oficial do `Scrapy`_ tem uma seção de primeiros 
+  passos, com conteúdos como `uma primeira olhada no Scrapy (ENG)`_ e `tutorial Scrapy (ENG)`_.
 
 2. A classe Gazette
 =====================
 
-Tendo em vista que coletar os arquivos de diários oficiais é o objetivo aqui, 
+Tendo em vista que coletar os arquivos de diários oficiais é o objetivo central, 
 a classe `Gazette`_ (diário oficial em inglês) foi criada para vincular cada 
 edição às suas informações complementares (metadados). Esta classe é criada a 
-partir de `scrapy.Item`_ e é composta por atributos personalizados para os fins 
-do Querido Diário. 
+partir de `scrapy.Item`_ e é composta por atributos personalizados para o Querido 
+Diário. 
 
 .. class:: Gazette (date, edition_number, is_extra_edition, power, file_urls )
 
    .. attribute:: date
    
       :tipo: `datetime.date()`_
-      :definição: Data de publicação informada no *site* publicador de um diário oficial.
+      :definição: Data de publicação informada no *site* publicador de um diário oficial. Em caso de ausência dessa informação, o raspador **não deve ser integrado**.
    
    .. attribute:: edition_number
    
       :tipo: **string**
-      :definição: Número informado no *site* publicador de um diário oficial.
+      :definição: Número informado no *site* publicador de um diário oficial. Em caso de ausência dessa informação, pode ser preenchido com vazio (``""``).
    
    .. attribute:: is_extra_edition
    
       :tipo: **boolean**
-      :definição: Informação do *site* publicador se a edição de um diário oficial é extra. Costuma ser identificado pela presença de termos como "Extra", "Extraordinário", "Suplemento". Quando não informado, deve ser fixado em ``False`` por padrão (*hard coded*). 
+      :definição: Informação do *site* publicador se a edição de um diário oficial é extra. Costuma ser identificado pela presença de termos como "Extra", "Extraordinário", "Suplemento". Em caso de ausência dessa informação, deve ser fixado em ``False`` por padrão (*hard coded*). 
    
    .. attribute:: power
    
@@ -64,7 +66,7 @@ do Querido Diário.
       :opções: ``'executive'`` ou ``'executive_legislative'``
       :definição: Informação se o conteúdo do diário oficial é do poder executivo exclusivamente ou se aparecem atos oficiais do poder legislativo também.
    
-      Atributo de preenchimento manual pela pessoa desenvolvedora (*hard coded*) a partir da consulta em alguns arquivos de diários oficias disponibilizados no *site* publicador.
+      Há casos onde é possível ser coletado no site, porém tende a ser um atributo de preenchimento manual pela pessoa desenvolvedora (*hard coded*) a partir da consulta em alguns diários oficias.
        
    .. attribute:: file_urls
    
@@ -75,28 +77,23 @@ do Querido Diário.
 3. A classe BaseGazetteSpider
 ===============================
 
-`BaseGazetteSpider`_ é a classe-mãe para todos os raspadores do Querido Diário. 
-Ela é criada a partir de `scrapy.Spider`_, em uma relação de herança. Juntas, 
-*scrapy.Spider* e **BaseGazetteSpider** criam uma lista de elementos obrigatórios
-para os raspadores :class:`UFMunicipioSpider` implementarem. A procedência de cada
-campo é indicada na definição da classe.
+`BaseGazetteSpider`_ é a classe-mãe para todos os raspadores. Ela é criada a partir 
+de `scrapy.Spider`_, em uma relação de herança. Juntas, `scrapy.Spider`_ e *BaseGazetteSpider* 
+criam uma lista de elementos obrigatórios para os raspadores :class:`UFMunicipioSpider` 
+implementarem. 
 
 4. As classes UFMunicipioSpider
 =================================
 
-Para cada município integrado ao Querido Diário, uma classe :class:`UFMunicipioSpider`
-correspondente deve existir no diretório de `spiders`_. Sua responsabilidade é a
-de coletar as informações nos *sites* publicadores de diários oficiais do município
-em questão. 
+Para cada município, uma classe :class:`UFMunicipioSpider` correspondente deve existir 
+no diretório de `spiders`_. Estruturalmente, a :class:`UFMunicipioSpider` faz uma 
+ponte entre as duas classes apresentadas acima: 
 
-Estruturalmente, a :class:`UFMunicipioSpider` faz uma ponte entre as duas classes 
-mencionadas acima: 
+a. É criada a partir de **BaseGazetteSpider**, herdando a exigência de implementar 
+elementos dela.
 
-a. Ela é criada a partir de **BaseGazetteSpider**. Isso significa que herda 
-a exigência de implementar elementos provindos dela.
-
-b. Ela cumpre sua missão uma vez que tenha construíndo um objeto :class:`Gazette`, 
-contendo todos os metadados listados no item 2.
+b. E termina construindo um objeto :class:`Gazette` para obter o diário oficial e 
+seus metadados.
 
 .. class:: UFMunicipioSpider(BaseGazetteSpider)
 
@@ -104,7 +101,7 @@ contendo todos os metadados listados no item 2.
 
       :procedência: `scrapy.Spider.name`_
       :tipo: **string**
-      :definição: Nome do raspador no formato ``uf_nome_do_municipio``. Definido para ser usado no comando de execução da *spider*.
+      :definição: Nome do raspador no formato ``uf_nome_do_municipio``. É usado no comando de execução da *spider*.
    
    .. attribute:: TERRITORY_ID
 
@@ -116,13 +113,13 @@ contendo todos os metadados listados no item 2.
    
       :procedência: `scrapy.Spider.allowed_domains`_
       :tipo: **list[string]**
-      :definição:  Domínios em que a *spider* está autorizada a navegar. Evita que a *spider* visite ou colete arquivos de outros *sites*.
+      :definição:  Domínios em que a *spider* está autorizada a navegar. Evita que a *spider* visite outros *sites* indevidamente.
        
    .. attribute:: start_urls
 
       :procedência: `scrapy.Spider.start_urls`_
       :tipo: **list[string]**
-      :definição: URL da página onde ficam os diários oficiais no *site* publicador. É apenas uma URL e não deve ser a *homepage* do *site*.
+      :definição: URL da página onde ficam os diários oficiais no *site* publicador. É apenas uma URL e não costuma ser a *homepage* do *site*.
       :exigência: Opcional. Saiba mais em :ref:`start-urls-ou-start-requests`
    
    .. attribute:: start_date
@@ -136,7 +133,7 @@ contendo todos os metadados listados no item 2.
       :procedência: `BaseGazetteSpider`_
       :tipo: `datetime.date()`_      
       :definição: Data da última edição de diário oficial disponibilizado no *site* publicador. 
-      :exigência: Implícito. Por padrão, é preenchido automaticamente com a data da execução do raspador (``datetime.today().date()``). Só é explicitado em raspadores que coletam *sites* descontinuados, mas que seguem no ar por conservação de memória.
+      :exigência: Implícito. Por padrão, é preenchido automaticamente com a data da execução do raspador (``datetime.today().date()``). Só é explicitado em raspadores que coletam :ref:`sites descontinuados<sites-descontinuados>`.
    
    .. method:: start_requests()
    
@@ -150,259 +147,15 @@ contendo todos os metadados listados no item 2.
       :procedência: `scrapy.Spider.parse()`_
       :returns: :class:`Gazette`
       :definição: Método que implementa a lógica de extração de metadados a partir do texto da `Response`_ obtida do *site* publicador. É o *callback* padrão.
+      :exigência: Obrigatório. Porém, é possível que tenha :ref:`outro nome<parse-alternativo>` 
 
 
-Esqueleto de um UFMunicipioSpider
-----------------------------------
+Esqueleto de uma UFMunicipioSpider
+-------------------------------------
 
 Com isso, já é possível visualizar um esqueleto de todos os *scripts* de raspadores 
-do Querido Diário e entender suas partes básicas. Note como todos os elementos
-listados acima a seguir.
-
-.. code-block:: python
-
-    from gazette.items import Gazette
-    from gazette.spiders.base import BaseGazetteSpider
-
-    class UFMunicipioSpider(BaseGazetteSpider):  
-        name
-        TERRITORY_ID                                                      
-        allowed_domains
-        start_urls
-        start_date                    
-
-        def start_requests(): 
-
-        def parse():
-
-            yield Gazette(
-                date  
-                edition_number       
-                is_extra_edition
-                file_urls    
-                power
-                )
-
-
-.. _classe-sistema:
-
-5. As classes SistemaGazetteSpider
-====================================
-
-Em alguns casos, o *site* publicador de diários oficiais tem o mesmo *layout* entre 
-diversas cidades. Isso parece acontecer quando municípios contratam a mesma solução
-publicadora de diários ou de desenvolvimento de *sites*. Por exemplo, note como os 
-*sites* de `Acajutiba (BA)`_, `Cícero Dantas (BA)`_ e `Monte Santo (BA)`_ tem a mesma
-aparência.
-
-A implicação disso para o Querido Diário é que o código das classes *BaAcajutibaSpider*,
-*BaCiceroDantasSpider* e *BaMonteSantoSpider* seria enormemente parecido: seus 
-raspadores "navegariam" nos *sites* da mesma maneira para obter metadados que ficam 
-na mesma posição. 
-
-Para simplificar a situação, enxugando repetição de código e facilitando a adição 
-de novos raspadores a partir do padrão conhecido - *até porque estes são 3 casos,
-quantos outros existem?* - temos as classes **SistemaGazetteSpider**. 
-
-.. note::
-    Adotamos a terminologia **sistema replicável** para nos referir ao padrão e 
-    **município replicado** os municípios que o utilizam.
-
-.. important::
-    Vários padrões são conhecidos. Seus códigos estão no `diretório de bases`_ e 
-    seus *layouts* na :doc:`Lista de Sistemas Replicáveis<lista-sistemas-replicaveis>`
-
-Esqueleto de um SistemaGazetteSpider
---------------------------------------
-
-Como parte da família de *spiders* do Querido Diário, a **SistemaGazetteSpider**
-é criada a partir de **BaseGazetteSpider** e precisa, ao final, coletar **Gazettes**. 
-Porém, cabe aqui o exercício de separar o que é recurso comum a diversos *sites* - 
-para ficar no código de **SistemaGazetteSpider** - do que é específico de cada 
-município - para ficar no código de :class:`UFMunicipioSpider`. 
-
-De modo geral, o método :meth:`~UFMunicipioSpider.parse` responsável por navegar 
-o *site* fica em **SistemaGazetteSpider** e os atributos :attr:`~UFMunicipioSpider.TERRITORY_ID`,
-:attr:`~UFMunicipioSpider.name`, :attr:`~UFMunicipioSpider.start_date` e 
-:attr:`~Gazette.power`, por serem dados particulares de cada município, tendem a
-ficar em :class:`UFMunicipioSpider`.  
-
-**SistemaGazetteSpider**
-
-.. code-block:: python
-
-    from gazette.items import Gazette
-    from gazette.spiders.base import BaseGazetteSpider
-
-    class SistemaGazetteSpider(BaseGazetteSpider):
-
-        def parse():
-            
-            yield Gazette(
-                date   
-                edition_number        
-                is_extra_edition
-                file_urls      
-            )
-
-**UFMunicipioSpider para o padrão SistemaGazetteSpider**
-
-.. code-block:: python
-
-    from gazette.spiders.base.<sistema> import SistemaGazetteSpider
-
-    class UFMunicipioSpider(SistemaGazetteSpider):
-        TERRITORY_ID 
-        name 
-        start_date 
-        power
-
-.. attention::
-    Perceba que os atributos :attr:`~UFMunicipioSpider.allowed_domains` e :attr:`~UFMunicipioSpider.start_urls` 
-    e o método :meth:`~UFMunicipioSpider.start_requests()` não aparecem nos rascunhos. 
-    Eles são os elementos mais influenciados pela situação, podendo ficar no código
-    de *SistemaGazetteSpider* ou *UFMunicipioSpider* a depender do caso. 
-
-6. Fluxo de execução 
-======================
-
-Idealmente, ao executar :ref:`o comando de raspagem<Executando um raspador>` para 
-um raspador qualquer, o Scrapy aciona seu método :meth:`~UFMunicipioSpider.start_requests()` 
-fazendo uma requisição inicial para a URL definida no atributo :attr:`~UFMunicipioSpider.start_urls`.
-A `Response`_ recebida é entregue ao método de *callback* :meth:`~UFMunicipioSpider.parse()`,
-onde metadados são coletados, um objeto :class:`Gazette` é construído e é enviado 
-ao `motor do Scrapy`_ para executar, de fato, a ação de baixar o arquivo do diário 
-oficial.
-
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/scrapers-default-flow_ptbr.png
-    :alt: [TODO]
-
-Há dois contextos em que, por exigência da situação, esse fluxo pode não acontecer 
-do jeito ilustrado:
-
-1. quando :class:`UFMunicipioSpider` tem seu próprio ``start_requests()``, não sendo usado o que existe em scrapy.Spider.
-2. quando o :meth:`~UFMunicipioSpider.parse()` não é usado como *callback* padrão.
-
-
-.. _start-urls-ou-start-requests:
-
-Quando usar :attr:`~UFMunicipioSpider.start_urls` ou :meth:`~UFMunicipioSpider.start_requests()`
---------------------------------------------------------------------------------------------------
-
-Primeiro, é importante destacar que um método ``start_requests()`` sempre existe, 
-pois já é implementado pelo Scrapy. A questão aqui é quando a implementação padrão, 
-ilustrada acima, não é suficiente. 
-
-Por exemplo, um *site* que organiza diários por data ou intervalo, a URL da requisição
-inicial pode precisar preencher campos de data. Ou um que atenda vários municípios
-ou poderes, pode ser necessário código identificador. Ainda, se uma API for encontrada, 
-a URL muda a depender dos *endpoints* e seus campos. Outros diversos casos acontecem.
-
-Nessas situações, a opção nativa não serve por ser muito restrita, uma vez que o 
-quê ela espera receber é uma URL já fixada. 
-
-Quando a situação demanda várias URLs e/ou parâmetros de contexto, a operação
-padrão do método ``start_requests()`` deve ser sobreescrita com um :meth:`~UFMunicipioSpider.start_requests()` 
-novo dentro do raspador que implemente uma lógica particular de construção dinâmica 
-de URLs. Com :meth:`~UFMunicipioSpider.start_requests()` gerando URLs, o atributo
-:attr:`~UFMunicipioSpider.start_urls` não tem porque existir. 
-
-.. list-table::
-   :widths: 25 25
-   :header-rows: 1
-
-   * - Exemplo com :attr:`~UFMunicipioSpider.start_urls`
-     - Exemplo com :meth:`~UFMunicipioSpider.start_requests()`
-   * - `raspador para Paulínia-SP`_
-     - `raspador para Barreiras-BA`_
-
-
-O método :meth:`~UFMunicipioSpider.parse()`
----------------------------------------------
-
-Por padrão, o fluxo de execução desemboca em :meth:`~UFMunicipioSpider.parse()`. 
-Para implementar um ``parse()`` que cumpra bem seu papel de obtenção de metadados a partir do conteúdo textual da `Response`_ 
-do *site*, é importante que a pessoa desenvolvedora saiba inspecionar uma página 
-*web* a fim de identificar seletores e construir `expressões regulares (RegEx)`_ 
-convenientes para serem usados no método. 
-
-O Scrapy conta com `seletores (ENG)`_ nativos que podem ser testados usando o 
-`Scrapy shell`_. Já para expressões regulares, é comum o uso da biblioteca `re`_ 
-de Python e, como sugestão, *sites* que testam *strings regex*, como `Pyregex`_, podem
-ajudar.
-
-Menos comuns, mas por vezes necessárias, outras bibliotecas já estão entre as dependências 
-do repositório de raspadores e podem ser úteis: `dateparser`_, para tratar datas
-em diferentes formatos, e `chompJS`_, para transformar objetos JavaScript em estruturas
-Python.
-
-.. tip::
-    Materiais complementares são indicados na seção :ref:`Aprenda mais sobre raspagem` 
-
-Quando o :meth:`~UFMunicipioSpider.parse()` não é o método de *callback* 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-O :meth:`~UFMunicipioSpider.parse()` só é o método padrão para o qual a `Response`_ é
-enviada por ser assim que o método ``start_requests()`` nativo do Scrapy define. 
-Porém, quando for o caso do :ref:`raspador implementar um start_requests() próprio<start-urls-ou-start-requests>`,
-pode ser opção da pessoa desenvolvedora indicar outro método como *callback*. O 
-`raspador para Macapá-AP`_ é um exemplo disso.
-
-.. important::
-  Um método nomeado como :meth:`~UFMunicipioSpider.parse()` pode não existir, mas 
-  o papel que espera-se que ele cumpra segue necessário e deve ser realizado pelo 
-  novo *callback* ou outros métodos auxiliares adicionados ao raspador. 
-
-
-Contribuindo com raspadores  
-*******************************
-
-Passos iniciais
-=================
-
-Antes de colocar a mão na massa, é necessário configurar o ambiente de desenvolvimento
-com as dependências que o repositório de raspadores precisa para funcionar e escolher
-um município para o qual contribuir. Você achará informações sobre esses passos iniciais 
-nas referências abaixo. Lembre-se de seguir o :doc:`guia-de-contribuicao` durante 
-as interações no repositório. 
-
-- **Repositório**: https://github.com/okfn-brasil/querido-diario
-- **Configuração do Ambiente de Desenvolvimento**: `CONTRIBUTING`_
-- **Mapeamento de municípios para contribuição**: `Quadro de Expansão de Cidades`_
-
-.. attention::
-  No momento, os únicos casos de raspadores sendo integrados são os para diários 
-  completos ou diários agregados. Atente-se a isso antes de começar a desenvolver 
-  e entenda mais dessa situação na seção sobre :ref:`tipos de diários oficiais<tipo-diarios>`
-
-Diretrizes 
-============
-
-O desenvolvimento de raspadores é norteado pelo interesse de coletar **todos**
-os diários oficiais disponíveis fazendo o **menor número de requisições possível**
-ao *site* publicador, evitando correr o risco de sobrecarregá-lo. Queremos, também, 
-que seja possível fazer coletas com períodos personalizados (uma semana, um mês, ...)
-dentro da série histórica completa de disponibilização. 
-
-Por isso, :class:`UFMunicipioSpider` tem os atributos :attr:`~UFMunicipioSpider.start_date` e 
-:attr:`~UFMunicipioSpider.end_date` e seus métodos :meth:`~UFMunicipioSpider.parse()`
-e/ou :meth:`~UFMunicipioSpider.start_requests()` devem ter, onde e como for conveniente,
-filtros ou condicionais para controlar a data sendo raspada, mantendo-a dentro do
-intervalo de interesse ao seguir executando. 
-
-.. tip::
-    Durante o desenvolvimento, para evitar fazer requisições repetidas nos *sites* 
-    é possível utilizar a configuração `HTTPCACHE_ENABLED`_ do Scrapy. Isso também 
-    faz com que as execuções sejam mais rápidas, já que todos os dados ficam armazenados 
-    localmente.
-
-Modelo para um raspador
-=========================
-
-Abaixo, temos um protótipo inicial e genérico para raspadores do Querido Diário. 
-Eles acabam não sendo estritamente assim, uma vez que a depender da situação outros
-atributos, métodos ou bibliotecas podem ser necessários ou, quando for o caso, pode 
-precisar de uma :ref:`classe SistemaGazetteSpider<classe-sistema>` intermediária. 
+e saber suas partes básicas. Note como todos os componentes de :class:`UFMunicipioSpider` 
+e :class:`Gazette` aparecem a seguir.
 
 .. code-block:: python
 
@@ -418,9 +171,9 @@ precisar de uma :ref:`classe SistemaGazetteSpider<classe-sistema>` intermediári
         TERRITORY_ID = ""                                                      
         allowed_domains = [""]
         start_urls = [""]
-        start_date = date()                    
+        start_date = date()                   
 
-        def start_requests(self):       # (caso necessário)
+        def start_requests(): # (caso necessário)
             # Lógica de geração de URLs 
             # ...
 
@@ -437,25 +190,266 @@ precisar de uma :ref:`classe SistemaGazetteSpider<classe-sistema>` intermediári
             # ... o que deve ser feito para coletar NÚMERO DA EDIÇÃO?
             # ... o que deve ser feito para coletar se a EDIÇÃO É EXTRA? 
             # ... o que deve ser feito para coletar a URL DE DOWNLOAD do arquivo?
+            # ... o que deve ser feito para coletar PODER?
 
             yield Gazette(
                 date = date(),  
                 edition_number = "",       
                 is_extra_edition = False,
                 file_urls = [""],    
-                power = "executive",
+                power = "",
             )
 
+.. _classe-sistema:
+
+5. As classes BaseSistemaSpider
+====================================
+
+Em alguns casos, fica visualmente perceptível que o *site* de diferentes cidades 
+tem o mesmo *layout*. `Acajutiba (BA)`_, `Cícero Dantas (BA)`_ e `Monte Santo (BA)`_
+são exemplos disso. Essa situação acontece quando municípios adotam a mesma solução 
+publicadora de diários ou de desenvolvimento de *sites*.
+
+A implicação para o repositório é que o código das classes *BaAcajutibaSpider*,
+*BaCiceroDantasSpider* e *BaMonteSantoSpider* seriam enormemente parecido: seus 
+raspadores "navegariam" nos *sites* da mesma maneira para obter metadados que ficam 
+na mesma posição. 
+
+Para simplificar a situação, evitando repetição de código e facilitando a adição 
+de novos raspadores a partir do padrão conhecido - *até porque estes são 3 casos,
+quantos outros existem?* -, temos as classes **BaseSistemaSpider**. 
+
+.. note::
+    Adotamos a terminologia **sistema replicável** para nos referir ao padrão e 
+    **município replicado** os municípios que o utilizam.
+
+.. important::
+    Vários padrões são conhecidos. Seus códigos estão no `diretório de bases`_ e 
+    seus *layouts* na :doc:`Lista de Sistemas Replicáveis<lista-sistemas-replicaveis>`
+
+Esqueleto de uma BaseSistemaSpider
+--------------------------------------
+
+Como parte da família de *spiders* do Querido Diário, a **BaseSistemaSpider** segue
+a mesma estrutura: é criada a partir de **BaseGazetteSpider** e finaliza construindo 
+objeto **Gazette**. 
+
+Porém, a classe que seria um raspador "normal" é dividida em duas: **BaseSistemaSpider**,
+onde ficam os recursos comuns para vários casos, e :class:`UFMunicipioSpider`, 
+onde ficam as partes específicas para cada caso. 
+
+De modo geral, os métodos :meth:`~UFMunicipioSpider.start_requests`, :meth:`~UFMunicipioSpider.parse` 
+e a criação de objetos :class:`Gazette` ficam em **BaseSistemaSpider** e os atributos 
+:attr:`~UFMunicipioSpider.TERRITORY_ID`, :attr:`~UFMunicipioSpider.name`, 
+:attr:`~UFMunicipioSpider.start_date` e :attr:`~Gazette.power`, por serem dados 
+particulares de cada município, ficam em :class:`UFMunicipioSpider`.  
+
+BaseSistemaSpider
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    from datetime import date
+    
+    import scrapy import Request
+
+    from gazette.items import Gazette
+    from gazette.spiders.base import BaseGazetteSpider
+
+    class BaseSistemaSpider(BaseGazetteSpider):
+
+        def start_requests(self): 
+            # Lógica de geração de URLs 
+            # ...
+
+            yield Request()
+
+        def parse(self, response):
+            # Lógica de extração de metadados
+            
+            # partindo de response ...
+            # 
+            # ... o que deve ser feito para coletar DATA DO DIÁRIO?
+            # ... o que deve ser feito para coletar NÚMERO DA EDIÇÃO?
+            # ... o que deve ser feito para coletar se a EDIÇÃO É EXTRA? 
+            # ... o que deve ser feito para coletar a URL DE DOWNLOAD do arquivo?
+
+            yield Gazette(
+                date = date(),  
+                edition_number = "",       
+                is_extra_edition = False,
+                file_urls = [""],    
+                power = self.power,
+            )
+
+.. _exemplo-municipio-replicado:
+
+UFMunicipioSpider para uma BaseSistemaSpider genérica
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Neste caso, :class:`UFMunicipioSpider` fica bastante simplificada uma vez que herdará 
+os métodos implementados em **BaseSistemaSpider**, restando apenas implementar os 
+demais atributos.
+
+.. code-block:: python
+  :emphasize-lines: 3,5
+
+    from datetime import date
+
+    from gazette.spiders.base.sistema import BaseSistemaSpider
+
+    class UFMunicipioSpider(BaseSistemaSpider):
+        name = "uf_nome_do_municipio"
+        TERRITORY_ID = ""    
+        allowed_domains = [""]
+        power = ""
+        start_date = date()                                                                          
+
+.. attention::
+    Tenha em vista que estes esqueletos em função de onde cada componente *tende* 
+    a aparecer, porém não são soluções fixas. Alguns elementos mudam a depender 
+    da situação e das escolhas de desenvolvimento. 
+
+
+6. Fluxo de execução 
+======================
+
+Idealmente, ao executar :ref:`o comando de raspagem<executando>` para 
+um raspador qualquer, o Scrapy aciona seu método :meth:`~UFMunicipioSpider.start_requests()` 
+fazendo uma requisição inicial para a URL definida no atributo :attr:`~UFMunicipioSpider.start_urls`.
+A `Response`_ recebida é entregue ao método de *callback* :meth:`~UFMunicipioSpider.parse()`,
+onde metadados são coletados, um objeto :class:`Gazette` é construído e é enviado 
+ao `motor do Scrapy`_ para executar, de fato, a ação de baixar o arquivo do diário 
+oficial.
+
+.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/scrapers-default-flow_ptbr.png
+    :alt: [TODO]
+
+Há dois contextos em que, por exigência da situação, esse fluxo pode não acontecer 
+do jeito ilustrado:
+
+1. quando :class:`UFMunicipioSpider` tem seu próprio ``start_requests()``, não sendo usado o que existe em `scrapy.Spider`_.
+2. quando o :meth:`~UFMunicipioSpider.parse()` não é usado como *callback* padrão.
+
+
+.. _start-urls-ou-start-requests:
+
+Quando usar :attr:`~UFMunicipioSpider.start_urls` ou :meth:`~UFMunicipioSpider.start_requests()`
+--------------------------------------------------------------------------------------------------
+
+Primeiro, é importante destacar que um método ``start_requests()`` sempre existe, 
+pois já é implementado pelo Scrapy. A questão aqui é quando a implementação padrão, 
+ilustrada acima, não é suficiente. 
+
+Por exemplo, um *site* que organiza diários por data ou intervalo, a URL da requisição
+inicial pode precisar preencher campos de data. Ou um que atenda vários municípios
+ou poderes, pode ser necessário código identificador. Ainda, se uma API for encontrada, 
+a URL muda a depender dos *endpoints* e seus campos. Outros diversos casos acontecem 
+e nessas situações, a opção nativa não serve por ser muito restrita, uma vez que o 
+quê ela espera receber é uma URL já fixada. 
+
+Quando a situação demanda criação de várias URLs iniciais e/ou parâmetros de contexto, 
+a operação padrão do método ``start_requests()`` deve ser sobreescrita com um 
+:meth:`~UFMunicipioSpider.start_requests()` novo dentro do raspador que implemente 
+a lógica particular de construção dinâmica de URLs. Com :meth:`~UFMunicipioSpider.start_requests()` 
+gerando URLs, o atributo :attr:`~UFMunicipioSpider.start_urls` não tem porque existir. 
+
+.. list-table::
+   :widths: 25 25
+   :header-rows: 1
+
+   * - Exemplo com :attr:`~UFMunicipioSpider.start_urls`
+     - Exemplo com :meth:`~UFMunicipioSpider.start_requests()`
+   * - `raspador para Paulínia-SP`_
+     - `raspador para Barreiras-BA`_
+
+
+O método :meth:`~UFMunicipioSpider.parse()`
+---------------------------------------------
+
+Por padrão, o fluxo de execução desemboca em :meth:`~UFMunicipioSpider.parse()`. 
+Para implementar um ``parse()`` que cumpra bem seu papel de obtenção de metadados 
+a partir do conteúdo textual da `Response`_, é importante que a pessoa desenvolvedora 
+saiba inspecionar uma página *web* a fim de identificar seletores e construir 
+`expressões regulares (RegEx)`_ convenientes para serem usadas no método. 
+
+O Scrapy conta com `seletores (ENG)`_ nativos que podem ser testados usando o 
+`Scrapy shell`_. Já para expressões regulares, é comum o uso da biblioteca `re`_ 
+de Python e, como sugestão, *sites* que testam *strings regex*, como `RegExr`_, podem
+ajudar.
+
+Menos comuns, mas por vezes necessárias, outras bibliotecas já estão entre as dependências 
+do repositório e podem ser úteis: `dateparser`_, para tratar datas e `chompJS`_, 
+para transformar objetos JavaScript em estruturas Python.
+
+.. seealso::
+    Materiais complementares são indicados na seção :ref:`Aprenda mais sobre os raspadores<aprenda>` 
+
+.. _parse-alternativo:
+
+Quando o :meth:`~UFMunicipioSpider.parse()` não é o método de *callback* 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+O :meth:`~UFMunicipioSpider.parse()` só é o método padrão para o qual a `Response`_ é
+enviada por ser assim que o método ``start_requests()`` nativo do Scrapy define. 
+Porém, quando for o caso do :ref:`raspador implementar um start_requests() próprio<start-urls-ou-start-requests>`,
+pode ser opção da pessoa desenvolvedora indicar outro método como *callback*. O 
+`raspador para Macapá-AP`_ é um exemplo disso.
+
+.. caution::
+  Um método nomeado como :meth:`~UFMunicipioSpider.parse()` pode não existir, mas 
+  o papel que espera-se que ele cumpra segue necessário e deve ser realizado pelo 
+  novo *callback* ou outros métodos auxiliares adicionados ao raspador. 
+
+
+Contribuindo com raspadores
+*******************************
+
+Passos iniciais
+=================
+
+Antes de colocar a mão na massa, é necessário configurar o ambiente de desenvolvimento
+e escolher um município para o qual contribuir. Lembre-se de seguir o :doc:`guia-de-contribuicao` 
+durante as interações no repositório. 
+
+- **Repositório**: https://github.com/okfn-brasil/querido-diario
+- **Configuração do Ambiente de Desenvolvimento**: `CONTRIBUTING`_
+- **Listas de municípios para contribuição**: `Quadro de Expansão de Cidades`_
+
+.. danger::
+  Apenas casos de :ref:`diários completos<tipo-diarios>` estão sendo integrados.
+
+
+Desenvolvendo raspadores
+==============================
+
+O desenvolvimento de raspadores é norteado pelo interesse de coletar **todos**
+os diários oficiais fazendo o **menor número de requisições possível** ao *site* 
+publicador, evitando correr o risco de sobrecarregá-lo. Queremos, também, 
+que o raspador **controle o período da coleta** dentro da série histórica completa 
+de disponibilização. 
+
+Por isso, :class:`UFMunicipioSpider` tem os atributos :attr:`~UFMunicipioSpider.start_date` e 
+:attr:`~UFMunicipioSpider.end_date` e seus métodos :meth:`~UFMunicipioSpider.parse()`
+e/ou :meth:`~UFMunicipioSpider.start_requests()` devem ter, onde e como for conveniente,
+condicionais para a data sendo raspada, mantendo-a dentro do intervalo de interesse 
+ao seguir executando. 
+
+.. tip::
+    Durante o desenvolvimento, para evitar fazer requisições repetidas nos *sites* 
+    é possível utilizar a configuração `HTTPCACHE_ENABLED`_ do Scrapy. Isso também 
+    faz com que as execuções sejam mais rápidas, já que todos os dados ficam armazenados 
+    localmente.
+
 Estratégias comuns
-====================
+----------------------
 
 Navegar pelo diretório de `spiders`_ lendo o código de raspadores existentes
-ajudará o desenvolvimento de novos raspadores, principalmente com ideias para 
-desafios frequentes. Abaixo, estão listadas mecânicas comuns que aparecem em *sites*
-e referências de raspadores que implementaram uma solução. 
+ajudará o desenvolvimento de novos raspadores, principalmente com soluções para 
+situações frequentes. Conheça alguns casos:
 
 Paginação
------------
+^^^^^^^^^^^^^^^^^^^^
 
 Quando as publicações de diários oficiais estão separadas em várias páginas referenciadas 
 por botões como "página 1", "página 2", "próxima página". 
@@ -473,8 +467,9 @@ por botões como "página 1", "página 2", "próxima página".
    * - `Site de João Pessoa-PB`_
      - `pb_joao_pessoa.py`_
 
+
 Filtro por data
------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Quando o *site* publicador oferece um formulário com campos de data para filtrar 
 as publicações. 
@@ -491,7 +486,7 @@ as publicações.
      - `ba_salvador.py`_
 
 Presença de APIs
-------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Quando é percebido que as requisições do *site* se dão por meio de APIs Públicas 
 devolvendo um formato JSON. 
@@ -505,17 +500,30 @@ devolvendo um formato JSON.
    * - `Exemplo de acesso à API em Natal-RN`_
      - `rn_natal.py`_
 
-Executando um raspador
-=========================
+.. _sites-descontinuados:
 
-Para executar um raspador, utilizamos o comando `crawl`_, cuja sintaxe e opções 
-mais relevantes são apresentadas a seguir. Este comando é um dos `comandos 
-padrão (ENG)`_ oferecidos pelo *framework* Scrapy e conhecer os demais também pode 
-ajudar a desenvolver raspadores com mais facilidade.
+Quando incrementar o *log*
+-------------------------------------
 
-O comando de raspagem deve ser executado no diretório ``/data_collection`` com o 
+(em construção)
+
+Sites descontinuados 
+-------------------------------------
+
+(em construção)
+
+.. _executando:
+
+Executando raspadores
+==========================
+
+Para executar um raspador, utiliza-se o comando `crawl`_. Este é um dos 
+`comandos padrão (ENG)`_ oferecidos pelo *framework* Scrapy e conhecer os demais 
+também pode ajudar a desenvolver raspadores com mais facilidade.
+
+O comando de raspagem deve ser executado no diretório ``data_collection/`` com o 
 ambiente de desenvolvimento ativo. Nele, surgirá um arquivo SQLite ``queridodiario.db``
-e um diretório ``/data``, organizado por :attr:`~UFMunicipioSpider.TERRITORY_ID` 
+e um diretório ``data/``, organizado por :attr:`~UFMunicipioSpider.TERRITORY_ID` 
 e :attr:`~Gazette.date`, onde ficam os arquivos de diários oficiais baixados.
 
 .. code-block:: sh
@@ -524,80 +532,257 @@ e :attr:`~Gazette.date`, onde ficam os arquivos de diários oficiais baixados.
 
 - ``-a start_date=AAAA-MM-DD`` define novo valor para :attr:`~UFMunicipioSpider.start_date`
 - ``-a end_date=AAAA-MM-DD`` define novo valor para :attr:`~UFMunicipioSpider.end_date`
-- ``-s LOG_FILE=nome_arquivo.log`` salva as mensagens de log em arquivo de texto
+- ``-s LOG_FILE=nome_arquivo.log`` salva as mensagens de *log* em arquivo de texto
 - ``-o nome_arquivo.csv`` salva a lista de diários oficiais e metadados coletados em arquivo tabular
 
-Execuções exigidas
+Testes exigidos
 ------------------------
 
-Para garantir que o raspador implemente todos os recursos necessários, experimente 
-algumas execuções-chave fazendo as validações indicadas na seção a seguir. Testes 
-com essas execuções são feitos durante a revisão de uma contribuição.  
+Uma pessoa contribuidora deve testar seu código para os 3 casos abaixo e anexar os 
+:ref:`arquivos auxiliares<arquivos-auxiliares>` aos comentários da *pull request*, 
+mostrando que seu raspador funciona conforme esperado e agilizando o processo de revisão. 
 
-1. **Coleta última edição**. Veja a data da edição mais recente no *site* publicador
-e execute a raspagem a partir dela. 
+Coleta da última edição
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Veja a data da edição mais recente no *site* publicador e execute a raspagem a partir dela. 
 
 .. code-block:: sh
 
     scrapy crawl uf_nome_do_municipio -a start_date=AAAA-MM-DD
-
-2. **Coleta intervalo**. Escolha um intervalo como uma semana, algumas semanas, 
-um mês ou alguns meses e execute a coleta desse intervalo arbitrário. 
+  
+Coleta de intervalo
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Escolha um intervalo (uma semana, algumas semanas, um mês, alguns meses, etc) e 
+execute a coleta desse intervalo arbitrário. 
 
 .. code-block:: sh
 
     scrapy crawl uf_nome_do_municipio -a start_date=AAAA-MM-DD -a end_date=AAAA-MM-DD
 
-3. **Coleta completa**. Execute a coleta sem filtro por datas para obter toda a 
-série histórica de edições no *site* publicador.  
+Coleta completa
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Execute a coleta sem filtro por datas para obter toda a série histórica de edições no *site* publicador.  
 
 .. code-block:: sh
 
-    scrapy crawl uf_nome_do_municipio -s LOG_FILE=nome_arquivo.log -o nome_arquivo.csv
+    scrapy crawl uf_nome_do_municipio
 
-Com esses três casos, garante-se que o raspador funciona para as rotinas do projeto: 
-ao integrar um novo município ao Querido Diário, o raspador é executado para obter
-todos os diários oficiais existentes *(coleta completa)*. A partir disso, no dia-a-dia,
-eles devem obter apenas a edição daquele dia *(coleta última edição)*. Por fim, para 
-confirmar que nenhuma edição retardatária foi perdida, coletas de redundância são
-feitas por precaução *(coleta intervalo)*. 
+.. admonition:: Conheça as rotinas de raspagem
 
-Verificando a execução do raspador
+  **Coleta diária**: Em produção, a coleta da última edição é feita para todos os 
+  raspadores diariamente a partir das 18h. 
+
+  **Coleta mensal**: Em produção, a coleta de intervalo é engatilhada, todo dia 1º,
+  como uma rotina de redundância por precaução, evitando a perda de edições retardatárias. 
+  Também é usada em momentos de manutenção de raspadores para obtenção de intervalos 
+  faltantes. 
+
+  **Coleta completa**: Em produção, a coleta completa é executada sempre que um 
+  novo raspador é integrado ao projeto.
+
+.. _verificando:
+
+Validando raspagens
+==========================
+
+Verificar uma coleta quer dizer vasculhar os arquivos que uma raspagem produz - 
+diários oficiais, tabela da coleta e *log* - conferindo se foi coletado tudo disponível 
+e da forma como se espera.
+
+Entendendo a situação
+--------------------------
+
+Ao encontrar uma situação que parece indicar que o raspador está perdendo dados 
+na coleta é importante buscar saber se existe uma **solução técnica** (= há algo 
+a ser feito) ou se é **fora do controle do Querido Diário** (= não há algo a ser 
+feito). 
+
+Exemplos são: se as edições número 5 e 7 foram obtidas, mas a 6 não; ou o *log* indica 
+erro de acesso em uma *URL*. Se, ao navegar manualmente o site, a edição 6 é encontrada 
+ou a *URL* abre quando copiada e colada no navegador, é confirmação de que 
+o problema é no raspador, que deve ser corrigido. Se não deu certo, está confirmado 
+que o problema não é do raspador - é do site ou da prefeitura. 
+
+Outros contextos podem existir e, sempre, a abordagem será a de **comparar com 
+a fonte** (o site publicador). O código não estará impedido de ser integrado quando 
+a responsabilidade pelo problema for o site ou a prefeitura. 
+
+
+Conferindo arquivos
 -------------------------------------
 
-Diários oficiais coletados
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Algumas dicas para verificações nos arquivos de saída das raspagens. 
 
-Em ``/data_collection/data``, deve-se verificar a aderência dos arquivos baixados,
-como: se são ``.pdf`` mesmo; se o conteúdo é de um diário oficial realmente; se 
-a data dentro do arquivo corresponde à data do diretório em que o arquivo está.
+Diários Oficiais (``data_collection/data/``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Arquivos auxiliares 
-^^^^^^^^^^^^^^^^^^^^^^^
+- Extensão dos arquivos, que devem ser ``.pdf``, ``.doc`` ou ``.docx``;
+- Conteúdo é o de um diário oficial realmente, não outro tipo de documento;
+- Se a data dentro do arquivo corresponde à data do diretório em que está.
 
-* ``nome_arquivo.csv``
+.. _arquivos-auxiliares:
 
-Veja se os campos de metadados (:attr:`~Gazette.date`, :attr:`~Gazette.edition_number`, 
-:attr:`~Gazette.is_extra_edition`, :attr:`~Gazette.power` e :attr:`~Gazette.file_urls`) 
-estão todos coerentemente preenchidos para todos os itens. Como o arquivo é uma tabela, 
-é útil ordenar as colunas para fazer a conferência. Em particular, é importante 
-prestar atenção se a primeira e a última edição estão dentro do intervalo de coleta 
-definido em :attr:`~UFMunicipioSpider.start_date` e :attr:`~UFMunicipioSpider.end_date`
-e se faltam certas datas ou números de edição que possam indicar que edições não 
-foram coletadas.
+Tabela da coleta (arquivo ``.csv``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* ``nome_arquivo.log``
+- Coerência do metadados: :attr:`~Gazette.date`, :attr:`~Gazette.edition_number`, :attr:`~Gazette.is_extra_edition`, :attr:`~Gazette.power` e :attr:`~Gazette.file_urls`. Como o arquivo é uma tabela, é útil ordenar as colunas para fazer a conferência;
+- Se a primeira e a última edição (:attr:`~UFMunicipioSpider.start_date` e :attr:`~UFMunicipioSpider.end_date`) estão dentro do intervalo de coleta definido, ou seja, se o filtro por data implementado funciona;
+- Se faltam certas datas ou números de edição que possam indicar que arquivos não foram coletados.
 
-Tem uma seção de dados e estatísticas do comportamento do raspador ao fim do arquivo.
-Nela, verifique pela existência de erros (``log_count/ERROR``) e analise outras 
-informações relevantes (como ``file_count``, ``retry/count``, ``downloader/request_count``). 
-Havendo indícios de problemas, procure no texto do *log* pelas mensagens que podem 
-ajudar a entender mais situação a fim de corrigí-las. 
+Log (arquivo ``.log``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Aprenda mais sobre raspagem
-******************************
+- **Configurações: parte inicial, até** ``INFO: Spider opened``
 
-**> Vídeos**
+  - Lista as configurações internas sendo usadas, como as versões das bibliotecas, módulos, extensões, nome e intervalo do raspador, etc.
+  - Acaba sendo uma seção mais "administrativa" e, normalmente, não tem o quê ser verificado nela. 
+
+- **Requisições: parte do meio, de** ``INFO: Spider opened`` **a** ``INFO: Closing spider``
+
+  - Lista as requisições de acesso ao site (``DEBUG: Crawled ...``) e as requisições de download de arquivos (``DEBUG: File (downloaded)...``) feitas pelo raspador.
+  - Visto que registra *todas* as requisições feitas, esta seção normalmente é usada para se investigar detalhes de alguma situação mais particular.    
+
+- **Estatísticas: parte final, de** ``INFO: Closing spider`` **a** ``INFO: Spider closed (finished)``
+
+  - Lista dados gerais da coleta e traz uma análise sobre o comportamento do raspador.
+  - Sendo um relatório resumido, é por onde uma validação/revisão normalmente começa. Olha-se o resumo em busca de algum ponto de atenção e, caso haja, parte-se para entender o que houve.
+
+Explorando o log
+=============================
+
+Na seção de estatísticas do *log*, algumas naturezas de informação são exibidas 
+juntas, com informações gerais seguidas das específicas. Nos referimos a isso 
+como "bloco temático" nesta seção, trazendo alguns aspectos do que se analisar no 
+*log*.
+
+.. attention::
+  Tenha em mente que essas serão apenas dicas para começar, visto que o *log* do 
+  Scrapy tem uma lógica própria. Não há intenção de se esgotar todas as possibilidades,
+  mas de permitir uma familiarização inicial e apontar os indícios mais frequentes. 
+
+
+Bloco de informações gerais
+--------------------------------
+
+O bloco de contabilizações gerais é o primeiro passo para se averiguar problemas.
+Nele, o contador de ``ERROR`` ou ``WARNING`` existindo (se não existir, é por que 
+é igual à 0) indicam pontos de atenção, permitindo fazer buscas globais no
+arquivo (*ctrl + f*) por esses termos.
+
+.. code-block:: sh
+
+  log_count/DEBUG: n
+  log_count/ERROR: n
+  log_count/INFO: n
+  log_count/WARNING: n
+
+Bloco de status
+----------------------------
+
+O bloco de *status* mostra a quantidade de *responses* obtidas e a situação delas, 
+seguindo a `codificação oficial de respostas HTTP`_. É desejado que todas sejam 
+200 (no exemplo, n = x), código que indica sucesso. 
+
+.. code-block:: sh
+
+  # como aparece na seção de estatísticas... 
+
+  downloader/response_count: n                      <total>
+  downloader/response_status_count/'CODIGO': z      <parcela de total>
+  downloader/response_status_count/200: x           <parcela de total>
+  downloader/response_status_count/302: y           <parcela de total>
+
+Caso outros ``CODIGO`` forem contabilizados, a dica é fazer uma busca global no 
+arquivo, usando o código entre parênteses, para encontrar a situação específica. 
+
+.. code-block:: sh
+
+  # ... e como reflete na seção de requisições 
+
+  Crawled (200) <GET https://...> 
+  Redirecting (302) to <GET https://...> from <GET https://...>
+
+No geral, códigos de redirecionamento (código 300 a 399) costumam aparecer sem que isso 
+indique um problema; entretanto, muitas ocorrências pode ser que seja.  
+
+Bloco de tentativas repetidas
+-----------------------------------
+
+O Scrapy está configurado para tentar até 3 vezes uma requisição que não obteve 
+sucesso. O bloco de tentativas repetidas contabiliza esses casos, indicando também 
+os ``MOTIVO``.
+
+.. code-block:: sh
+
+  # como aparece na seção de estatísticas... 
+
+  retry/count: n,                                     <total>
+  retry/reason_count/'MOTIVO': y,                     <parcela de total>
+  retry/reason_count/500 Internal Server Error: x,    <parcela de total>
+
+Tentativas repetidas são sinalizadas com ``WARNING`` na primeira e segunda vezes, 
+se tornando ``ERROR`` apenas na terceira. Uma *URL* não acessada significa, em 
+último caso, arquivos não coletados. 
+
+.. code-block:: sh
+
+  # ... e como reflete na seção de requisições
+
+  Retrying <GET https://...> (failed 'N' times)
+
+Bloco de validações
+-------------------------------------
+
+No bloco de validações, pode aparecer indícios de que itens foram abandonados (*dropped*)
+e o ``MOTIVO`` do abandono.  
+
+.. code-block:: sh
+
+  # como aparece na seção de estatísticas... 
+
+  spidermon/validation/items: n                     <total>
+  spidermon/validation/items/dropped: x             <parcela de total>
+  ...
+  spidermon/validation/fields: n                    <total>
+  spidermon/validation/fields/errors/'MOTIVO': y    <parcela de total>
+
+Na seção de requisições do *log*, aparecerá informações específicas daquele arquivo 
+abandonado no padrão abaixo. Usar *Dropped* ou *failed* na busca global ajuda a 
+encontrar os casos.
+
+.. code-block:: sh
+
+  # ... e como reflete na seção de requisições
+
+  WARNING: Dropped: Validation failed!
+  {_validation: < mensagem que tem muitas coisas, entre elas 'MOTIVO' >,
+  date: ...,
+  edition_number: ...,
+  file_urls: [...],
+  files: ,
+  is_extra_edition: ...,
+  power: ...,
+  scraped_at: ,
+  territory_id: ...}
+
+.. attention::
+  Tenha em mente que abandono de arquivo não é o problema em si, mas a consequência 
+  de um problema. 
+
+  Por exemplo, foi tentado 3 vezes baixar um arquivo sem sucesso, isso cria um rastro 
+  no bloco de tentativas repetidas (erro) e no bloco de validações. Nesse caso, 
+  é possível que todos os campos estejam preenchidos, mas *files* e *scraped_at* 
+  não, visto que o arquivo não foi baixado. A ausência de dados esperados gerou 
+  o alerta de validação
+
+
+.. _aprenda:
+
+Aprenda mais sobre os raspadores
+*******************************************************
+
+Aulas
+==============
 
   `Módulo 3 do Curso Python para Inovação Cívica`_ da `Escola de Dados`_:
     - Aula 1: `Apresentando o Querido Diário`_
@@ -611,13 +796,15 @@ Aprenda mais sobre raspagem
     - Aula 9: `Traduzindo a análise para um raspador`_
     - Aula 10: `Indo além`_
 
-**> Sessões de desenvolvimento ou revisão de raspadores gravadas**
+Sessões gravadas
+==============================
 
-  Ana Paula Gomes   
-    - `Querido Diário, hoje eu tornei um diário oficial acessível`_
-  Giulio Carvalho   
-    - Coding Dojo: `Raspador para Petrópolis-RJ do início ao fim`_
-  Renne Rocha   
+  Desenvolvimento
+    - Ana Paula Gomes: `Querido Diário, hoje eu tornei um diário oficial acessível`_ 
+    - Giulio Carvalho: `Raspador para Petrópolis-RJ do início ao fim`_ (coding dojo)
+  Revisão 
+    - Renne Rocha
+
       - `Aldeias Altas-MA`_
       - `Feira de Santana-BA`_
       - `Maceió-AL`_
@@ -630,9 +817,10 @@ Aprenda mais sobre raspagem
       - `Itaúna-MG`_
       - `Piracicaba-SP`_
 
-**> Textos**
+Textos
+=======================
 
-  - Giulio Carvalho, `Entenda como analisar *sites* de diários oficiais para raspagem de dados`_
+  - Giulio Carvalho, `Entenda como analisar sites de diários oficiais para raspagem de dados`_
   - Juliana Trevine, `Conheça os desafios de raspagem do Querido Diário`_
   - Ana Paula Gomes, `Quero tornar Diários Oficiais acessíveis. Como começar?`_
   - Lucas Villela, `Monitorando o governo de Araraquara/SP`_
@@ -671,7 +859,7 @@ Aprenda mais sobre raspagem
 .. _motor do Scrapy: https://docs.scrapy.org/en/latest/topics/architecture.html
 .. _expressões regulares (RegEx): https://pt.wikipedia.org/wiki/Express%C3%A3o_regular
 .. _seletores (ENG): https://docs.scrapy.org/en/latest/topics/selectors.html
-.. _Pyregex: http://www.pyregex.com/
+.. _RegExr: https://regexr.com/
 .. _re: https://docs.python.org/3/library/re.html
 .. _chompJS: https://github.com/Nykakin/chompjs
 .. _dateparser: https://github.com/scrapinghub/dateparser
@@ -690,7 +878,7 @@ Aprenda mais sobre raspagem
 .. _Indo além: https://youtu.be/gNbUQAicLAs?list=PLpWp6ibmzPTc2rod9Hc822_3zMaq9G-qE
 .. _Raspador para Petrópolis-RJ do início ao fim: https://youtu.be/s22_t4YTTTk?list=PLpWp6ibmzPTc2rod9Hc822_3zMaq9G-qE
 .. _Querido Diário, hoje eu tornei um diário oficial acessível: https://escoladedados.org/coda/coda2020/workshop-querido-diario/
-.. _Entenda como analisar *sites* de diários oficiais para raspagem de dados: https://queridodiario.ok.org.br/blog/post/30
+.. _Entenda como analisar sites de diários oficiais para raspagem de dados: https://queridodiario.ok.org.br/blog/post/30
 .. _Conheça os desafios de raspagem do Querido Diário: https://queridodiario.ok.org.br/blog/post/28
 .. _Como funciona o robozinho do Serenata que baixa os diários oficiais?: https://jvanz.com/como-funciona-o-robozinho-do-serenata-que-baixa-os-diarios-oficiais.html
 .. _Quero tornar Diários Oficiais acessíveis. Como começar?: https://www.anapaulagomes.me/pt-br/2020/10/quero-tornar-di%C3%A1rios-oficiais-acess%C3%ADveis.-como-come%C3%A7ar/
@@ -720,3 +908,4 @@ Aprenda mais sobre raspagem
 .. _comandos padrão (ENG): https://docs.scrapy.org/en/latest/topics/commands.html#available-tool-commands
 .. _crawl: https://docs.scrapy.org/en/latest/topics/commands.html#crawl
 .. _Response: https://docs.scrapy.org/en/latest/topics/request-response.html#response-objects
+.. _codificação oficial de respostas HTTP: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
