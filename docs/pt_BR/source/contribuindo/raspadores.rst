@@ -417,7 +417,7 @@ durante as interações no repositório.
 - **Listas de municípios para contribuição**: `Quadro de Expansão de Cidades`_
 
 .. danger::
-  Apenas casos de :ref:`diários completos<tipo-diarios>` estão sendo integrados.
+  Apenas casos de :ref:`diários individuais<tipo-diarios>` estão sendo integrados.
 
 
 Desenvolvendo raspadores
