@@ -15,7 +15,7 @@ Os raspadores são desenvolvidos em `Python`_ usando o *framework* `Scrapy`_ seg
 o paradigma de Orientação a Objetos. Por isso, os principais componentes de código 
 são classes, e elas são utilizadas pelo `Scrapy`_ para realizar as coletas.  
 
-O diagrama resume a relação entre estas classes raspadoras. Cada uma é aprofundada 
+O diagrama resume a relação entre as classes raspadoras. Cada uma é aprofundada 
 nos tópicos enumerados correspondentes desta seção e, ao fim, é apresentada a ordem 
 em que seus componentes são acionados quando um comando de raspagem é engatilhado. 
 
@@ -234,9 +234,9 @@ Como parte da família de *spiders* do Querido Diário, a **BaseSistemaSpider** 
 a mesma estrutura: é criada a partir de **BaseGazetteSpider** e finaliza construindo 
 objeto **Gazette**. 
 
-Porém, a classe que seria um raspador "normal" é dividida em duas: **BaseSistemaSpider**,
-onde ficam os recursos comuns para vários casos, e :class:`UFMunicipioSpider`, 
-onde ficam as partes específicas para cada caso. 
+Porém, a classe que seria um raspador para um município individual é dividida em 
+duas: **BaseSistemaSpider**, onde ficam os recursos comuns para vários casos, e 
+:class:`UFMunicipioSpider`, onde ficam as partes específicas para cada caso. 
 
 De modo geral, os métodos :meth:`~UFMunicipioSpider.start_requests`, :meth:`~UFMunicipioSpider.parse` 
 e a criação de objetos :class:`Gazette` ficam em **BaseSistemaSpider** e os atributos 
@@ -264,6 +264,8 @@ BaseSistemaSpider
 
             yield Request()
 
+        # ... métodos auxiliares opcionais ...
+
         def parse(self, response):
             # Lógica de extração de metadados
             
@@ -273,6 +275,7 @@ BaseSistemaSpider
             # ... o que deve ser feito para coletar NÚMERO DA EDIÇÃO?
             # ... o que deve ser feito para coletar se a EDIÇÃO É EXTRA? 
             # ... o que deve ser feito para coletar a URL DE DOWNLOAD do arquivo?
+            # ... o que deve ser feito para coletar PODER?
 
             yield Gazette(
                 date = date(),  
@@ -283,6 +286,11 @@ BaseSistemaSpider
             )
 
 .. _exemplo-municipio-replicado:
+
+.. attention::
+    Tenha em mente que esses esqueletos são em função de onde cada componente *tende* 
+    a aparecer, porém não são soluções fixas. Alguns elementos mudam a depender 
+    da situação e das escolhas de desenvolvimento. 
 
 UFMunicipioSpider para uma BaseSistemaSpider genérica
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -304,12 +312,6 @@ demais atributos.
         allowed_domains = [""]
         power = ""
         start_date = date()                                                                          
-
-.. attention::
-    Tenha em vista que estes esqueletos em função de onde cada componente *tende* 
-    a aparecer, porém não são soluções fixas. Alguns elementos mudam a depender 
-    da situação e das escolhas de desenvolvimento. 
-
 
 6. Fluxo de execução 
 ======================
@@ -379,8 +381,12 @@ de Python e, como sugestão, *sites* que testam *strings regex*, como `RegExr`_,
 ajudar.
 
 Menos comuns, mas por vezes necessárias, outras bibliotecas já estão entre as dependências 
-do repositório e podem ser úteis: `dateparser`_, para tratar datas e `chompJS`_, 
-para transformar objetos JavaScript em estruturas Python.
+do repositório e podem ser úteis: 
+
+- `dateparser`_ para tratar datas em diferentes formatos;
+- `dateutil`_ para, principalmente, criar datas recorrentes;
+- `urllib.parse`_ para tratar, desmontando e remontando, URLs de forma padronizada;
+- `chompJS`_ para transformar objetos JavaScript em estruturas Python.
 
 .. seealso::
     Materiais complementares são indicados na seção :ref:`Aprenda mais sobre os raspadores<aprenda>` 
@@ -413,12 +419,11 @@ e escolher um município para o qual contribuir. Lembre-se de seguir o :doc:`gui
 durante as interações no repositório. 
 
 - **Repositório**: https://github.com/okfn-brasil/querido-diario
-- **Configuração do Ambiente de Desenvolvimento**: `CONTRIBUTING`_
-- **Listas de municípios para contribuição**: `Quadro de Expansão de Cidades`_
+- Passo 1: `Como configurar o Ambiente de Desenvolvimento`_
+- Passo 2: `Como escolher uma tarefa para fazer`_
 
 .. danger::
   Apenas casos de :ref:`diários individuais<tipo-diarios>` estão sendo integrados.
-
 
 Desenvolvendo raspadores
 ==============================
@@ -500,17 +505,49 @@ devolvendo um formato JSON.
    * - `Exemplo de acesso à API em Natal-RN`_
      - `rn_natal.py`_
 
+
+Um município, diários oficiais em diferentes lugares 
+=======================================================
+
+É comum existir mais de um lugar por onde o mesmo município disponibiliza diários 
+oficiais, fazendo ser de interesse cobrir a raspagem de todos eles para o Querido
+Diário ter o histórico completo. Entretanto, algumas coisas devem ser levadas em 
+consideração: 
+
+- Essa situação parece acontecer pelo município ter um **site vigente**, em uso atualmente onde publica edições recentes, e um ou mais **sites descontinuados**, onde ficam edições antigas publicadas no passado.
+
+  - Menos comum, mas acontece também de dois *sites* serem vigentes. É considerado apenas o que tiver a maior série histórica.
+  - Para *sites* descontinuados, o código só será mantido no repositório enquanto o *site* estiver ativo. No caso de um *site* ser abandonado pelo município, o código pode ser excluído ou sobreescrito com código novo.
+
+- A integração dos raspadores se dará, sempre, em prol de **garantir que a cobertura fique consistente**. 
+
+  - Ou seja, a partir do site vigente rumo aos sites descontinuados, de forma a não esburacar a sequência histórica armazenada no banco de dados e, consequentemente, oferecida aos usuários para busca. 
+
+.. important::
+  Isso não significa que, para uma contribuição ser realizada, é necessário encontrar todos os *sites* que um município já usou. Mas significa que contribuições que não seguem essa ordem ficarão em espera.
+  
+- A organização do repositório segue a diretriz **um raspador para um layout**.
+
+  - A decisão visa manter a spider atomizada, sem lógicas diferentes misturadas em um mesmo raspador, tornando o código mais fácel de manter.
+  - Então, na situação de um município usar mais *sites* ou seções/páginas completamente diferentes entre si ainda que em um mesmo *site*, arquivos `.py` separados devem ser criados para coletar cada um.
+
 .. _sites-descontinuados:
 
-Quando incrementar o *log*
--------------------------------------
+Modificações
+----------------
 
-(em construção)
+A primeira integração - do raspador que coleta o *site* vigente - segue o fluxo normal 
+de contribuição: demanda a implementação de uma :class:`UFMunicipioSpider` padrão. Ao 
+serem encontrados *sites* descontinuados, algumas adaptações devem ser feitas: 
 
-Sites descontinuados 
--------------------------------------
+- As nomenclaturas para o arquivo, :class:`UFMunicipioSpider` e :attr:`~UFMunicipioSpider.name` recebem ``_<ano-inicial>`` ao fim; ficando, por exemplo: `pe_recife_2022`
+- O atributo :attr:`~UFMunicipioSpider.end_date` deve ser explicitado, usando a data da última edição disponível no *site* descontinuado
+- Alterações no nome do arquivo devem ser feitas de forma a preservar a conexão com o histórico do versionamento. 
 
-(em construção)
+.. code-block:: sh
+
+  git mv <nome-atual-do-arquivo> <novo-nome-do-arquivo>
+
 
 .. _executando:
 
@@ -589,6 +626,8 @@ Verificar uma coleta quer dizer vasculhar os arquivos que uma raspagem produz -
 diários oficiais, tabela da coleta e *log* - conferindo se foi coletado tudo disponível 
 e da forma como se espera.
 
+.. _entendendo-a-situacao:
+
 Entendendo a situação
 --------------------------
 
@@ -618,7 +657,14 @@ Diários Oficiais (``data_collection/data/``)
 
 - Extensão dos arquivos, que devem ser ``.pdf``, ``.doc`` ou ``.docx``;
 - Conteúdo é o de um diário oficial realmente, não outro tipo de documento;
-- Se a data dentro do arquivo corresponde à data do diretório em que está.
+- Se a data dentro do arquivo corresponde à data do diretório em que está;
+- Se o documento corresponde exclusivamente ao município.
+
+.. attention::
+  É comum que municípios reproduzam o diário da associação municipal ao qual 
+  pertencem ao invés de um documento individual. As edições mais antigas do 
+  `diário oficial de Milagres do Maranhão-MA`_ é um exemplo. Estes casos serão não 
+  devem ser integrados.
 
 .. _arquivos-auxiliares:
 
@@ -628,6 +674,12 @@ Tabela da coleta (arquivo ``.csv``)
 - Coerência do metadados: :attr:`~Gazette.date`, :attr:`~Gazette.edition_number`, :attr:`~Gazette.is_extra_edition`, :attr:`~Gazette.power` e :attr:`~Gazette.file_urls`. Como o arquivo é uma tabela, é útil ordenar as colunas para fazer a conferência;
 - Se a primeira e a última edição (:attr:`~UFMunicipioSpider.start_date` e :attr:`~UFMunicipioSpider.end_date`) estão dentro do intervalo de coleta definido, ou seja, se o filtro por data implementado funciona;
 - Se faltam certas datas ou números de edição que possam indicar que arquivos não foram coletados.
+
+.. attention::
+  É importante ter atenção na ordenação das datas para verificar a ausência de documentos
+  por longos períodos (semanas ou meses). Uma situação dessa sendo encontrada, deve 
+  ser avisada na *PR* e discutida. A depender do caso, pode impossibilitar que o 
+  raspador seja integrado.
 
 Log (arquivo ``.log``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -655,11 +707,16 @@ juntas, com informações gerais seguidas das específicas. Nos referimos a isso
 como "bloco temático" nesta seção, trazendo alguns aspectos do que se analisar no 
 *log*.
 
-.. attention::
+.. note::
   Tenha em mente que essas serão apenas dicas para começar, visto que o *log* do 
   Scrapy tem uma lógica própria. Não há intenção de se esgotar todas as possibilidades,
   mas de permitir uma familiarização inicial e apontar os indícios mais frequentes. 
 
+.. important::
+  Lembre-se que, conforme a seção :ref:`Entendendo a situação<entendendo-a-situacao>` orienta,
+  nem sempre a ocorrência de certas mensagens significam problemas, de fato. Situações 
+  específicas são conversadas e, nem sempre, impossibilita a integração do raspador. 
+  O importante é evidenciar os casos para discussão. `Este é um exemplo`_.
 
 Bloco de informações gerais
 --------------------------------
@@ -679,9 +736,8 @@ arquivo (*ctrl + f*) por esses termos.
 Bloco de status
 ----------------------------
 
-O bloco de *status* mostra a quantidade de *responses* obtidas e a situação delas, 
-seguindo a `codificação oficial de respostas HTTP`_. É desejado que todas sejam 
-200 (no exemplo, n = x), código que indica sucesso. 
+O bloco de *status* mostra a quantidade de *responses* obtidas e a situação delas. 
+É desejado que todas sejam 200 (no exemplo, n = x), código que indica sucesso. 
 
 .. code-block:: sh
 
@@ -700,10 +756,20 @@ arquivo, usando o código entre parênteses, para encontrar a situação especí
   # ... e como reflete na seção de requisições 
 
   Crawled (200) <GET https://...> 
-  Redirecting (302) to <GET https://...> from <GET https://...>
+  Redirecting (302) to <GET https://...> from <GET http://...>
 
-No geral, códigos de redirecionamento (código 300 a 399) costumam aparecer sem que isso 
-indique um problema; entretanto, muitas ocorrências pode ser que seja.  
+Códigos específicos devem ser consultados na `codificação oficial de respostas HTTP`_. 
+Eles seguem o seguinte agrupamento: 
+
+- Respostas Informativas (100 à 199)
+- Respostas bem-sucedidas (200 à 299)
+- Mensagens de redirecionamento (300 à 399)
+- Respostas de erro do cliente (400 à 499)
+- Respostas de erro do servidor (500 à 599)
+
+.. note::
+  - códigos de redirecionamento costumam aparecer sem que isso indique um problema; entretanto, muitas ocorrências pode indicar que alguma escolha de desenvolvimento precisa ser revista;
+  - códigos de erro do servidor costumam indicar que o raspador está exigindo demais do servidor. Será necessário adicionar `configurações específicas`_ para diminuir o ritmo de raspagem. Este é um exemplo de `raspador com custom_settings`_. 
 
 Bloco de tentativas repetidas
 -----------------------------------
@@ -747,7 +813,7 @@ e o ``MOTIVO`` do abandono.
   spidermon/validation/fields/errors/'MOTIVO': y    <parcela de total>
 
 Na seção de requisições do *log*, aparecerá informações específicas daquele arquivo 
-abandonado no padrão abaixo. Usar *Dropped* ou *failed* na busca global ajuda a 
+abandonado no padrão abaixo. Usar *dropped* ou *failed* na busca global ajuda a 
 encontrar os casos.
 
 .. code-block:: sh
@@ -774,6 +840,25 @@ encontrar os casos.
   é possível que todos os campos estejam preenchidos, mas *files* e *scraped_at* 
   não, visto que o arquivo não foi baixado. A ausência de dados esperados gerou 
   o alerta de validação
+
+Erro de Integridade
+-------------------------------------
+
+Ocorre quando tenta-se adicionar ao banco de dados ``querido-diario.db`` uma edição 
+que já existe armazenada nele. 
+
+.. code-block:: sh
+
+  Something wrong has happened when adding the gazette in the database. 
+  Date: 'AAAA-MM-DD'. File Checksum: 'HASH'. 
+  Details: (sqlite3.IntegrityError) UNIQUE constraint failed ...
+
+A restrição de exclusividade (*unique constraint*) serve para evitar o registro de 
+diários oficiais repetidos, provavelmente por um descuido por parte do município.  
+
+.. note::
+  É comum esse erro aparecer ao se executar um raspador mais vezes, especialmente 
+  durante testes, sem lembrar de excluir o banco de dados da coleta anterior.
 
 
 .. _aprenda:
@@ -827,7 +912,8 @@ Textos
   - José Vanz, `Como funciona o robozinho do Serenata que baixa os diários oficiais?`_
 
 .. Referências
-.. _Python: https://www.python.org/
+
+.. para a documentação do Scrapy 
 .. _Scrapy: https://scrapy.org/
 .. _uma primeira olhada no Scrapy (ENG): https://docs.scrapy.org/en/latest/intro/overview.html
 .. _tutorial Scrapy (ENG): https://docs.scrapy.org/en/latest/intro/tutorial.html
@@ -838,32 +924,61 @@ Textos
 .. _scrapy.Spider.start_urls: https://docs.scrapy.org/en/latest/topics/spiders.html#scrapy.Spider.start_urls
 .. _scrapy.Spider.start_requests(): https://docs.scrapy.org/en/latest/topics/spiders.html#scrapy.Spider.start_requests
 .. _scrapy.Spider.parse(): https://docs.scrapy.org/en/latest/topics/spiders.html#scrapy.Spider.parse
-.. _Gazette: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/items.py
 .. _scrapy.Item: https://docs.scrapy.org/en/latest/topics/items.html
+.. _scrapy.Request(): https://docs.scrapy.org/en/latest/topics/request-response.html#scrapy.http.Request
+.. _HTTPCACHE_ENABLED: https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-enabled
+.. _motor do Scrapy: https://docs.scrapy.org/en/latest/topics/architecture.html
+.. _comandos padrão (ENG): https://docs.scrapy.org/en/latest/topics/commands.html#available-tool-commands
+.. _crawl: https://docs.scrapy.org/en/latest/topics/commands.html#crawl
+.. _Response: https://docs.scrapy.org/en/latest/topics/request-response.html#response-objects
+.. _Scrapy shell: https://docs.scrapy.org/en/latest/topics/shell.html
+.. _configurações específicas: https://docs.scrapy.org/en/latest/topics/settings.html#built-in-settings-reference
+
+.. para o repositório de raspadores
+.. _Gazette: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/items.py
 .. _spiders: https://github.com/okfn-brasil/querido-diario/tree/main/data_collection/gazette/spiders
+.. _sistema replicável DOEM: https://github.com/okfn-brasil/querido-diario/edit/main/data_collection/gazette/spiders/base/doem.py
+.. _diretório de bases: https://github.com/okfn-brasil/querido-diario/tree/main/data_collection/gazette/spiders/base
+.. _Como escolher uma tarefa para fazer: https://github.com/okfn-brasil/querido-diario/blob/main/docs/CONTRIBUTING.md#como-escolher-uma-issue-para-fazer
+.. _Como configurar o Ambiente de Desenvolvimento: https://github.com/okfn-brasil/querido-diario/blob/main/docs/CONTRIBUTING.md#como-configurar-o-ambiente-de-desenvolvimento
+.. _arquivo de territórios: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/resources/territories.csv
+.. _Quadro de Expansão de Cidades: https://github.com/orgs/okfn-brasil/projects/12
+.. _Este é um exemplo: https://github.com/okfn-brasil/querido-diario/pull/1185
+
+.. para exemplos de raspadores ou sites de prefeituras 
 .. _Acajutiba (BA): https://doem.org.br/ba/acajutiba/diarios
 .. _Cícero Dantas (BA): https://doem.org.br/ba/cicerodantas/diarios
 .. _Monte Santo (BA): https://doem.org.br/ba/montesanto/diarios
-.. _sistema replicável DOEM: https://github.com/okfn-brasil/querido-diario/edit/main/data_collection/gazette/spiders/base/doem.py
-.. _diretório de bases: https://github.com/okfn-brasil/querido-diario/tree/main/data_collection/gazette/spiders/base
-.. _CONTRIBUTING: https://github.com/okfn-brasil/querido-diario/blob/main/docs/CONTRIBUTING.md#como-configurar-o-ambiente-de-desenvolvimento
-.. _datetime.date(): https://docs.python.org/3/library/datetime.html#datetime.date
-.. _arquivo de territórios: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/resources/territories.csv
-.. _scrapy.Request(): https://docs.scrapy.org/en/latest/topics/request-response.html#scrapy.http.Request
-.. _Quadro de Expansão de Cidades: https://github.com/orgs/okfn-brasil/projects/12
 .. _raspador para Paulínia-SP: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/spiders/sp/sp_paulinia.py
 .. _raspador para Barreiras-BA: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/spiders/ba/ba_barreiras.py
 .. _raspador para Macapá-AP: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/spiders/ap/ap_macapa.py
-.. _shell: https://docs.scrapy.org/en/latest/topics/shell.html
-.. _HTTPCACHE_ENABLED: https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-enabled
-.. _motor do Scrapy: https://docs.scrapy.org/en/latest/topics/architecture.html
+.. _Site de Manaus-AM: http://dom.manaus.am.gov.br/diario-oficial-de-manaus
+.. _am_manaus.py: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/spiders/am/am_manaus.py
+.. _Site de Sobral-CE: https://www.sobral.ce.gov.br/diario/pesquisa/index
+.. _ce_sobral.py: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/spiders/ce/ce_sobral.py
+.. _Site de João Pessoa-PB: https://www.joaopessoa.pb.gov.br/doe-jp/
+.. _pb_joao_pessoa.py: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/spiders/pb/pb_joao_pessoa.py
+.. _Site de Salvador-BA: http://www.dom.salvador.ba.gov.br/#
+.. _ba_salvador.py: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/spiders/ba/ba_salvador.py
+.. _Exemplo de acesso à API em Natal-RN: https://www.natal.rn.gov.br/api/dom/data/10/2023
+.. _rn_natal.py: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/spiders/rn/rn_natal.py
+.. _diário oficial de Milagres do Maranhão-MA: https://www.milagresdomaranhao.ma.gov.br/diario/diario
+.. _raspador com custom_settings: https://github.com/okfn-brasil/querido-diario/blob/d495f90193ae4699a9669cf735abc64f3c128eb6/data_collection/gazette/spiders/base/modernizacao.py#L15
+
+.. links externos
+.. _Python: https://www.python.org/
+.. _datetime.date(): https://docs.python.org/3/library/datetime.html#datetime.date
 .. _expressões regulares (RegEx): https://pt.wikipedia.org/wiki/Express%C3%A3o_regular
 .. _seletores (ENG): https://docs.scrapy.org/en/latest/topics/selectors.html
 .. _RegExr: https://regexr.com/
 .. _re: https://docs.python.org/3/library/re.html
-.. _chompJS: https://github.com/Nykakin/chompjs
-.. _dateparser: https://github.com/scrapinghub/dateparser
-.. _Scrapy shell: https://docs.scrapy.org/en/latest/topics/shell.html
+.. _chompJS: https://nykakin.github.io/chompjs/
+.. _dateparser: https://dateparser.readthedocs.io/en/latest/
+.. _dateutil: https://dateutil.readthedocs.io/en/stable/index.html
+.. _urllib.parse: https://docs.python.org/3/library/urllib.parse.html#module-urllib.parse
+.. _codificação oficial de respostas HTTP: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+
+.. links da seção aprenda mais
 .. _Escola de Dados: https://escoladedados.org/courses/
 .. _Módulo 3 do Curso Python para Inovação Cívica: https://www.youtube.com/playlist?list=PLpWp6ibmzPTc2rod9Hc822_3zMaq9G-qE
 .. _Apresentando o Querido Diário: https://youtu.be/3SCQl4cYB5I?list=PLpWp6ibmzPTc2rod9Hc822_3zMaq9G-qE
@@ -895,17 +1010,3 @@ Textos
 .. _Maceió-AL: https://peertube.lhc.net.br/w/pg7XjLaHNP35YCcK4cHYgY
 .. _Feira de Santana-BA: https://peertube.lhc.net.br/w/ehFgbkfnXMooc1MeeB1ndE
 .. _Aldeias Altas-MA: https://peertube.lhc.net.br/w/6zHfRFyRnL75yybUskmhWx
-.. _Site de Manaus-AM: http://dom.manaus.am.gov.br/diario-oficial-de-manaus
-.. _am_manaus.py: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/spiders/am/am_manaus.py
-.. _Site de Sobral-CE: https://www.sobral.ce.gov.br/diario/pesquisa/index
-.. _ce_sobral.py: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/spiders/ce/ce_sobral.py
-.. _Site de João Pessoa-PB: https://www.joaopessoa.pb.gov.br/doe-jp/
-.. _pb_joao_pessoa.py: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/spiders/pb/pb_joao_pessoa.py
-.. _Site de Salvador-BA: http://www.dom.salvador.ba.gov.br/#
-.. _ba_salvador.py: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/spiders/ba/ba_salvador.py
-.. _Exemplo de acesso à API em Natal-RN: https://www.natal.rn.gov.br/api/dom/data/10/2023
-.. _rn_natal.py: https://github.com/okfn-brasil/querido-diario/blob/main/data_collection/gazette/spiders/rn/rn_natal.py
-.. _comandos padrão (ENG): https://docs.scrapy.org/en/latest/topics/commands.html#available-tool-commands
-.. _crawl: https://docs.scrapy.org/en/latest/topics/commands.html#crawl
-.. _Response: https://docs.scrapy.org/en/latest/topics/request-response.html#response-objects
-.. _codificação oficial de respostas HTTP: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
