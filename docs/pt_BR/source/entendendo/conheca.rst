@@ -100,14 +100,14 @@ Apesar da ausência legal de padrão, percebemos ser possível classificar os di
 oficiais eletrônicos em 3 categorias: 
 
 - **Diário agregado**: o documento contém atos oficiais de diversos municípios, normalmente por comporem uma Associação/Federação ou o Diário do Estado tem uma seção para municipalidades. Um caso é o `Diário Oficial da Associação de Municípios de Alagoas`_.
-- **Diário completo**: todos os atos oficiais do documento correspondem a um único município, como é o `diário oficial de Recife (PE)`_.
+- **Diário individual**: todos os atos oficiais do documento correspondem a um único município, como é o `diário oficial de Recife (PE)`_.
 - **Diário fragmentado**: não há um documento único para todos os atos oficiais do município, eles ficam pulverizados em vários arquivos. Um exemplo é `Bragança (PA)`_ que, em seu *site*, tem seções para decretos, portarias, etc, e nelas vários atos separados.
 
 Note como esses três tipos de diários diferem quanto a granularidade do conteúdo 
 e se relacionam conforme o diagrama a seguir.
 
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/qd-document-types_ptbr.png
-    :alt: Diagrama sobre como os tipos de diários se relacionam. Diário agregado ao separar cada município se torna diário completo e diário fragmentado se unir todas as partes se torna diário completo.
+    :alt: Diagrama sobre como os tipos de diários se relacionam. Diário agregado ao separar cada município se torna diário individual e diário fragmentado se unir todas as partes se torna diário individual.
 
 .. REFERÊNCIAS:
 .. _Diário Oficial da Associação de Municípios de Alagoas: https://www.diariomunicipal.com.br/ama/

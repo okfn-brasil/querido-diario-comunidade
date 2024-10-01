@@ -17,10 +17,10 @@ gestão, infraestrutura, inteligência artificial, robótica, etc.
     :alt: [TODO]
 
 
-`Diário do Clima`_
+`Diários do Clima`_
 **************************
 
-O `Diário do Clima`_ monitora diários oficiais para identificar os documentos mais 
+O `Diários do Clima`_ monitora diários oficiais para identificar os documentos mais 
 relevantes sobre políticas públicas em clima e meio-ambiente. Nela, pessoas usuárias
 podem acompanhar movimentações oficiais relacionadas a crimes ambientais, biodiversidade,
 mineração, água, saneamento, etc, assim que novos atos oficias forem publicados.
@@ -64,7 +64,7 @@ os diários municipais como fonte.
 
 .. REFERÊNCIAS
 .. _Querido Diário\: Tecnologias na Educação: https://queridodiario.ok.org.br/educacao
-.. _Diário do Clima: https://diariodoclima.org.br/
+.. _Diários do Clima: https://diariodoclima.org.br/
 .. _LegislaTech: https://legisla.tech/
 .. _Exoonero: https://exoonero.org/
 .. _Cadastro do Ro-DOU no Catálogo de Soluções do Ministério: https://www.gov.br/economia/pt-br/acesso-a-informacao/acoes-e-programas/transformagov/catalogodesolucoes/ro-dou
