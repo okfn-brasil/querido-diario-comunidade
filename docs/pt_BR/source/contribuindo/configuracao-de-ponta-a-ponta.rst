@@ -25,21 +25,18 @@ Para configurá-lo, seguiremos o passo-a-passo:
 
 1. `Instale o podman`_ (caso não esteja instalado);
 
-2. No Makefile do projeto, mude a variável ``FULL_PROJECT`` para ``true`` (isto faz com
-
-que portas adicionais sejam abertas pelo pod que será criado);
-
-3. Execute:
+2. Execute:
 
     .. code-block:: bash
 
       make build
 
-4. Execute:
+3. Execute (``FULL_PROJECT=true`` faz com que portas adicionais sejam abertas pelo pod
+   que será criado):
 
     .. code-block:: bash
 
-      make setup
+      FULL_PROJECT=true make setup
 
 .. tip::
     Se essa for a primeira vez que está executando o projeto, as variáveis de ambiente
@@ -48,33 +45,31 @@ que portas adicionais sejam abertas pelo pod que será criado);
 
 .. warning::
     Ao executar o comando ``make setup``, um erro ``bind: address already in use`` pode
-
     aparecer. Nesse caso, verifique se não tem algum outro serviço no seu computador
     utilizando a porta indicada e o pare (ou modifique as variáveis de ambiente e/ou
     Makefile, se souber o que está fazendo).
 
     Caso a porta esteja sendo usada pelo próprio podman por algum erro de execução você
-
     pode terminar o programa com o comando (usando a porta 8000 de exemplo) ``sudo
     kill -9 $(sudo lsof -t -i:8000)``.
 
-    Ao terminar, execute ``make setup`` novamente.
+    Ao terminar, execute o ``make setup`` novamente.
 
 Agora o pod foi criado, e dentro dele vários recursos como Opensearch, Postgres e Minio
-
 estão sendo executados. Porém, eles ainda estão "vazios". Vamos populá-los utilizando
-o repositório de `raspadores`_.
+o repositório de raspadores.
 
 Gerando dados com os raspadores
 *******************************
 
 Queremos executar raspadores para popular nosso banco com diários oficiais para serem
-processados. Para isso, só precisamos configurar o seguinte:
+processados. Para isso, só precisamos configurar o seguinte no
+`repositório de raspadores`_:
 
 1. Copie ``data_collection/local.env`` para ``data_collection/.env``;
 
 2. Configure o ambiente de desenvolvimento e execute raspadores normalmente, como
-indicado em sua documentação.
+   indicado em sua documentação.
 
 Processando os documentos raspados
 **********************************
@@ -83,7 +78,7 @@ Agora que temos o armazenamento de objetos e algumas tabelas do banco Postgres
 populadas, vamos executar o pipeline principal do processamento de dados para que os
 arquivos TXT sejam gerados e o motor de busca seja populado:
 
-1. Execute no repositório do processamento de dados:
+1. Execute, no repositório do processamento de dados:
 
     .. code-block:: bash
 
@@ -92,8 +87,7 @@ arquivos TXT sejam gerados e o motor de busca seja populado:
 .. note::
     Perceba que o ``make re-run`` está sendo executado aqui e não o ``make run``, pois
     o ``make run`` executa o ``make setup``, e se o ``make setup`` for executado, todos
-
-    os recursos serão destruído e reconstruídos novamente, anulando a raspagem que foi
+    os recursos serão destruídos e reconstruídos novamente, anulando a raspagem que foi
     realizada.
 
 Agora temos arquivos, tabelas e índices populados. Podemos habilitar a API.
@@ -101,7 +95,7 @@ Agora temos arquivos, tabelas e índices populados. Podemos habilitar a API.
 Habilitando a API
 *****************
 
-1. Execute:
+1. Execute, no repositório da `API`_:
 
     .. code-block:: bash
 
@@ -123,7 +117,7 @@ Habilitando o backend
 *********************
 
 Para lidar com o `Querido Diário: Tecnologias na Educação`_, é necessário configurar o
-backend da seguinte forma:
+`backend`_ da seguinte forma:
 
 1. Configure o ambiente de desenvolvimento como indicado na documentação;
 
@@ -135,7 +129,7 @@ configurado.
 Habilitando o frontend
 **********************
 
-Finalmente chegamos na outra ponta da arquitetura do QD! Aqui vamos fazer o seguinte:
+Finalmente chegamos na outra ponta da arquitetura do QD, o `frontend`_! Aqui vamos fazer o seguinte:
 
 1. Configure o ambiente de desenvolvimento como indicado na documentação;
 
@@ -183,7 +177,7 @@ temáticos?
 
 4. Quer baixar mais arquivos de diários e processá-los?
 
-    Execute outro scrapy crawl no repositório querido-diario e então execute ``make
+    Execute outro ``scrapy crawl`` no repositório querido-diario e então execute ``make
     re-run`` no querido-diario-data-processing novamente.
 
 5. No frontend o live reload está habilitado, mas na API e backend não. Como checar as
@@ -206,7 +200,6 @@ mudanças?
 7. Como acessar o painel de admin do backend?
 
     Acesse `0.0.0.0:8000/api/admin <http://0.0.0.0:8000/api/admin>`_ com as credenciais
-
     de superusuário criadas anteriormente.
 
     .. tip::
@@ -216,7 +209,10 @@ mudanças?
 .. Referências
 .. _podman: https://podman.io/
 .. _processamento de dados: https://github.com/okfn-brasil/querido-diario-data-processing/
+.. _repositório de raspadores: https://github.com/okfn-brasil/querido-diario/
+.. _API: https://github.com/okfn-brasil/querido-diario-api/
+.. _backend: https://github.com/okfn-brasil/querido-diario-backend/
+.. _frontend: https://github.com/okfn-brasil/querido-diario-frontend/
 .. _Instale o podman: https://podman.io/docs/installation
-.. _raspadores: https://github.com/okfn-brasil/querido-diario/
 .. _Querido Diário\: Tecnologias na Educação: https://queridodiario.ok.org.br/educacao
 
