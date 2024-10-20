@@ -23,3 +23,4 @@ Querido Diário
    contributing/contribution-guide.rst
    contributing/scrapers.rst
    contributing/documentation.rst
+   contributing/end-to-end-configuration
