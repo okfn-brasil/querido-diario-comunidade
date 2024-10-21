@@ -66,7 +66,7 @@ Queremos executar raspadores para popular nosso banco com diários oficiais para
 processados. Para isso, só precisamos configurar o seguinte no
 `repositório de raspadores`_:
 
-1. Copie ``data_collection/local.env`` para ``data_collection/.env``;
+1. Copie ``data_collection/.local.env`` para ``data_collection/.env``;
 
 2. Configure o ambiente de desenvolvimento e execute raspadores normalmente, como
    indicado em sua documentação.
