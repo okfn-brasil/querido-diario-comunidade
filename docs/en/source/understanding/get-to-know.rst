@@ -99,7 +99,7 @@ Note how these three types of gazzetes differ in terms of content granularity an
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/qd-document-types.png
    :alt: Diagram about how gazette types relate. An aggregated gazette if splited each municipality makes a complete gazette and a fragmented gazette if all parts joined becomes a complete gazette.
 
-.. REFERÊNCIAS:
+.. REFERENCES:
 .. _Municipalities Association of Alagoas State Official Gazette: https://www.diariomunicipal.com.br/ama/
 .. _Recife (PE) Gazette: https://dome.recife.pe.gov.br/dome/
 .. _Bragança (PA): https://braganca.pa.gov.br/decretos-2023/
