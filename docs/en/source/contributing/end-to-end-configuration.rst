@@ -62,7 +62,7 @@ Generating data with spiders
 We want to run spiders to populate our database with official gazettes for processing.
 To do this, we just need to configure the following in the `spiders repository`_:
 
-1. Copy ``data_collection/local.env`` to ``data_collection/.env``;
+1. Copy ``data_collection/.local.env`` to ``data_collection/.env``;
 
 2. Set up the development environment and run spiders normally, as indicated in its
    documentation.
