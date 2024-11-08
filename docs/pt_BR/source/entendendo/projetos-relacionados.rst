@@ -14,7 +14,7 @@ a nível municipal em temáticas específicas como acessibilidade, conectividade
 gestão, infraestrutura, inteligência artificial, robótica, etc.
 
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/querido-diario-tecnologias-educacao.png
-    :alt: [TODO]
+    :alt: Página do "Querido Diário: Tecnologias na Educação".
 
 
 `Diários do Clima`_
@@ -26,7 +26,7 @@ podem acompanhar movimentações oficiais relacionadas a crimes ambientais, biod
 mineração, água, saneamento, etc, assim que novos atos oficias forem publicados.
 
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/diario-do-clima.png
-    :alt: [TODO]
+    :alt: Página do "Diário do clima".
 
 
 `LegislaTech`_
@@ -37,7 +37,7 @@ judiciais, diários oficiais e até notícias - em busca de assuntos de interess
 as pessoas usuárias.
 
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/legislatech.png
-    :alt: [TODO]
+    :alt: Página do "LegislaTech".
 
 
 `Exoonero`_
@@ -48,7 +48,7 @@ diários da Associação de Municípios Alagoanos, oferecendo estatísticas gera
 específicas por município e por ano.
 
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/exoonero.png
-    :alt: [TODO]
+    :alt: Página do "Exoonero".
 
 
 Ro-DOU
