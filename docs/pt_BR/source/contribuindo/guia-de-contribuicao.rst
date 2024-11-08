@@ -84,15 +84,6 @@ Comunidade online
 - Ingresse no `Discord da OKBR`_. Lá você poderá tirar dúvidas mais rápidas, interagir com as pessoas mantenedoras, perguntar como poderia ajudar e ainda conversar com outras pessoas que também contribuem. 
 - Também no Discord, organizamos e promovemos atividades como *sprints*, reuniões periódicas, pareamentos, plantões, etc. Todas essas atividades são abertas e podem ser acompanhadas por meio desta `agenda pública`_.
 
-Reunião Geral do Querido Diário
----------------------------------
-
-Sempre na última quinta-feira do mês, às 18h, acontece, no Discord, a Reunião Geral
-do Querido Diário, que conta com a presença da equipe de Inovação Cívica da OKBR, 
-pessoas mantenedoras e contribuidoras. 
-
-- Por um lado, esta reunião cumpre o papel alinhamento interno da comunidade quanto às diversas frentes de desenvolvimento que podem estar ocorrendo. E, por outro, serve de porta de entrada para pessoas interessadas, visto que é uma reunião de caráter panorâmico, permitindo conheçam as pessoas envolvidas e atividades acontecendo. 
-
 Interagindo com a pessoa revisora 
 ====================================
 
@@ -106,8 +97,7 @@ Interagindo com a pessoa revisora
     especialmente se ela não estiver relacionada a uma meta do projeto (mapeada no `roadmap`_).
 
     Caso tenha dúvidas sobre isso e gostaria de entender melhor como contribuir
-    com revisão e/ou em tarefas prioritárias, entre em contato pelo Discord e participe
-    da :ref:`reunião geral<Reunião Geral do Querido Diário>`. 
+    com revisão e/ou em tarefas prioritárias, entre em contato pelo Discord.
 
 
 Mantendo

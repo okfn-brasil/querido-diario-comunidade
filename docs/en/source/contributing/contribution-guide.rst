@@ -71,11 +71,6 @@ Online community
 - Join the OKBR `Discord`_. There you can quickly ask questions, interact with the maintainers, ask how you can help, and even chat with other contributors.
 - We also organize and promote activities on Discord such as sprints, regular meetings, pairings, on-call sessions, etc. All of these activities are open and can be followed through this `public calendar`_.
 
-*Querido Diário* General Meeting
--------------------------------
-Always on the last Thursday of the month, at 6 pm (São Paulo time/GMT-3), the *Querido Diário* General Meeting takes place on Discord, which is attended by the OKBR Civic Innovation team, maintainers and contributors.
-- This meeting serves as an internal alignment of the community regarding the various development fronts that may be taking place and, on the other hand, it serves as a gateway for interested people, since it is a panoramic meeting, allowing them to get to know the people involved and the activities taking place.
-
 Interacting with reviewers
 ====================================
 
@@ -87,7 +82,7 @@ Important
 ----------------------
 *Querido Diário* has several repositories and a limited number of maintainers for each one. Therefore, it may take some time to review a contribution, especially if it is not related to a project goal (mapped in the `roadmap`_).
 
-If you have any questions about this and would like to better understand how to contribute with review and/or priority tasks, please contact us via Discord and join the :ref:`general meeting<*Querido Diário* General Meeting>`.
+If you have any questions about this and would like to better understand how to contribute with review and/or priority tasks, please contact us via Discord.
 
 Maintaining
 ************************
