@@ -49,7 +49,7 @@ campos do *endpoint* ficarão disponíveis para interação.
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/api-tryitout.png
 
 Para esta experimentação, fazemos uma busca por "orçamento" nos diários oficiais 
-do município de Batalha (AL) por meio do *endpoint* ``/gazettes``. Ao clicar para 
+do município de Batalha (AL) (ID do IBGE: 2700706) por meio do *endpoint* ``/gazettes``. Ao clicar para 
 executar, um acesso é feito à API Pública e uma *response* é exibida. 
 
 .. important::
@@ -88,7 +88,7 @@ preenchimento. Continuando com o exemplo acima, a URL gerada explicita os campos
 
 ... buscando pelo território de código IBGE "2700706": ``https://queridodiario.ok.org.br/api/gazettes?territory_ids=2700706``
 
-... usando a *string* de busca "orçamento": ``https://queridodiario.ok.org.br/api/gazettes?territory_ids=2700706&querystring=or%C3%A7amento``
+... usando a *string* de busca "orçamento": ``https://queridodiario.ok.org.br/api/gazettes?territory_ids=2700706&querystring=orçamento``
 
 ... e assim por diante.
 
