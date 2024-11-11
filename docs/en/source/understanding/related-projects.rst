@@ -40,14 +40,14 @@ With Querido Diário handling the heavy and innovative work of collecting, stori
 Ro-DOU
 *************
  
-Ro-DOU is a tool of the Brazilian Ministry of Economy that supports the daily activities of various public agencies by generating email *clippings* for public servants. Initially create to monitor the Union Official Gazette, it has also begun using municipalities gazettes as a data source.
+Ro-DOU is a tool of the Brazilian Ministry of Management and Innovation in Public Services that supports the daily activities of various public agencies by generating email *clippings* for public servants. Initially create to monitor the Union Official Gazette, it has also begun using municipalities gazettes as a data source.
  
-**Learn more**: `Ro-DOU Registration in the Ministry's Solutions Catalog (in PT-BR)`_.
+**Learn more**: `Meet Ro-DOU\: the automated research robot for Union Official Gazette (in PT-BR)`_.
  
 .. REFERÊNCIAS
 .. _Querido Diário\: Technologies in Education: https://queridodiario.ok.org.br/educacao
 .. _Diários do Clima: https://diariosdoclima.org.br/
 .. _LegislaTech: https://legisla.tech/
 .. _Exoonero: https://exoonero.org/
-.. _Ro-DOU Registration in the Ministry's Solutions Catalog (in PT-BR): https://www.gov.br/economia/pt-br/acesso-a-informacao/acoes-e-programas/transformagov/catalogodesolucoes/ro-dou
+.. _Meet Ro-DOU\: the automated research robot for Union Official Gazette (in PT-BR): https://www.gov.br/gestao/pt-br/assuntos/ro-dou/noticias/conheca-o-ro-dou-o-robo-de-pesquisa-automatizada-no-diario-oficial-da-uniao
 

@@ -54,12 +54,12 @@ específicas por município e por ano.
 Ro-DOU
 ************
 
-O Ro-DOU é uma ferramenta do Ministério da Economia de apoio às atividades cotidianas 
-de diversos órgãos públicos gerando *clippings* por e-mail para servidores. Criada 
-inicialmente para acompanhar o Diário Oficial da União, passou também a utilizar
-os diários municipais como fonte. 
+O Ro-DOU é uma ferramenta do Ministério da Gestão e da Inovação em Serviços Públicos
+de apoio às atividades cotidianas de diversos órgãos públicos gerando *clippings* 
+por e-mail para servidores. Criada inicialmente para acompanhar o Diário Oficial 
+da União, passou também a utilizar os diários municipais como fonte. 
 
-**Saiba mais**: `Cadastro do Ro-DOU no Catálogo de Soluções do Ministério`_.  
+**Saiba mais**: `Conheça o Ro-DOU\: o robô de pesquisa automatizada no Diário Oficial da União`_.  
 
 
 .. REFERÊNCIAS
@@ -67,4 +67,4 @@ os diários municipais como fonte.
 .. _Diários do Clima: https://diariodoclima.org.br/
 .. _LegislaTech: https://legisla.tech/
 .. _Exoonero: https://exoonero.org/
-.. _Cadastro do Ro-DOU no Catálogo de Soluções do Ministério: https://www.gov.br/economia/pt-br/acesso-a-informacao/acoes-e-programas/transformagov/catalogodesolucoes/ro-dou
+.. _Conheça o Ro-DOU\: o robô de pesquisa automatizada no Diário Oficial da União: https://www.gov.br/gestao/pt-br/assuntos/ro-dou/noticias/conheca-o-ro-dou-o-robo-de-pesquisa-automatizada-no-diario-oficial-da-uniao
