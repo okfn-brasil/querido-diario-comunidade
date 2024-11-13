@@ -89,7 +89,11 @@ Interagindo com a pessoa revisora
 
 - Tenha paciência e dê tempo para a pessoa revisora. Além de revisões de código serem complexas e demandarem, por si só, tempo e atenção, uma pessoa revisora pode ser, assim como você, outra contribuidora cedendo seu tempo pessoal quando possível ou ter outras prioridades antes de poder revisar seu código.
 - Seja em forma de código ou com mensagens de dúvidas e sugestões, facilite a interação sendo objetivo(a), mas dando detalhes quando necessário.
-- Durante a revisão, uma pessoa revisora pode abrir *threads* de solicitação de melhorias em seu código. Geralmente, é responsabilidade da pessoa revisora decidir quando a *thread* foi finalizada. 
+- Durante o processo de revisão, uma pessoa revisora pode abrir *threads* solicitando
+  melhorias na sua contribuição. Em geral, é função das pessoas revisoras decidir
+  quando uma *thread* foi encerrada e marcá-la como "resolvida" na interface do GitHub.
+  Isso significa que ambos concordam com as modificações implementadas e que a contribuição
+  pode prosseguir.
 
 .. important::
     O Querido Diário conta com vários repositórios e um número limitado de pessoas 
