@@ -1,28 +1,28 @@
 Search Interface
-########################
+################
 
-The Querido Diário search interface is a resource that allows users to search, in a 
-user-friendly way, the data that the project stores: the texts of official gazettes. 
-It is accessible through the `Querido Diário web platform`_.
+The Querido Diário search interface is a resource that allows users to search, in a
+user-friendly way, the data that the project stores: the texts of official gazettes.
+It is accessible through the `Querido Diário's web platform`_.
 
-Learn how to use the search interface as you prefer, either by watching a recording 
+Learn how to use the search interface as you prefer, either by watching a recording
 or through a textual tutorial, below.
 
 Browsing the site (in Portuguese)
-***********************************
+*********************************
 
 .. raw:: html
 
     <div style="position:relative;padding-bottom:56.25%;margin-bottom:3vh">
         <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;"
-        src="https://www.youtube.com/embed/Qk5oQ9g1iX8" 
-        title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
-        encrypted-media; gyroscope; picture-in-picture; web-share" 
+        src="https://www.youtube.com/embed/Qk5oQ9g1iX8"
+        title="YouTube video player" allow="accelerometer; autoplay; clipboard-write;
+        encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
     </div>
 
 Search Usage Tutorial
-******************************
+*********************
 
 .. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/search-interface/interface-de-busca.png
     :alt: QD search interface on the web platform
@@ -61,5 +61,5 @@ And you can also download the **official gazette in original and/or open format*
     and perform a text search for any of the terms present in the excerpt.
 
 .. REFERENCES
-.. _plataforma web do Querido Diário: https://queridodiario.ok.org.br/
+.. _Querido Diário's web platform: https://queridodiario.ok.org.br/
 .. _Advanced Search Operators: https://queridodiario.ok.org.br/tecnologia/busca-avancada
