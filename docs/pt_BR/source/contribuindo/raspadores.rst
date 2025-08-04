@@ -567,8 +567,8 @@ e :attr:`~Gazette.date`, onde ficam os arquivos de diários oficiais baixados.
 
     scrapy crawl uf_nome_do_municipio [+ opções]
 
-- ``-a start_date=AAAA-MM-DD`` define novo valor para :attr:`~UFMunicipioSpider.start_date`
-- ``-a end_date=AAAA-MM-DD`` define novo valor para :attr:`~UFMunicipioSpider.end_date`
+- ``-a start=AAAA-MM-DD`` define novo valor para :attr:`~UFMunicipioSpider.start_date`
+- ``-a end=AAAA-MM-DD`` define novo valor para :attr:`~UFMunicipioSpider.end_date`
 - ``-s LOG_FILE=nome_arquivo.log`` salva as mensagens de *log* em arquivo de texto
 - ``-o nome_arquivo.csv`` salva a lista de diários oficiais e metadados coletados em arquivo tabular
 
@@ -585,7 +585,7 @@ Veja a data da edição mais recente no *site* publicador e execute a raspagem a
 
 .. code-block:: sh
 
-    scrapy crawl uf_nome_do_municipio -a start_date=AAAA-MM-DD
+    scrapy crawl uf_nome_do_municipio -a start=AAAA-MM-DD
   
 Coleta de intervalo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -594,7 +594,7 @@ execute a coleta desse intervalo arbitrário.
 
 .. code-block:: sh
 
-    scrapy crawl uf_nome_do_municipio -a start_date=AAAA-MM-DD -a end_date=AAAA-MM-DD
+    scrapy crawl uf_nome_do_municipio -a start=AAAA-MM-DD -a end=AAAA-MM-DD
 
 Coleta completa
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

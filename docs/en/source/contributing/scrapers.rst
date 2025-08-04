@@ -78,7 +78,7 @@ If you want to collect data starting from another date, you can use the followin
 
 .. code-block:: sh
 
-    scrapy crawl my_city_spider -a start_date=2021-04-28
+    scrapy crawl my_city_spider -a start=2021-04-28
 
 
 The default value of `end_date` is today's date (the date when you are running your spider), so there's **no need** to define it in your spider class. This is set in the `BaseGazetteSpider`.
@@ -102,7 +102,7 @@ Here are some suggested checks:
 
 - Check if the downloaded files are valid;
 - Verify if you are collecting all available Official Gazettes;
-- If specifying the `start_date` and/or `end_date` arguments, ensure that you are not collecting more Official Gazettes than expected;
+- If specifying the `start` and/or `end` arguments, ensure that you are not collecting more Official Gazettes than expected;
 - Check if, when running the spider more than once, the results remain the same;
 - Ensure there are no execution errors (`log/ERROR` in spider statistics);
 
