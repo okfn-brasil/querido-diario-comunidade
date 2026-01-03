@@ -138,11 +138,11 @@ Finalmente chegamos na outra ponta da arquitetura do QD, o `frontend`_! Aqui vam
     .. code-block:: bash
 
       ./src/app/constants.ts
-      - export const API = 'https://queridodiario.ok.org.br/api';
+      - export const API = 'https://api.queridodiario.ok.org.br';
       + export const API = 'http://localhost:8080';
 
       ./src/app/services/utils/index.ts
-      - export const educationApi = 'https://backend-api.queridodiario.ok.org.br/api/';
+      - export const educationApi = 'https://backend-api.api.queridodiario.ok.org.br/';
 
       + export const educationApi = 'http://localhost:8000/api/';
 

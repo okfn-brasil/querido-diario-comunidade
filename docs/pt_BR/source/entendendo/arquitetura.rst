@@ -79,7 +79,7 @@ A API Pública é a porta pela qual o acesso aos dados do projeto é facilitado.
 conta com diversos *endpoints* (pontos de acesso) pelos quais diferentes dados podem 
 ser solicitados às bases de dados de diários oficiais e de `CNPJs da Receita Federal`_. 
 
-- **Acesse**: https://queridodiario.ok.org.br/api/docs
+- **Acesse**: https://api.queridodiario.ok.org.br/docs
 - **Desenvolvimento**: `Python`_, biblioteca `FastAPI`_ e documentação automática com `Swagger`_.
 - **Armazenamento em produção**: `PostgreSQL`_ para metadados de empresas e `OpenSearch`_ para buscas em diários.
 - **Repositório de código**: https://github.com/okfn-brasil/querido-diario-api

@@ -57,7 +57,7 @@ For more information, please see the `Terms of Use and Privacy Policy`_.
 
 .. REFERENCES
 .. _web platform: https://queridodiario.ok.org.br/
-.. _API: https://queridodiario.ok.org.br/api/docs
+.. _API: https://api.queridodiario.ok.org.br/docs
 .. _recurring funding campaign: https://www.catarse.me/queridodiario-okbr
 .. _directly to OKBR: https://ok.org.br/apoie/
 .. _teaching or research activities: https://ok.org.br/projetos/qd-universidades/

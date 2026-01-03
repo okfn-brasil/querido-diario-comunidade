@@ -7,7 +7,7 @@ The Public API is the gateway to Querido Diário. It offers several endpoints
 Learn how to use the API however you prefer, whether by watching a recording of a 
 usage workshop or through a textual tutorial, below.
 
-- **Documentation**: https://queridodiario.ok.org.br/api/docs
+- **Documentation**: https://api.queridodiario.ok.org.br/docs
 
 .. warning::
     **We do not impose any restrictions on API usage**. We hope for common sense 
@@ -67,7 +67,7 @@ with much more user-friendly navigation. Here, what is of interest, in fact, is 
 generated in the **Response URL** field. Our example search generates the following URL. 
 Try clicking in it and see what it offers:
 
-https://queridodiario.ok.org.br/api/gazettes?territory_ids=2700706&querystring=or%C3%A7amento&excerpt_size=500&number_of_excerpts=1&size=10
+https://api.queridodiario.ok.org.br/gazettes?territory_ids=2700706&querystring=or%C3%A7amento&excerpt_size=500&number_of_excerpts=1&size=10
 
 This URL is a permanent link to the search with this specific settings. It can be 
 added to scripts, such as data analysis code, to make automated use of Querido 
@@ -81,13 +81,13 @@ with different fields is an initial step that allows greater familiarity with
 how Querido Diário data is accessed. Continuing with the example above, the generated 
 URL explains the fields: 
 
-... the API was accessed: ``https://queridodiario.ok.org.br/api/``
+... the API was accessed: ``https://api.queridodiario.ok.org.br/``
 
-... in the "gazettes" endpoint: ``https://queridodiario.ok.org.br/api/gazettes?``
+... in the "gazettes" endpoint: ``https://api.queridodiario.ok.org.br/gazettes?``
 
-... searching for IBGE code territory "2700706": ``https://queridodiario.ok.org.br/api/gazettes?territory_ids=2700706``
+... searching for IBGE code territory "2700706": ``https://api.queridodiario.ok.org.br/gazettes?territory_ids=2700706``
 
-... using the search string "orçamento": ``https://queridodiario.ok.org.br/api/gazettes?territory_ids=2700706&querystring=orçamento``
+... using the search string "orçamento": ``https://api.queridodiario.ok.org.br/gazettes?territory_ids=2700706&querystring=orçamento``
 
 ... and so on.
 
@@ -99,10 +99,10 @@ of the fields, creating custom URLs at script runtime.
 An example, using the endpoint ``gazettes/``, highlighting the places where the 
 script would fill in the fields:
 
-``https://queridodiario.ok.org.br/api/gazettes?territory_ids={**ID**}querystring={**SEARCH KEYWORDS**}&excerpt_size={**VALUE**}&number_of_excerpts={**VALUE**}&size={**VALUE**}``
+``https://api.queridodiario.ok.org.br/gazettes?territory_ids={**ID**}querystring={**SEARCH KEYWORDS**}&excerpt_size={**VALUE**}&number_of_excerpts={**VALUE**}&size={**VALUE**}``
 
 .. REFERÊNCIAS
-.. _API docs page: https://queridodiario.ok.org.br/api/docs
+.. _API docs page: https://api.queridodiario.ok.org.br/docs
 .. _Python: https://www.python.org/
 .. _FastAPI: https://fastapi.tiangolo.com/
 .. _Swagger: https://swagger.io/
