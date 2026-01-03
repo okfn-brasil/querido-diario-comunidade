@@ -85,7 +85,7 @@ facilitated. It has several endpoints through which different
 data can be requested from the official gazette databases and
 `CNPJs from the federal taxes service`_ (*Receita Federal do Brasil*, in Portuguese).
 
-- **Access**: https://queridodiario.ok.org.br/api/docs
+- **Access**: https://api.queridodiario.ok.org.br/docs
 - **Development**: `Python`_ using the `FastAPI`_ framework and automatic documentation
   with `Swagger`_.
 - **Production storage**: `PostgreSQL`_ for company metadata and `OpenSearch`_ for gazette

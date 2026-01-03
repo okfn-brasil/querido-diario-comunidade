@@ -8,7 +8,7 @@ dados.
 Aprenda como utilizar a API conforme preferir, seja assistindo a gravação de uma 
 oficina de uso ou por meio de tutorial textual, logo abaixo.
 
-- **Acesse**: https://queridodiario.ok.org.br/api/docs
+- **Acesse**: https://api.queridodiario.ok.org.br/docs
 
 .. warning::
     **Não impomos nenhuma restrição para consumo da API**. Esperamos bom senso por parte 
@@ -68,7 +68,7 @@ com uma navegação muito mais amigável. Aqui, o que é de interesse, de fato, 
 gerada no campo **Response URL**. Nossa busca-exemplo gera a URL a seguir. Experimente 
 clicar e ver o que ela disponibiliza: 
 
-https://queridodiario.ok.org.br/api/gazettes?territory_ids=2700706&querystring=or%C3%A7amento&excerpt_size=500&number_of_excerpts=1&size=10
+https://api.queridodiario.ok.org.br/gazettes?territory_ids=2700706&querystring=or%C3%A7amento&excerpt_size=500&number_of_excerpts=1&size=10
 
 Esta URL é um *link* permanente para a pesquisa com configurações específicas. Ela 
 pode ser adicionada a *scripts*, como códigos de análise de dados, para fazer 
@@ -82,13 +82,13 @@ com diferentes campos é um passo inicial que possibilita maior familiaridade co
 como os dados do Querido Diário são acessados e percebendo os padrões de 
 preenchimento. Continuando com o exemplo acima, a URL gerada explicita os campos: 
 
-... a API foi acessada: ``https://queridodiario.ok.org.br/api/``
+... a API foi acessada: ``https://api.queridodiario.ok.org.br/``
 
-... no ponto de acesso "gazettes": ``https://queridodiario.ok.org.br/api/gazettes?``
+... no ponto de acesso "gazettes": ``https://api.queridodiario.ok.org.br/gazettes?``
 
-... buscando pelo território de código IBGE "2700706": ``https://queridodiario.ok.org.br/api/gazettes?territory_ids=2700706``
+... buscando pelo território de código IBGE "2700706": ``https://api.queridodiario.ok.org.br/gazettes?territory_ids=2700706``
 
-... usando a *string* de busca "orçamento": ``https://queridodiario.ok.org.br/api/gazettes?territory_ids=2700706&querystring=orçamento``
+... usando a *string* de busca "orçamento": ``https://api.queridodiario.ok.org.br/gazettes?territory_ids=2700706&querystring=orçamento``
 
 ... e assim por diante.
 
@@ -100,10 +100,10 @@ dos campos, criando URLs personalizadas em tempo de execução do *script*.
 Um exemplo, usando o *endpoint* ``gazettes/``, com destaque aos locais onde o 
 *script* preencheria os campos: 
 
-``https://queridodiario.ok.org.br/api/gazettes?territory_ids={**CÓDIGO IBGE**}querystring={**PALAVRAS-CHAVE**}&excerpt_size={**VALOR**}&number_of_excerpts={**VALOR**}&size={**VALOR**}``
+``https://api.queridodiario.ok.org.br/gazettes?territory_ids={**CÓDIGO IBGE**}querystring={**PALAVRAS-CHAVE**}&excerpt_size={**VALOR**}&number_of_excerpts={**VALOR**}&size={**VALOR**}``
 
 .. REFERÊNCIAS
-.. _página da API: https://queridodiario.ok.org.br/api/docs
+.. _página da API: https://api.queridodiario.ok.org.br/docs
 .. _Python: https://www.python.org/
 .. _FastAPI: https://fastapi.tiangolo.com/
 .. _Swagger: https://swagger.io/
