@@ -115,7 +115,7 @@ Responsabilidades de uma pessoa mantenedora do Querido Diário
 - O projeto deve ser testado antes de um *Pull Request* ser mesclado
 - Manter o histórico de *commits* organizado, preferencialmente seguindo o formato a seguir onde toda alteração na base de código tem como base a *main* atualizada e é mesclada com um *merge commit*:
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/guide-commits-history.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/guide-commits-history.png
     :alt: Organização dos commits 
 
 - Caso um Pull Request tenha muitos *commits* e as mensagens não forem claras, pode-se realizar um *squash* nos *commits* antes de mesclar o *Pull Request*

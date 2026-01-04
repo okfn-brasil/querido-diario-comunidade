@@ -114,7 +114,7 @@ gazettes into three categories:
 Note how these three types of gazzetes differ in terms of content granularity and
 how they relate to each other as shown in the following diagram.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/qd-document-types.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/qd-document-types.png
    :alt: Diagram about how gazette types relate. An aggregated gazette if splited each
          municipality makes a complete gazette and a fragmented gazette if all parts
          joined becomes a complete gazette.

@@ -34,18 +34,18 @@ API usage tutorial
 
 When accessing the `API docs page`_, there are two blocks: *default* and *schemas*.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/api-docs.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/api-docs.png
 
 **Schemas** describe objects and their details. Through them, you can get to know
 the data that Querido Diário stores and its types.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/api-gazetteitem.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/api-gazetteitem.png
 
 In **default**, there are endpoints which are the access routes to data. To 
 try one of them, select it and click the "Try it out" button, so
 endpoint fields will be available for interaction.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/api-tryitout.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/api-tryitout.png
 
 For this experiment, we search for "orçamento" (budget) in the official gazettes 
 of Batalha (AL) municipality (ID 2700706) through the endpoint ``/gazettes``. When 
@@ -55,7 +55,7 @@ clicking to execute, an access is made to the Public API and a response is displ
     We take an endpoint as an example, however all other endpoints are 
     simulable with the same mechanics.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/api-response.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/api-response.png
 
 In the **response body** field you can check the search results: how many 
 files serve the search, a small excerpt from each official gazette where the 
