@@ -24,12 +24,12 @@ Browsing the site (in Portuguese)
 Search Usage Tutorial
 *********************
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/search-interface/interface-de-busca.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/search-interface/interface-de-busca.png
     :alt: QD search interface on the web platform
 
 There, you can search by **keywords**:
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/search-interface/busca-querystring.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/search-interface/busca-querystring.png
     :alt: Keyword query result
 
 .. tip::
@@ -37,12 +37,12 @@ There, you can search by **keywords**:
 
 Apply **filters by municipality and date**:
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/search-interface/busca-filtros.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/search-interface/busca-filtros.png
     :alt: Query result by keywords with filters
 
 You can **sort results** in the most appropriate way for your search.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/search-interface/busca-ordenacao.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/search-interface/busca-ordenacao.png
     :alt: Clicking the "sort by" button on the search page
 
 .. attention::
@@ -53,7 +53,7 @@ You can **sort results** in the most appropriate way for your search.
 
 And you can also download the **official gazette in original and/or open format**:
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/search-interface/busca-baixar.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/search-interface/busca-baixar.png
     :alt: Clicking on the "download official diary" button of the diary excerpt
 
 .. tip::

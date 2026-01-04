@@ -18,7 +18,7 @@ the steps below and understand them in more detail later.
 2. **Process**: apply treatments to the original files obtained
 3. **Provide**: allow access and search on the stored contents
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/qd-dataflow-per-gazettes.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/qd-dataflow-per-gazettes.png
    :alt: [TODO]
 
 1. Data collection
@@ -138,7 +138,7 @@ documentation repository contains the project’s roadmap (:ref:`Roadmap`).
 Architecture design
 *******************
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/qd-architecture.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/qd-architecture.png
    :alt: [TODO]
 
 .. References

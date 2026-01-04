@@ -14,7 +14,7 @@ network at the municipality level in specific themes such as accessibility,
 connectivity, management, infrastructure, artificial intelligence,
 robotics, etc.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/querido-diario-tecnologias-educacao.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/related-projects/querido-diario-tecnologias-educacao.png
     :alt: "Querido Diário: Technology in education" Webpage
 
 `Diários do Clima`_
@@ -26,7 +26,7 @@ can track official acts related to environmental crimes, biodiversity,
 mining, water, sanitation, etc. as soon as new official gazettes are
 published.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/diario-do-clima.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/related-projects/diario-do-clima.png
    :alt: "Diário do clima" webpage.
 
 `LegislaTech`_
@@ -36,7 +36,7 @@ published.
 judicial proceedings, official gazettes and even news - seeking topics
 of interest for users.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/legislatech.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/related-projects/legislatech.png
     :alt: LegislaTech webpage.
 
 `Exoonero`_
@@ -46,7 +46,7 @@ of interest for users.
 acts from the Municipalities Association of Alagoas State Official Gazette,
 providing general and specific statistics by municipality and by year.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/related-projects/exoonero.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/related-projects/exoonero.png
     :alt: Exoonero Webpage.
 
 Ro-DOU

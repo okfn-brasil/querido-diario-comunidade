@@ -106,7 +106,7 @@ oficiais eletrônicos em 3 categorias:
 Note como esses três tipos de diários diferem quanto a granularidade do conteúdo 
 e se relacionam conforme o diagrama a seguir.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/qd-document-types_ptbr.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/qd-document-types_ptbr.png
     :alt: Diagrama sobre como os tipos de diários se relacionam. Diário agregado ao separar cada município se torna diário individual e diário fragmentado se unir todas as partes se torna diário individual.
 
 .. REFERÊNCIAS:

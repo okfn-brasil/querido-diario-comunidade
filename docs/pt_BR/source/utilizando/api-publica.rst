@@ -35,18 +35,18 @@ Tutorial de uso da API
 
 Ao acessar a `página da API`_, há dois blocos: o *default* e os *schemas*. 
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/api-docs.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/api-docs.png
 
 Os **schemas** descrevem os objetos e seus detalhes. Por meio deles, pode-se conhecer
 os dados que o Querido Diário armazena e seus tipos. 
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/api-gazetteitem.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/api-gazetteitem.png
 
 Já em **default**, ficam os *endpoints* que são as vias de acesso aos dados. Para 
 experimentar um deles, selecione-o e clique no botão "Try it out", assim os
 campos do *endpoint* ficarão disponíveis para interação.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/api-tryitout.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/api-tryitout.png
 
 Para esta experimentação, fazemos uma busca por "orçamento" nos diários oficiais 
 do município de Batalha (AL) (ID do IBGE: 2700706) por meio do *endpoint* ``/gazettes``. Ao clicar para 
@@ -56,7 +56,7 @@ executar, um acesso é feito à API Pública e uma *response* é exibida.
     Tomamos um *endpoint* de exemplo, entretanto todos os demais *endpoints* são 
     simuláveis com a mesma mecânica. 
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/api-response.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/api-response.png
 
 No campo **response body** é possível conferir o resultado da pesquisa: quantos 
 arquivos atendem a busca, um pequeno trecho (ou excerto) do texto de cada diário 

@@ -19,7 +19,7 @@ O diagrama resume a relação entre as classes raspadoras. Cada uma é aprofunda
 nos tópicos enumerados correspondentes desta seção e, ao fim, é apresentada a ordem 
 em que seus componentes são acionados quando um comando de raspagem é engatilhado. 
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/scrapers-class-hierarchy_ptbr.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/scrapers-class-hierarchy_ptbr.png
     :alt: [TODO]
 
 1. O framework Scrapy
@@ -324,7 +324,7 @@ onde metadados são coletados, um objeto :class:`Gazette` é construído e é en
 ao `motor do Scrapy`_ para executar, de fato, a ação de baixar o arquivo do diário 
 oficial.
 
-.. image:: https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/scrapers-default-flow_ptbr.png
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/scrapers-default-flow_ptbr.png
     :alt: [TODO]
 
 Há dois contextos em que, por exigência da situação, esse fluxo pode não acontecer 
