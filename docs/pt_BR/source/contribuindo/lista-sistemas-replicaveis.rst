@@ -95,9 +95,16 @@ APLUS
 ATENDE
 **********
 
-.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/replicable-systems/ATENTE_exemplo-1.png
+Layout 1 (ex.: Camaquã/RS, Cachoeirinha/RS)
+------------------------------------------
+
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/replicable-systems/ATENDE_exemplo-1.png
     :width: 49 %
-.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/replicable-systems/ATENTE_exemplo-2.png
+
+Layout 2 (ex.: Araucária/PR, Campo Mourão/PR)
+--------------------------------------------
+
+.. image:: https://d20vl87kcc4i28.cloudfront.net/docs/replicable-systems/ATENDE_exemplo-2.png
     :width: 49 %
 
 BARCO
